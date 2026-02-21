@@ -49,17 +49,6 @@ Open frame monitors are available with or without integrated touch:
 
 See our [touch panel page](/products/touch-panels) for detailed touch technology information.
 
-## Key Specifications
-
-| Parameter | Range |
-|-----------|-------|
-| Brightness | 250 – 2,500 nits |
-| Contrast ratio | 700:1 – 5,000:1 |
-| Viewing angle | 170°/170° (IPS) |
-| Operating temperature | 0°C to 50°C (extended available) |
-| Mounting | VESA 75/100/200/400 |
-| Input voltage | 12V DC or 100-240V AC |
-| Touch | None, PCAP, Resistive |
 
 ## High-Brightness Options
 

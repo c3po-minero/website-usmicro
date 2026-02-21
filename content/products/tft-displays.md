@@ -37,16 +37,6 @@ Our TFT displays support all major interface standards, selected based on resolu
 - **MIPI DSI** — Mobile Industry Processor Interface. High-bandwidth serial link standard in mobile processors and modern SoCs. Available in 1, 2, or 4 lane configurations.
 - **eDP** — Embedded DisplayPort for high-resolution panels (Full HD and above). Common in tablet-sized and larger displays driven by application processors.
 
-## Key Specifications Across the Range
-
-| Parameter | Range |
-|-----------|-------|
-| Diagonal size | 0.96" – 84" |
-| Resolution | 80×160 to 3840×2160 (4K) |
-| Brightness | 150 – 1,500+ nits |
-| Contrast ratio | 500:1 – 5,000:1 |
-| Operating temperature | -40°C to +85°C (extended range available) |
-| Touch integration | None, capacitive (PCAP), resistive |
 
 ## Customization Options
 

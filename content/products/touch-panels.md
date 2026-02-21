@@ -36,18 +36,6 @@ For select AMOLED and TFT displays, the touch sensor is integrated directly into
 | GFF (Glass-Film-Film) | Cover glass + two sensor films | Cost-effective multi-touch | Lower optical clarity |
 | OGS (One Glass Solution) | Sensor on inner surface of cover glass | Thinnest, lightest | Less customizable |
 
-## Key Specifications
-
-| Parameter | Range |
-|-----------|-------|
-| Diagonal size | 2.8" – 32" |
-| Touch points | 1 – 10+ simultaneous |
-| Cover glass thickness | 0.55 mm – 8 mm |
-| Response time | < 10 ms |
-| Touch accuracy | ± 1 mm |
-| Operating temperature | -20°C to 70°C (extended available) |
-| Surface hardness | 6H – 9H (Mohs) |
-| Transmission | 88% – 92% |
 
 ## Advanced Touch Capabilities
 

@@ -349,8 +349,12 @@ export default async function ProductCategoryPage({ params }: Props) {
   const displayTitle = title.replace(/\s*\|.*$/, '').trim();
 
   const overviewSection = parsed?.sections?.[0];
-  const otherSections = parsed?.sections?.slice(1) || [];
-  const specCards = overviewSection ? extractSpecCards(overviewSection.html) : [];
+  // Find section with h3 sub-items for spec cards (e.g. "Panel Types Available")
+  const panelTypesIdx = parsed?.sections?.findIndex((s, i) => i > 0 && extractSpecCards(s.html).length >= 2) ?? -1;
+  const panelTypesSection = panelTypesIdx >= 0 ? parsed?.sections?.[panelTypesIdx] : null;
+  const specCards = panelTypesSection ? extractSpecCards(panelTypesSection.html) : (overviewSection ? extractSpecCards(overviewSection.html) : []);
+  // Exclude panel types section from otherSections since we render it as cards
+  const otherSections = (parsed?.sections?.slice(1) || []).filter((_, i) => i + 1 !== panelTypesIdx);
   const images = categoryImages[category];
 
   return (
@@ -384,7 +388,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                   </>
                 )}
                 {specCards.length > 0 && (
-                  <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
                     {specCards.map((card) => (
                       <div key={card.title} className="p-5 bg-gray-50 rounded-xl border border-gray-200">
                         <h3 className="text-base font-bold text-navy mb-1">

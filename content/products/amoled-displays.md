@@ -41,17 +41,6 @@ Panels built on flexible plastic substrates that can conform to curved surfaces.
 - **SPI** — Simple serial interface for small, low-resolution AMOLED modules. Minimal pin count for microcontroller-driven wearable and IoT applications.
 - **Parallel RGB** — Available on select modules for legacy system compatibility.
 
-## Key Specifications
-
-| Parameter | Range |
-|-----------|-------|
-| Diagonal size | 0.95" – 6.67" |
-| Shape | Round, rectangular, flexible |
-| Resolution | 128×128 to 1080×2400 |
-| Color depth | 16.7M colors (24-bit) |
-| Viewing angle | 170°+ all directions |
-| Operating temperature | -20°C to 70°C (extended available) |
-| Thickness | As low as 1.2 mm total stack |
 
 ## Customization Options
 
