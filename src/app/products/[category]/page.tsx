@@ -367,64 +367,42 @@ function renderSection(section: { id: string; title: string; html: string }, idx
 
   // Why Choose section — gradient callout with optional images
   if (isWhyChoose) {
-    return (
-      <section key={section.id} className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 opacity-10" aria-hidden="true">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-400 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
-        </div>
-        <div className="relative max-w-[1280px] mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Why Choose Us</p>
-            <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">
-              {section.title}
-            </h2>
-            <p className="text-white/70 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
-          </div>
-          {(listItems.length > 0 || boldParagraphs.length > 0) ? (
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${(listItems.length > 0 ? listItems : boldParagraphs).length > 4 ? 'lg:grid-cols-3' : ''}`}>
-              {(listItems.length > 0 ? listItems : boldParagraphs).map((item, i) => {
-                const icons = ['fa-trophy', 'fa-handshake', 'fa-brain', 'fa-tools', 'fa-rocket', 'fa-headset'];
-                const icon = icons[i % icons.length];
-                return (
-                  <div key={i} className="group p-6 bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/[0.12] hover:border-accent/30 transition-all duration-300">
-                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
-                      <i className={`fas ${icon} text-accent text-lg`} />
-                    </div>
-                    <h3 className="text-[1.0625rem] font-bold text-white mb-2">{item.title}</h3>
-                    {item.description && <p className="text-sm text-white/70 m-0 leading-relaxed">{item.description}</p>}
+    const whyItems = listItems.length > 0 ? listItems : boldParagraphs;
+    const whyIcons = ['fa-boxes', 'fa-headset', 'fa-sync-alt', 'fa-dollar-sign', 'fa-trophy', 'fa-handshake'];
+
+    if (whyItems.length > 0) {
+      return (
+        <section key={section.id} className="py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Why Choose Us</p>
+              <h2 className="text-[1.75rem] md:text-[2rem] font-bold text-navy mb-3">{section.title}</h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {whyItems.map((item, i) => (
+                <div key={i} className="flex gap-4 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                    <i className={`fas ${whyIcons[i % whyIcons.length]} text-accent text-lg`} />
                   </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="prose prose-invert max-w-none [&_a]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
-          )}
-          {/* Decorative image strip */}
-          <div className="mt-12 flex justify-center gap-4 opacity-60">
-            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden">
-              <img src="/images/content/amoled-card.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden sm:block">
-              <img src="/images/products/amoled-displays.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden md:block">
-              <img src="/images/content/product-hero-portrait.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
-              <img src="/images/content/product-hero-square.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
-            </div>
-          </div>
-          {links.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-3 mt-8">
-              {links.map((link, i) => (
-                <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
-                  {link.text} <i className="fas fa-arrow-right text-xs" />
-                </Link>
+                  <div>
+                    <h3 className="text-[0.9375rem] font-bold text-navy mb-1">{item.title}</h3>
+                    {item.description && <p className="text-sm text-gray-600 m-0 leading-relaxed">{item.description}</p>}
+                  </div>
+                </div>
               ))}
             </div>
-          )}
+          </div>
+        </section>
+      );
+    }
+
+    // Fallback: prose
+    return (
+      <section key={section.id} className="py-20 bg-gray-50">
+        <div className="max-w-[900px] mx-auto px-6">
+          <h2 className="text-[1.75rem] font-bold text-navy mb-6">{section.title}</h2>
+          <div className="prose max-w-none text-gray-700 leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
         </div>
       </section>
     );
