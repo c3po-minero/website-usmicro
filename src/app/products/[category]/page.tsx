@@ -209,8 +209,9 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const links = extractLinks(section.html);
   const isWhyChoose = isWhyChooseSection(section.title);
   const isWhenToChoose = /when to choose/i.test(section.title);
-  const isKeyAdvantages = /key advantages/i.test(section.title);
+  const isKeyAdvantages = /key (advantages|benefits)/i.test(section.title);
   const isApplications = /^applications$/i.test(section.title.trim());
+  const isCustomization = /customization/i.test(section.title);
   const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;
 
   // "When to Choose" section — horizontal feature highlights with accent left border
@@ -440,7 +441,8 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   // Sections with lists — icon card grid
   if (listItems.length > 0) {
     // Remove list from HTML for intro text
-    const introHtml = section.html.replace(/<ul[\s\S]*?<\/ul>/gi, '').replace(/<ol[\s\S]*?<\/ol>/gi, '');
+    let introHtml = section.html.replace(/<ul[\s\S]*?<\/ul>/gi, '').replace(/<ol[\s\S]*?<\/ol>/gi, '');
+    if (isCustomization) introHtml = introHtml.replace(/<p>[\s\S]*?<a[\s\S]*?<\/a>[\s\S]*?<\/p>/gi, '');
     const hasIntro = introHtml.replace(/<[^>]*>/g, '').trim().length > 20;
 
     return (
@@ -461,7 +463,7 @@ function renderSection(section: { id: string; title: string; html: string }, idx
               </div>
             ))}
           </div>
-          {links.length > 0 && (
+          {!isCustomization && links.length > 0 && (
             <div className="flex flex-wrap gap-3 mt-8">
               {links.map((link, i) => (
                 <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">

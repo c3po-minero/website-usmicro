@@ -23,30 +23,14 @@ A smart display module integrates the following components into a single unit:
 
 The host system communicates at the object level — "display screen 3," "update value on widget 7," "show alert popup" — rather than managing pixels, frame timing, or display initialization sequences.
 
-## Key Benefits for OEM Engineers
+## Key Advantages
 
-**Reduced development time.** GUI development moves from months of embedded display driver work to days of drag-and-drop screen design with the module manufacturer's visual editor. Most smart display platforms include a PC-based IDE for designing screens, defining widgets, and programming navigation flows.
-
-**Simplified BOM.** The smart display replaces: display panel + driver board + FPC + connector + GPU/display controller on your main PCB + frame buffer RAM + flash for assets. One module, one connector, one purchase order.
-
-**Processor independence.** Because the display communicates via serial protocol, it can be driven by any host processor — from an 8-bit microcontroller to a Linux SBC. No specific GPU, display controller, or memory bandwidth requirements on the host side.
-
-**Faster iterations.** GUI updates don't require changes to host firmware. Upload new screens to the display's flash memory independently, enabling parallel development between UI and application teams.
-
-**Lower technical risk.** Display timing, gamma correction, backlight control, and touch calibration are handled by the module. The host system focuses on application logic.
-
-## Typical Specifications
-
-| Parameter | Range |
-|-----------|-------|
-| Diagonal size | 2.4" – 10.1" |
-| Resolution | 320×240 to 1024×600 |
-| Panel type | TFT LCD (IPS and TN) |
-| Touch | Capacitive or resistive (optional) |
-| Interface to host | UART (TTL), SPI, I2C |
-| Flash storage | 4 MB – 128 MB |
-| Operating temperature | -20°C to 70°C |
-| Supply voltage | 3.3V or 5V |
+- **Months to Days:** GUI development goes from months of embedded driver work to days of drag-and-drop screen design. Most platforms include a PC-based visual IDE for designing screens and programming navigation flows.
+- **Simplified BOM:** Replaces display panel + driver board + FPC + GPU + frame buffer RAM + flash storage. One module, one connector, one purchase order.
+- **Processor Independent:** Communicates via serial protocol — driven by any host from an 8-bit MCU to a Linux SBC. Zero GPU or display controller requirements on the host side.
+- **Parallel Development:** GUI updates don't require host firmware changes. Upload new screens independently — UI and application teams work in parallel.
+- **Lower Technical Risk:** Display timing, gamma correction, backlight control, and touch calibration all handled by the module. Host focuses purely on application logic.
+- **Rapid Iteration:** Change the UI without touching a line of embedded code. Flash new screen designs in seconds.
 
 ## GUI Development Platforms
 

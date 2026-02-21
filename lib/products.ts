@@ -24,6 +24,10 @@ export interface Product {
   ledColor: string;
   glass: string;
   image: string;
+  cpu: string;
+  mcuMpu: string;
+  io: string;
+  os: string;
   datasheetUrl: string;
   category: string;
   [key: string]: string;

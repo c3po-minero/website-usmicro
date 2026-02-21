@@ -23,6 +23,10 @@ interface Product {
   ledColor: string;
   glass: string;
   image: string;
+  cpu: string;
+  mcuMpu: string;
+  io: string;
+  os: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
@@ -56,6 +60,16 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  'smart-displays': [
+    { key: 'diagonalSize', label: 'Diagonal Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'touchPanel', label: 'Touch', icon: 'fa-hand-pointer' },
+    { key: 'cpu', label: 'CPU', icon: 'fa-microchip' },
+    { key: 'mcuMpu', label: 'MCU/MPU', icon: 'fa-memory' },
+    { key: 'io', label: 'I/O', icon: 'fa-plug' },
+    { key: 'os', label: 'OS', icon: 'fa-desktop' },
   ],
   'graphic-lcd': [
     { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
