@@ -65,6 +65,15 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
   ],
+  'open-frame-monitors': [
+    { key: 'diagonalSize', label: 'Panel Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'brightness', label: 'Brightness', icon: 'fa-sun' },
+    { key: 'operatingTemp', label: 'Operating Temp.', icon: 'fa-thermometer-half' },
+    { key: 'viewingAngle', label: 'Viewing Angle', icon: 'fa-eye' },
+    { key: 'touchPanel', label: 'Touch Screen', icon: 'fa-hand-pointer' },
+  ],
   'touch-panels': [
     { key: 'diagonalSize', label: 'Diagonal Size', icon: 'fa-expand-alt' },
     { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },

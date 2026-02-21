@@ -712,6 +712,99 @@ export default async function ProductCategoryPage({ params }: Props) {
         </section>
       )}
 
+      {/* Open Frame vs Complete Monitors Comparison */}
+      {category === 'open-frame-monitors' && (
+        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div className="absolute top-0 left-1/4 w-80 h-80 bg-accent rounded-full blur-[100px]" />
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400 rounded-full blur-[80px]" />
+          </div>
+          <div className="relative max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Comparison</p>
+              <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">Open Frame vs. Enclosed Monitors</h2>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">Understand the trade-offs to choose the right form factor for your integration.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-tv text-accent text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Open Frame</h3>
+                    <p className="text-white/50 text-sm">No Enclosure</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Cost', value: '★★★★★ Lower (no enclosure)', icon: 'fa-tag' },
+                    { label: 'Weight', value: '★★★★★ Lighter', icon: 'fa-feather-alt' },
+                    { label: 'Flexibility', value: 'Fits any enclosure design', icon: 'fa-drafting-compass' },
+                    { label: 'Custom', value: 'Easy (brightness, touch, I/O)', icon: 'fa-tools' },
+                    { label: 'Mounting', value: 'VESA or custom brackets', icon: 'fa-th-large' },
+                    { label: 'Branding', value: 'Your brand, your design', icon: 'fa-paint-brush' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-accent/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-24 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-accent/10 rounded-xl border border-accent/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-accent">Best for:</strong> Kiosks, gaming cabinets, POS terminals, custom enclosures, OEM integration</p>
+                </div>
+              </div>
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-blue-400/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-desktop text-blue-400 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Enclosed Monitor</h3>
+                    <p className="text-white/50 text-sm">Complete Housing</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Cost', value: '★★★ Higher (enclosure included)', icon: 'fa-tag' },
+                    { label: 'Weight', value: '★★★ Heavier', icon: 'fa-feather-alt' },
+                    { label: 'Flexibility', value: 'Fixed form factor', icon: 'fa-drafting-compass' },
+                    { label: 'Custom', value: 'Limited modifications', icon: 'fa-tools' },
+                    { label: 'Mounting', value: 'Stand or VESA only', icon: 'fa-th-large' },
+                    { label: 'Branding', value: "Manufacturer's brand", icon: 'fa-paint-brush' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-blue-400/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-24 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-blue-400/10 rounded-xl border border-blue-400/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-blue-400">Best for:</strong> Desktop use, standalone signage, quick deployment without custom housing</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-10 flex justify-center gap-4 opacity-50">
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden">
+                <img src="/images/content/open-frame-card.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden sm:block">
+                <img src="/images/products/open-frame-monitors.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden md:block">
+                <img src="/images/content/product-hero-portrait.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
+                <img src="/images/content/product-hero-square.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Character LCD vs Graphic LCD Comparison */}
       {category === 'character-lcd' && (
         <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>

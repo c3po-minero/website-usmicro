@@ -10,6 +10,15 @@ schema: ["CollectionPage", "Product", "BreadcrumbList"]
 
 US Micro Products offers 20+ open frame monitor assemblies designed for integration into kiosks, gaming cabinets, POS terminals, digital signage enclosures, and industrial equipment. Open frame monitors arrive as complete, tested display assemblies — panel, driver board, power supply, and optional touch screen — without an external enclosure, ready to mount directly into your system's housing.
 
+### Projected Capacitive (PCAP)
+Multi-touch, durable, works through thick cover glass. Standard for new kiosk and POS designs. USB interface to host.
+
+### Resistive Touch
+Single-touch, works with any pointing device (finger, glove, stylus). Lower cost option. USB or serial interface.
+
+### No Touch
+Display-only for signage, status displays, and non-interactive applications.
+
 ## What Is an Open Frame Monitor
 
 An open frame monitor is a fully functional LCD display assembly without a consumer-style enclosure. It includes:
@@ -22,15 +31,6 @@ An open frame monitor is a fully functional LCD display assembly without a consu
 
 The OEM integrator mounts the open frame monitor into their own enclosure, chassis, or panel cutout. This approach eliminates the cost and bulk of a consumer monitor enclosure while providing a display assembly that's pre-tested and ready for integration.
 
-## Size Range
-
-| Size Category | Diagonal Range | Typical Resolutions | Common Applications |
-|--------------|---------------|--------------------|--------------------|
-| Small | 7" – 10.1" | 1024×600, 1280×800 | Instrument panels, compact kiosks |
-| Medium | 15" – 21.5" | 1024×768, 1920×1080 | POS terminals, gaming machines, medical |
-| Large | 23.8" – 32" | 1920×1080, 2560×1440 | Kiosks, digital signage, gaming |
-| Extra Large | 42" – 55"+ | 1920×1080, 3840×2160 | Large-format kiosks, signage, gaming |
-
 ## Video Input Options
 
 - **HDMI** — Standard for most modern systems. Carries video and audio over a single cable.
@@ -39,32 +39,14 @@ The OEM integrator mounts the open frame monitor into their own enclosure, chass
 - **DisplayPort** — High-bandwidth digital interface for high-resolution panels.
 - **Composite/S-Video** — Available on select models for legacy integration.
 
-## Touch Options
+## Key Advantages
 
-Open frame monitors are available with or without integrated touch:
-
-- **Projected capacitive (PCAP)** — Multi-touch, durable, works through thick cover glass. Standard for new kiosk and POS designs. USB interface to host.
-- **Resistive** — Single-touch, works with any pointing device (finger, glove, stylus). Lower cost. USB or serial interface.
-- **No touch** — Display-only for signage, status displays, and non-interactive applications.
-
-See our [touch panel page](/products/touch-panels) for detailed touch technology information.
-
-
-## High-Brightness Options
-
-For outdoor kiosks, drive-through displays, and sunlit industrial environments, we offer high-brightness open frame monitors with 1,000 to 2,500 nit LED backlights. Combined with anti-reflective cover glass and optical bonding, these displays remain readable in direct sunlight.
-
-## Why Open Frame vs. Complete Monitors
-
-| Factor | Open Frame | Enclosed Monitor |
-|--------|-----------|-----------------|
-| Cost | Lower (no enclosure) | Higher |
-| Weight | Lighter | Heavier |
-| Flexibility | Fits your enclosure design | Fixed form factor |
-| Customization | Easy to modify (brightness, touch, I/O) | Limited |
-| Mounting | VESA or custom brackets | Stand or VESA only |
-| IP rating | Determined by your enclosure | Fixed |
-| Branding | Your brand, your design | Manufacturer's brand |
+- **Sunlight-Readable Options:** High-brightness models with 1,000 to 2,500 nit LED backlights plus anti-reflective cover glass and optical bonding for full outdoor readability.
+- **Lower Cost:** No enclosure means lower unit cost — you get a tested display assembly without paying for a consumer housing you'd remove anyway.
+- **Design Freedom:** Mount into any enclosure, chassis, or panel cutout. Your housing, your brand, your form factor — no compromises.
+- **Flexible Customization:** Easy to modify brightness, touch type, video inputs, cover glass, and mounting brackets to match your exact requirements.
+- **Multiple Video Inputs:** HDMI, VGA, DVI, DisplayPort — connect to virtually any host system without adapters.
+- **Production Ready:** Complete tested assemblies with panel, driver board, power supply, and optional touch. Integrate and ship.
 
 ## Applications
 
