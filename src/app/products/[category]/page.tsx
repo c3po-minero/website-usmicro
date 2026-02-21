@@ -182,7 +182,7 @@ function extractLinks(html: string): { text: string; href: string }[] {
   let match;
   while ((match = linkRegex.exec(html)) !== null) {
     const text = match[2].replace(/<[^>]*>/g, '').trim();
-    if (text.toLowerCase().includes('learn more') || text.toLowerCase().includes('contact') || text.toLowerCase().includes('request')) {
+    if (text.toLowerCase().includes('learn') || text.toLowerCase().includes('contact') || text.toLowerCase().includes('request')) {
       links.push({ text, href: match[1] });
     }
   }
