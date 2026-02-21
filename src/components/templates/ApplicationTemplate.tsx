@@ -75,10 +75,8 @@ function extractSubSections(html: string): { preamble: string; subs: SubSection[
   };
 }
 
-/** Extract a key stat from intro text (e.g., "1,500+ nits", "IP65+", numbers with units) */
 function extractKeyStat(intro: string): { number: string; text: string } | null {
   const plainText = intro.replace(/<[^>]*>/g, '');
-  // Look for patterns like "1,500+ nits" or "IP65" or numbers with + suffix
   const patterns = [
     /(\d[\d,]*\+?\s*nits)/i,
     /(IP\d+\+?)/i,
@@ -87,7 +85,6 @@ function extractKeyStat(intro: string): { number: string; text: string } | null 
   for (const pat of patterns) {
     const m = plainText.match(pat);
     if (m) {
-      // Get surrounding context
       const idx = plainText.indexOf(m[1]);
       const sentence = plainText.substring(Math.max(0, idx - 60), Math.min(plainText.length, idx + m[1].length + 60));
       const parts = sentence.split(m[1]);
@@ -97,13 +94,17 @@ function extractKeyStat(intro: string): { number: string; text: string } | null 
   return null;
 }
 
+const proseClasses = "prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2";
+const proseCompact = "text-sm text-gray-600 leading-relaxed [&_a]:text-blue-mid [&_p]:mb-2";
+const proseCompactFull = "text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1";
+const prosePreamble = "prose max-w-none text-gray-700 mb-8 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid";
+
 function RenderSection({ section, index }: { section: ContentSection; index: number }) {
   const { preamble, subs } = extractSubSections(section.html);
   const isRecommended = section.title.toLowerCase().includes('recommend') || section.title.toLowerCase().includes('product');
   const hasSubSections = subs.length > 0;
   const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
 
-  // Recommended products section - card grid with icon circles
   if (isRecommended && hasSubSections) {
     return (
       <section className="py-16 bg-gray-50">
@@ -117,7 +118,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
                     <i className={`fas ${getRequirementIcon(sub.title)}`} />
                   </div>
                   <h3 className="text-lg font-bold text-navy mb-2">{sub.title}</h3>
-                  <div className="text-sm text-gray-600 leading-relaxed [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: sub.html }} />
+                  <div className={proseCompact} dangerouslySetInnerHTML={{ __html: sub.html }} />
                 </div>
               </div>
             ))}
@@ -127,7 +128,6 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
     );
   }
 
-  // Sections with sub-sections as requirement cards (2x2 grid with orange circle icons)
   if (hasSubSections && subs.length >= 3) {
     return (
       <section className={`py-16 ${bgClass}`} id={section.id}>
@@ -137,7 +137,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
             {section.title}
           </h2>
           {preamble && (
-            <div className="prose max-w-none text-gray-700 mb-8 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text" dangerouslySetInnerHTML={{ __html: preamble }} />
+            <div className={prosePreamble} dangerouslySetInnerHTML={{ __html: preamble }} />
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {subs.map((sub) => (
@@ -147,7 +147,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
                 </div>
                 <div>
                   <h3 className="font-bold text-navy mb-1 text-base">{sub.title}</h3>
-                  <div className="text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1" dangerouslySetInnerHTML={{ __html: sub.html }} />
+                  <div className={proseCompactFull} dangerouslySetInnerHTML={{ __html: sub.html }} />
                 </div>
               </div>
             ))}
@@ -157,7 +157,6 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
     );
   }
 
-  // Default prose section
   return (
     <section className={`py-16 ${bgClass}`} id={section.id}>
       <div className="max-w-[900px] mx-auto px-6">
@@ -165,7 +164,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
           <i className={`fas ${getSectionIcon(section.title)} text-accent mr-3`} />
           {section.title}
         </h2>
-        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+        <div className={proseClasses} dangerouslySetInnerHTML={{ __html: section.html }} />
       </div>
     </section>
   );
@@ -177,12 +176,9 @@ export default function ApplicationTemplate({ title, description, intro, section
 
   return (
     <>
-      {/* Intro */}
       <section className="py-16">
         <div className="max-w-[900px] mx-auto px-6">
-          <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text" dangerouslySetInnerHTML={{ __html: intro }} />
-
-          {/* Stat callout bar */}
+          <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: intro }} />
           {keyStat && (
             <div className="bg-blue-light border-l-4 border-accent rounded-r-xl p-6 my-8">
               <div className="text-[2rem] font-extrabold text-accent leading-none">{keyStat.number}</div>
@@ -192,12 +188,10 @@ export default function ApplicationTemplate({ title, description, intro, section
         </div>
       </section>
 
-      {/* Content Sections */}
       {sections.map((section, i) => (
         <RenderSection key={section.id} section={section} index={i} />
       ))}
 
-      {/* Case Study - dark navy background */}
       <section className="bg-gradient-to-br from-navy to-blue text-white py-20">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -227,7 +221,6 @@ export default function ApplicationTemplate({ title, description, intro, section
         </div>
       </section>
 
-      {/* FAQ */}
       {faqs.length > 0 && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-[1280px] mx-auto px-6">
@@ -237,7 +230,6 @@ export default function ApplicationTemplate({ title, description, intro, section
         </section>
       )}
 
-      {/* CTA with 2 buttons */}
       <section className="bg-gradient-to-br from-blue to-navy text-white py-16 text-center">
         <div className="max-w-[700px] mx-auto px-6">
           <h2 className="text-white text-[1.875rem] font-bold mb-4">Discuss Your {industryName} Display Project</h2>

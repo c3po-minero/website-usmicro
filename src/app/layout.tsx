@@ -4,6 +4,7 @@ import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import SearchOverlay from '@/components/SearchOverlay';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <SearchOverlay />
         <Script id="load-fontawesome" strategy="afterInteractive">
           {`var l=document.createElement('link');l.rel='stylesheet';l.href='/fontawesome/css/all.min.css';document.head.appendChild(l);`}
         </Script>

@@ -64,6 +64,7 @@
 .prose p { line-height: 1.8; }
 .prose ul, .prose ol { margin-bottom: 1.5rem; }
 .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
+.prose a:hover { color: var(--color-accent-text); }
 
 /* Mega menu show on hover */
 .nav-item:hover .mega-menu,

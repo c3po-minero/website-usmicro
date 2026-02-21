@@ -91,7 +91,7 @@ export default async function LearnGuidePage({ params }: Props) {
                   [&_h3]:text-[1.25rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:scroll-mt-24
                   [&_p]:mb-4 [&_p]:text-base
                   [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2
-                  [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text
+                  [&_a]:text-blue-mid
                   [&_strong]:text-gray-900
                   [&_table]:w-full [&_table]:border-collapse [&_table]:rounded-xl [&_table]:overflow-hidden [&_table]:border [&_table]:border-gray-200
                   [&_th]:bg-navy [&_th]:text-white [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-xs [&_th]:uppercase [&_th]:tracking-wider [&_th]:font-semibold

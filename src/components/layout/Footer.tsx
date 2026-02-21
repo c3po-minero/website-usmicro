@@ -5,16 +5,21 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white/70 pt-16" role="contentinfo">
       <div className="max-w-[1280px] mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-          <div className="lg:col-span-1">
+        {/* Logo + description */}
+        <div className="text-center md:text-left mb-10">
+          <div className="flex justify-center md:justify-start">
             <Image src="/images/logos/USMP-square-white.svg" alt="US Micro Products logo" width={80} height={80} />
-            <p className="text-sm leading-relaxed mt-3">Custom display solutions engineered for your product. Fabless manufacturer serving medical, military, aerospace, and industrial OEMs since 1996.</p>
-            <div className="flex gap-3 mt-4">
-              <a href="https://linkedin.com" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-linkedin-in" /></a>
-              <a href="https://twitter.com" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-x-twitter" /></a>
-              <a href="https://youtube.com" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-youtube" /></a>
-            </div>
           </div>
+          <p className="text-sm leading-relaxed mt-3 max-w-[360px] mx-auto md:mx-0">Custom display solutions engineered for your product. Fabless manufacturer serving medical, military, aerospace, and industrial OEMs since 1996.</p>
+          <div className="flex gap-3 mt-4 justify-center md:justify-start">
+            <a href="https://linkedin.com" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-linkedin-in" /></a>
+            <a href="https://twitter.com" aria-label="Twitter" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-x-twitter" /></a>
+            <a href="https://youtube.com" aria-label="YouTube" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-accent hover:text-white transition-all"><i className="fab fa-youtube" /></a>
+          </div>
+        </div>
+
+        {/* Link columns: 2-col on mobile, 4-col on desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-center md:text-left">
           <div>
             <p className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Products</p>
             <ul className="space-y-2">
@@ -48,7 +53,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 py-6 flex flex-wrap justify-between items-center gap-4 text-xs">
+
+        {/* Copyright */}
+        <div className="border-t border-white/10 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-center">
           <span>&copy; {new Date().getFullYear()} US Micro Products</span>
           <span><Link href="/terms" className="text-white/50 hover:text-white">Terms</Link> &middot; <Link href="/privacy" className="text-white/50 hover:text-white">Privacy Policy</Link></span>
         </div>
