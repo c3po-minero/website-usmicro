@@ -31,6 +31,10 @@ interface Product {
   structure: string;
   surfaceHardness: string;
   outlineDimension: string;
+  lcdType: string;
+  mode: string;
+  wifi: string;
+  bluetooth: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
@@ -64,6 +68,19 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  'tablets': [
+    { key: 'diagonalSize', label: 'Panel Size', icon: 'fa-expand-alt' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'lcdType', label: 'LCD Type', icon: 'fa-desktop' },
+    { key: 'mode', label: 'Mode', icon: 'fa-adjust' },
+    { key: 'brightness', label: 'Brightness', icon: 'fa-sun' },
+    { key: 'touchPanel', label: 'Touch Panel', icon: 'fa-hand-pointer' },
+    { key: 'os', label: 'OS', icon: 'fa-android' },
+    { key: 'wifi', label: 'WiFi', icon: 'fa-wifi' },
+    { key: 'bluetooth', label: 'Bluetooth', icon: 'fa-bluetooth-b' },
+    { key: 'interface', label: 'Interface', icon: 'fa-plug' },
   ],
   'open-frame-monitors': [
     { key: 'diagonalSize', label: 'Panel Size', icon: 'fa-expand-alt' },

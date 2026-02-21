@@ -466,7 +466,7 @@ function renderSection(section: { id: string; title: string; html: string }, idx
           {!isCustomization && links.length > 0 && (
             <div className="flex flex-wrap gap-3 mt-8">
               {links.map((link, i) => (
-                <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                <Link key={i} href={link.href} className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${i === 0 ? 'bg-accent text-white hover:bg-accent-hover' : 'bg-navy text-white hover:bg-blue'}`}>
                   {link.text} <i className="fas fa-arrow-right text-xs" />
                 </Link>
               ))}

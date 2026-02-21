@@ -32,6 +32,10 @@ export interface Product {
   structure: string;
   surfaceHardness: string;
   outlineDimension: string;
+  lcdType: string;
+  mode: string;
+  wifi: string;
+  bluetooth: string;
   datasheetUrl: string;
   category: string;
   [key: string]: string;

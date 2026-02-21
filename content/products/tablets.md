@@ -26,20 +26,6 @@ Our custom tablet platform addresses what commercial tablets cannot:
 
 **Lifecycle commitment.** Consumer tablets are discontinued without warning. Our custom tablets are supported for 5–7+ year production lifecycles with managed component changes and EOL planning.
 
-## Platform Capabilities
-
-| Parameter | Options |
-|-----------|---------|
-| Display sizes | 7" – 13.3" |
-| Panel technology | IPS TFT LCD |
-| Touch | Projected capacitive (PCAP), multi-touch |
-| Processor | ARM Cortex-A series (quad/octa-core) |
-| OS | Android (AOSP), Linux, Windows IoT |
-| Connectivity | Wi-Fi 6, Bluetooth 5.x, 4G/5G LTE, GPS |
-| Rugged rating | IP54 – IP67, MIL-STD-810G (configurable) |
-| Battery | 5,000 – 12,000 mAh, hot-swap options |
-| Operating temperature | -20°C to 60°C |
-
 ## Customization Options
 
 - Custom enclosure design (colors, materials, form factor)
@@ -62,14 +48,13 @@ Our custom tablet platform addresses what commercial tablets cannot:
 
 Custom tablet development follows our Engineering Display Solution Process (EDSP):
 
-1. **Requirements definition** — We work with your engineering team to document display, mechanical, electrical, environmental, and software requirements.
-2. **Concept design** — Industrial design concepts, I/O planning, component selection.
-3. **Prototype** — Working prototype units for your evaluation and application testing.
-4. **Validation** — Environmental, reliability, and compliance testing.
-5. **Production** — Volume manufacturing with ongoing quality management and supply chain support.
+- **Requirements Definition:** We work with your engineering team to document display, mechanical, electrical, environmental, and software requirements.
+- **Concept Design:** Industrial design concepts, I/O planning, component selection.
+- **Prototype:** Working prototype units for your evaluation and application testing.
+- **Validation:** Environmental, reliability, and compliance testing.
+- **Production:** Volume manufacturing with ongoing quality management and supply chain support.
 
 Typical development timeline: 16–24 weeks from requirements lock to production-ready units.
 
----
-
-[Request a Quote](/support/request-quote) | [Learn About Custom Solutions](/products/custom-displays) | [Contact Engineering](/contact)
+[Request a Quote](/support/request-quote)
+[Learn About Custom Solutions](/products/custom-displays)
