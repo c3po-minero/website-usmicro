@@ -372,22 +372,26 @@ function renderSection(section: { id: string; title: string; html: string }, idx
 
     if (whyItems.length > 0) {
       return (
-        <section key={section.id} className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-[1280px] mx-auto px-6">
+        <section key={section.id} className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-400 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+          </div>
+          <div className="relative max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Why Choose Us</p>
-              <h2 className="text-[1.75rem] md:text-[2rem] font-bold text-navy mb-3">{section.title}</h2>
-              <p className="text-gray-600 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
+              <h2 className="text-[1.75rem] md:text-[2rem] font-bold text-white mb-3">{section.title}</h2>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {whyItems.map((item, i) => (
-                <div key={i} className="flex gap-4 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300">
-                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                <div key={i} className="flex gap-4 p-6 bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/[0.12] hover:border-accent/30 transition-all duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
                     <i className={`fas ${whyIcons[i % whyIcons.length]} text-accent text-lg`} />
                   </div>
                   <div>
-                    <h3 className="text-[0.9375rem] font-bold text-navy mb-1">{item.title}</h3>
-                    {item.description && <p className="text-sm text-gray-600 m-0 leading-relaxed">{item.description}</p>}
+                    <h3 className="text-[0.9375rem] font-bold text-white mb-1">{item.title}</h3>
+                    {item.description && <p className="text-sm text-white/70 m-0 leading-relaxed">{item.description}</p>}
                   </div>
                 </div>
               ))}
