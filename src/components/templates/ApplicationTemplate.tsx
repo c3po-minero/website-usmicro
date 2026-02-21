@@ -117,7 +117,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
                     <i className={`fas ${getRequirementIcon(sub.title)}`} />
                   </div>
                   <h3 className="text-lg font-bold text-navy mb-2">{sub.title}</h3>
-                  <div className="text-sm text-gray-600 leading-relaxed [&_a]:text-blue-mid [&_a:hover]:text-accent [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: sub.html }} />
+                  <div className="text-sm text-gray-600 leading-relaxed [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: sub.html }} />
                 </div>
               </div>
             ))}
@@ -137,7 +137,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
             {section.title}
           </h2>
           {preamble && (
-            <div className="prose max-w-none text-gray-700 mb-8 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent" dangerouslySetInnerHTML={{ __html: preamble }} />
+            <div className="prose max-w-none text-gray-700 mb-8 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text" dangerouslySetInnerHTML={{ __html: preamble }} />
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {subs.map((sub) => (
@@ -147,7 +147,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
                 </div>
                 <div>
                   <h3 className="font-bold text-navy mb-1 text-base">{sub.title}</h3>
-                  <div className="text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1" dangerouslySetInnerHTML={{ __html: sub.html }} />
+                  <div className="text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1" dangerouslySetInnerHTML={{ __html: sub.html }} />
                 </div>
               </div>
             ))}
@@ -165,7 +165,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
           <i className={`fas ${getSectionIcon(section.title)} text-accent mr-3`} />
           {section.title}
         </h2>
-        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
       </div>
     </section>
   );
@@ -180,7 +180,7 @@ export default function ApplicationTemplate({ title, description, intro, section
       {/* Intro */}
       <section className="py-16">
         <div className="max-w-[900px] mx-auto px-6">
-          <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent" dangerouslySetInnerHTML={{ __html: intro }} />
+          <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text" dangerouslySetInnerHTML={{ __html: intro }} />
 
           {/* Stat callout bar */}
           {keyStat && (

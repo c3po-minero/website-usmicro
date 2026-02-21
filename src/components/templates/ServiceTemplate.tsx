@@ -73,7 +73,7 @@ function SectionRenderer({ section, index, isFirst }: { section: ContentSection;
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             <div className="lg:col-span-3">
               <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
-              <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+              <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
             </div>
             <div className="lg:col-span-2 hidden lg:block relative min-h-[350px]" aria-hidden="true">
               <div className="absolute left-0 top-0 w-[calc(100%-30px)] h-[calc(100%-40px)] bg-gray-200 rounded-xl shadow-lg z-[1] flex items-center justify-center">
@@ -182,7 +182,7 @@ function SectionRenderer({ section, index, isFirst }: { section: ContentSection;
     <section className={`py-16 ${bgClass}`} id={section.id}>
       <div className="max-w-[900px] mx-auto px-6">
         <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
-        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
       </div>
     </section>
   );

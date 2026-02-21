@@ -27,27 +27,27 @@ const contentFileMap: Record<string, string> = {
 
 const categoryImages: Record<string, { portrait: string; square: string }> = {
   'tft-displays': {
-    portrait: '/images/products/tft-displays.webp',
-    square: '/images/products/tft-displays.webp',
+    portrait: '/images/content/product-hero-portrait.webp',
+    square: '/images/content/product-hero-square.webp',
   },
   'amoled-displays': {
-    portrait: '/images/products/amoled-displays.webp',
+    portrait: '/images/content/amoled-card.webp',
     square: '/images/products/amoled-displays.webp',
   },
   'pmoled-displays': {
-    portrait: '/images/products/pmoled-displays.webp',
+    portrait: '/images/content/pmoled-card.webp',
     square: '/images/products/pmoled-displays.webp',
   },
   'smart-displays': {
-    portrait: '/images/products/smart-displays.webp',
+    portrait: '/images/content/smart-card.webp',
     square: '/images/products/smart-displays.webp',
   },
   'touch-panels': {
-    portrait: '/images/products/touch-panels.webp',
+    portrait: '/images/content/touch-card.webp',
     square: '/images/products/touch-panels.webp',
   },
   'open-frame-monitors': {
-    portrait: '/images/products/open-frame-monitors.webp',
+    portrait: '/images/content/open-frame-card.webp',
     square: '/images/products/open-frame-monitors.webp',
   },
 };
@@ -240,7 +240,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                 Custom {cat.name.split(' ')[0]} Solutions
               </h3>
               <p className="text-sm text-gray-600 mb-3">Every product in our catalog can be customized: brightness, bonding, cover glass, interface, connectors.</p>
-              <Link href="/products/custom-displays" className="text-[0.8125rem] font-semibold text-accent inline-flex items-center gap-1.5">
+              <Link href="/products/custom-displays" className="text-[0.8125rem] font-semibold text-accent-text inline-flex items-center gap-1.5">
                 Learn about customization <i className="fas fa-arrow-right text-xs" />
               </Link>
             </div>
@@ -250,7 +250,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                 Technology Guide
               </h3>
               <p className="text-sm text-gray-600 mb-3">Comprehensive guide covering how displays work, panel types, interfaces, and selection criteria.</p>
-              <Link href="/learn" className="text-[0.8125rem] font-semibold text-accent inline-flex items-center gap-1.5">
+              <Link href="/learn" className="text-[0.8125rem] font-semibold text-accent-text inline-flex items-center gap-1.5">
                 Read the guide <i className="fas fa-arrow-right text-xs" />
               </Link>
             </div>
@@ -260,7 +260,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                 Medical Applications
               </h3>
               <p className="text-sm text-gray-600 mb-3">Displays for patient monitors, surgical displays, and portable medical devices.</p>
-              <Link href="/applications/medical" className="text-[0.8125rem] font-semibold text-accent inline-flex items-center gap-1.5">
+              <Link href="/applications/medical" className="text-[0.8125rem] font-semibold text-accent-text inline-flex items-center gap-1.5">
                 Explore medical displays <i className="fas fa-arrow-right text-xs" />
               </Link>
             </div>

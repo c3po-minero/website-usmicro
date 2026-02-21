@@ -47,11 +47,11 @@ export default function ContactPage() {
                   </div>
                   <div className="flex gap-3 text-[0.9375rem]">
                     <i className="fas fa-phone text-accent mt-1 w-5 flex-shrink-0" />
-                    <a href="tel:+15123856010" className="text-gray-700 hover:text-accent">(512) 385-6010</a>
+                    <a href="tel:+15123856010" className="text-gray-700 hover:text-accent-text">(512) 385-6010</a>
                   </div>
                   <div className="flex gap-3 text-[0.9375rem]">
                     <i className="fas fa-envelope text-accent mt-1 w-5 flex-shrink-0" />
-                    <a href="mailto:sales@usmicro.com" className="text-gray-700 hover:text-accent">sales@usmicro.com</a>
+                    <a href="mailto:sales@usmicro.com" className="text-gray-700 hover:text-accent-text">sales@usmicro.com</a>
                   </div>
                   <div className="flex gap-3 text-[0.9375rem]">
                     <i className="fas fa-clock text-accent mt-1 w-5 flex-shrink-0" />

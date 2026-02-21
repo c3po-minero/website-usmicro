@@ -91,7 +91,7 @@ export default async function LearnGuidePage({ params }: Props) {
                   [&_h3]:text-[1.25rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:scroll-mt-24
                   [&_p]:mb-4 [&_p]:text-base
                   [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_li]:mb-2
-                  [&_a]:text-blue-mid [&_a:hover]:text-accent
+                  [&_a]:text-blue-mid [[&_a:hover]:text-accent_a:hover]:text-accent-text
                   [&_strong]:text-gray-900
                   [&_table]:w-full [&_table]:border-collapse [&_table]:rounded-xl [&_table]:overflow-hidden [&_table]:border [&_table]:border-gray-200
                   [&_th]:bg-navy [&_th]:text-white [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-xs [&_th]:uppercase [&_th]:tracking-wider [&_th]:font-semibold
@@ -115,21 +115,21 @@ export default async function LearnGuidePage({ params }: Props) {
             <div className="p-5 bg-white rounded-xl border border-gray-200">
               <p className="text-[0.6875rem] uppercase tracking-wider text-accent font-semibold mb-2">Product Catalog</p>
               <h4 className="text-[0.9375rem] font-bold text-navy mb-1">
-                <Link href="/products/tft-displays" className="text-navy hover:text-accent">TFT LCD Displays</Link>
+                <Link href="/products/tft-displays" className="text-navy hover:text-accent-text">TFT LCD Displays</Link>
               </h4>
               <p className="text-[0.8125rem] text-gray-600 m-0">Browse 225+ TFT modules with filterable spec table.</p>
             </div>
             <div className="p-5 bg-white rounded-xl border border-gray-200">
               <p className="text-[0.6875rem] uppercase tracking-wider text-accent font-semibold mb-2">Guide</p>
               <h4 className="text-[0.9375rem] font-bold text-navy mb-1">
-                <Link href="/learn" className="text-navy hover:text-accent">Display Technology Guides</Link>
+                <Link href="/learn" className="text-navy hover:text-accent-text">Display Technology Guides</Link>
               </h4>
               <p className="text-[0.8125rem] text-gray-600 m-0">Explore all display technology guides and resources.</p>
             </div>
             <div className="p-5 bg-white rounded-xl border border-gray-200">
               <p className="text-[0.6875rem] uppercase tracking-wider text-accent font-semibold mb-2">Application</p>
               <h4 className="text-[0.9375rem] font-bold text-navy mb-1">
-                <Link href="/applications/medical" className="text-navy hover:text-accent">Medical Display Solutions</Link>
+                <Link href="/applications/medical" className="text-navy hover:text-accent-text">Medical Display Solutions</Link>
               </h4>
               <p className="text-[0.8125rem] text-gray-600 m-0">FDA-ready display solutions for medical devices.</p>
             </div>

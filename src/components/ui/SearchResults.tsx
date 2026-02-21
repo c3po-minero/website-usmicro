@@ -42,7 +42,7 @@ export default function SearchResults({ items }: { items: SearchItem[] }) {
       <div className="max-w-[1280px] mx-auto px-6 py-8">
         {results.map((r) => (
           <div key={r.item.url + r.item.title} className="py-6 border-b border-gray-200">
-            <h3 className="text-lg font-bold mb-1"><Link href={r.item.url} className="text-navy hover:text-accent">{r.item.title}</Link></h3>
+            <h3 className="text-lg font-bold mb-1"><Link href={r.item.url} className="text-navy hover:text-accent-text">{r.item.title}</Link></h3>
             <p className="text-[0.8125rem] text-success mb-2">{r.item.url}</p>
             <p className="text-[0.9375rem] text-gray-700">{r.item.description}</p>
           </div>

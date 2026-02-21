@@ -11,18 +11,18 @@ interface Props {
 }
 
 const heroImages: Record<string, string> = {
-  medical: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1400&q=80',
-  military: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=1400&q=80',
-  aerospace: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1400&q=80',
-  automotive: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=1400&q=80',
-  gaming: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1400&q=80',
-  industrial: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1400&q=80',
-  wearables: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=1400&q=80',
-  consumer: 'https://images.unsplash.com/photo-1550009158-9ebf69173e03?w=1400&q=80',
-  'kiosk-pos': 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1400&q=80',
-  instrumentation: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1400&q=80',
-  marine: 'https://images.unsplash.com/photo-1500930287596-c1ecaa210c96?w=1400&q=80',
-  'harsh-environments': 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80',
+  medical: '/images/applications/medical.jpg',
+  military: '/images/applications/military.jpg',
+  aerospace: '/images/applications/aerospace.jpg',
+  automotive: '/images/applications/automotive.jpg',
+  gaming: '/images/applications/gaming.jpg',
+  industrial: '/images/applications/industrial.jpg',
+  wearables: '/images/applications/wearables.jpg',
+  consumer: '/images/applications/consumer.jpg',
+  'kiosk-pos': '/images/applications/kiosk-pos.jpg',
+  instrumentation: '/images/applications/instrumentation.jpg',
+  marine: '/images/applications/marine.jpg',
+  'harsh-environments': '/images/applications/harsh-environments.jpg',
 };
 
 export function generateStaticParams() {

@@ -29,9 +29,9 @@ export default function ProductCard({ title, description, href, icon, imageUrl, 
         )}
       </div>
       <div className="p-6">
-        <h3 className="text-lg font-bold mb-2"><Link href={href} className="text-navy hover:text-accent transition-colors">{title}</Link></h3>
+        <h3 className="text-lg font-bold mb-2"><Link href={href} className="text-navy hover:text-accent-text transition-colors">{title}</Link></h3>
         <p className="text-sm text-gray-500 mb-3">{description}</p>
-        <Link href={href} className="text-sm font-semibold text-accent inline-flex items-center gap-1.5">
+        <Link href={href} className="text-sm font-semibold text-accent-text inline-flex items-center gap-1.5">
           Browse {title.split(' ')[0]} <i className="fas fa-arrow-right" />
         </Link>
       </div>

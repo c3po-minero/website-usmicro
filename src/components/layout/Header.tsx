@@ -29,7 +29,7 @@ export default function Header() {
 
         <nav className={`${mobileOpen ? 'flex' : 'hidden'} lg:flex items-center gap-1 fixed lg:static top-[72px] left-0 right-0 bottom-0 lg:bottom-auto bg-white lg:bg-transparent flex-col lg:flex-row p-6 lg:p-0 overflow-y-auto lg:overflow-visible z-50`} role="navigation" aria-label="Main navigation">
           <div className="nav-item relative group">
-            <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
+            <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
               Products <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
             </button>
             <div className="mega-menu hidden group-hover:grid group-focus-within:grid absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50">
@@ -41,12 +41,12 @@ export default function Header() {
               ))}
             </div>
           </div>
-          <Link href="/applications/medical" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Applications</Link>
-          <Link href="/services/ems" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Services</Link>
-          <Link href="/learn/tft-display-technology" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Learn</Link>
-          <Link href="/about" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">About</Link>
-          <Link href="/support/faq" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Support</Link>
-          <Link href="/contact" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Contact</Link>
+          <Link href="/applications/medical" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">Applications</Link>
+          <Link href="/services/ems" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">Services</Link>
+          <Link href="/learn/tft-display-technology" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">Learn</Link>
+          <Link href="/about" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">About</Link>
+          <Link href="/support/faq" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">Support</Link>
+          <Link href="/contact" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent-text hover:bg-gray-50 transition-all">Contact</Link>
         </nav>
 
         <div className="flex items-center gap-3">

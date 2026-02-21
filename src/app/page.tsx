@@ -167,9 +167,9 @@ export default function HomePage() {
                   <div className="w-12 h-12 rounded-[10px] bg-blue-light flex items-center justify-center mb-4 text-blue-mid text-xl">
                     <i className={`fas ${item.icon}`} />
                   </div>
-                  <h3 className="text-lg font-bold mb-2"><Link href={item.href} className="text-navy hover:text-accent">{item.title}</Link></h3>
+                  <h3 className="text-lg font-bold mb-2"><Link href={item.href} className="text-navy hover:text-accent-text">{item.title}</Link></h3>
                   <p className="text-sm text-gray-500 mb-3">{item.desc}</p>
-                  <Link href={item.href} className="text-sm font-semibold text-accent inline-flex items-center gap-1.5">{item.link} <i className="fas fa-arrow-right" /></Link>
+                  <Link href={item.href} className="text-sm font-semibold text-accent-text inline-flex items-center gap-1.5">{item.link} <i className="fas fa-arrow-right" /></Link>
                 </div>
               </div>
             ))}
