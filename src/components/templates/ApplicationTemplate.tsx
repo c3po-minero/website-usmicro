@@ -278,13 +278,40 @@ function SubSectionAccordion({ sub }: { sub: SubSection }) {
 
 export default function ApplicationTemplate({ title, description, intro, sections, faqs, industry }: ApplicationTemplateProps) {
   const industryName = title.replace(/\s*(Display|Solutions?|Displays?)\s*/gi, ' ').replace(/\s*\|.*$/, '').trim();
+  const displayTitle = title.replace(/\s*\|.*$/, '').trim();
+
+  // Extract first h2 title from intro sections for the overview heading
+  const firstSection = sections[0];
+  const overviewTitle = firstSection?.title || displayTitle;
 
   return (
     <>
-      {/* Intro */}
+      {/* Overview with photo collage — matches product category pages */}
       <section className="py-16">
-        <div className="max-w-[900px] mx-auto px-6">
-          <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: intro }} />
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            {/* Left column: 60% — text */}
+            <div className="lg:col-span-3">
+              <h2 className="text-[1.625rem] font-bold text-navy mb-6">{displayTitle}</h2>
+              <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_h1]:hidden" dangerouslySetInnerHTML={{ __html: intro }} />
+            </div>
+
+            {/* Right column: 40% — photo collage */}
+            <div className="lg:col-span-2 relative min-h-[350px] hidden lg:block" aria-hidden="true">
+              <img
+                src={`/images/applications/${industry}.webp`}
+                alt={`${displayTitle}`}
+                className="absolute left-0 top-0 w-[85%] h-[85%] object-cover rounded-xl shadow-2xl z-[1]"
+                loading="eager"
+              />
+              <img
+                src={`/images/applications/${industry}-2.webp`}
+                alt={`${displayTitle} application`}
+                className="absolute right-0 bottom-0 w-[160px] h-[160px] object-cover rounded-xl shadow-xl z-[3] border-4 border-white"
+                loading="eager"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
