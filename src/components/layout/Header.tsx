@@ -132,7 +132,7 @@ export default function Header() {
           <div className="relative h-full">
             {/* Panel 1: Main menu */}
             <div
-              className="absolute inset-0 flex flex-col p-6 overflow-y-auto transition-transform duration-300 ease-in-out"
+              className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'main' ? 'translateX(0)' : 'translateX(-100%)' }}
             >
               <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
@@ -162,7 +162,7 @@ export default function Header() {
 
             {/* Panel 2: Products submenu */}
             <div
-              className="absolute inset-0 flex flex-col p-6 overflow-y-auto transition-transform duration-300 ease-in-out"
+              className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'products' ? 'translateX(0)' : 'translateX(100%)' }}
             >
               <div className="flex items-center gap-3 mb-4">
@@ -183,7 +183,7 @@ export default function Header() {
 
             {/* Panel 3: Applications submenu */}
             <div
-              className="absolute inset-0 flex flex-col p-6 overflow-y-auto transition-transform duration-300 ease-in-out"
+              className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'applications' ? 'translateX(0)' : 'translateX(100%)' }}
             >
               <div className="flex items-center gap-3 mb-4">
