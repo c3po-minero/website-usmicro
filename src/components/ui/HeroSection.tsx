@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeroProps {
   eyebrow?: string;
@@ -7,12 +8,23 @@ interface HeroProps {
   primaryCta?: { label: string; href: string; icon?: string };
   secondaryCta?: { label: string; href: string; icon?: string };
   short?: boolean;
+  backgroundImage?: string;
 }
 
-export default function HeroSection({ eyebrow, title, description, primaryCta, secondaryCta, short }: HeroProps) {
+export default function HeroSection({ eyebrow, title, description, primaryCta, secondaryCta, short, backgroundImage }: HeroProps) {
   return (
     <section className={`relative bg-navy text-white overflow-hidden ${short ? 'py-15 md:py-12' : 'py-20 md:py-25'}`}>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue/30 to-navy opacity-50" />
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover"
+          priority
+          quality={80}
+        />
+      )}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy/80 to-navy/60" />
       <div className="max-w-[1280px] mx-auto px-6 relative z-10">
         <div className="max-w-[720px]">
           {eyebrow && <p className="text-[0.8125rem] font-semibold uppercase tracking-[1.5px] text-accent mb-3">{eyebrow}</p>}

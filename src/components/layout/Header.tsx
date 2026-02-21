@@ -75,7 +75,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 h-[72px]" role="banner">
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="US Micro Products - Home">
-          <Image src="/images/logos/USMP-horizontal.svg" alt="US Micro Products logo" width={160} height={40} priority />
+          <Image src="/images/logos/USMP-horizontal.svg" alt="US Micro Products logo" width={200} height={48} priority className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}

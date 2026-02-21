@@ -104,6 +104,7 @@ export default function HomePage() {
         description="We add the human touch to technology. For nearly three decades, US Micro Products has designed and delivered high-performance display solutions for OEMs across medical, military, aerospace, industrial, and consumer markets."
         primaryCta={{ label: 'Request a Quote', href: '/support/request-quote', icon: 'fa-file-alt' }}
         secondaryCta={{ label: 'Explore Products', href: '/products', icon: 'fa-search' }}
+        backgroundImage="/images/hero-bg.webp"
       />
 
       {/* Stats Bar */}
