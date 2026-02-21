@@ -28,7 +28,6 @@ interface ApplicationTemplateProps {
   industry: string;
 }
 
-// Icons mapped to common section keywords
 function getSectionIcon(title: string): string {
   const t = title.toLowerCase();
   if (t.includes('requirement')) return 'fa-clipboard-list';
@@ -76,14 +75,35 @@ function extractSubSections(html: string): { preamble: string; subs: SubSection[
   };
 }
 
+/** Extract a key stat from intro text (e.g., "1,500+ nits", "IP65+", numbers with units) */
+function extractKeyStat(intro: string): { number: string; text: string } | null {
+  const plainText = intro.replace(/<[^>]*>/g, '');
+  // Look for patterns like "1,500+ nits" or "IP65" or numbers with + suffix
+  const patterns = [
+    /(\d[\d,]*\+?\s*nits)/i,
+    /(IP\d+\+?)/i,
+    /(\d[\d,]*\+?\s*(?:hours|years|degrees?))/i,
+  ];
+  for (const pat of patterns) {
+    const m = plainText.match(pat);
+    if (m) {
+      // Get surrounding context
+      const idx = plainText.indexOf(m[1]);
+      const sentence = plainText.substring(Math.max(0, idx - 60), Math.min(plainText.length, idx + m[1].length + 60));
+      const parts = sentence.split(m[1]);
+      return { number: m[1].trim(), text: (parts[1] || parts[0] || '').replace(/^\s*[,.]?\s*/, '').trim() };
+    }
+  }
+  return null;
+}
+
 function RenderSection({ section, index }: { section: ContentSection; index: number }) {
   const { preamble, subs } = extractSubSections(section.html);
   const isRecommended = section.title.toLowerCase().includes('recommend') || section.title.toLowerCase().includes('product');
-  const isExpertise = section.title.toLowerCase().includes('expertise') || section.title.toLowerCase().includes('experience');
   const hasSubSections = subs.length > 0;
   const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
 
-  // Recommended products section - card grid
+  // Recommended products section - card grid with icon circles
   if (isRecommended && hasSubSections) {
     return (
       <section className="py-16 bg-gray-50">
@@ -91,9 +111,9 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
           <h2 className="text-[1.625rem] font-bold text-navy mb-8">{section.title}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subs.map((sub) => (
-              <div key={sub.title} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all">
+              <div key={sub.title} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all">
                 <div className="p-6">
-                  <div className="w-12 h-12 rounded-[10px] bg-blue-light flex items-center justify-center mb-4 text-blue-mid text-xl">
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent text-xl">
                     <i className={`fas ${getRequirementIcon(sub.title)}`} />
                   </div>
                   <h3 className="text-lg font-bold text-navy mb-2">{sub.title}</h3>
@@ -107,7 +127,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
     );
   }
 
-  // Sections with sub-sections as requirement cards
+  // Sections with sub-sections as requirement cards (2x2 grid with orange circle icons)
   if (hasSubSections && subs.length >= 3) {
     return (
       <section className={`py-16 ${bgClass}`} id={section.id}>
@@ -122,7 +142,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {subs.map((sub) => (
               <div key={sub.title} className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
-                <div className="w-10 h-10 rounded-lg bg-blue-light flex items-center justify-center flex-shrink-0 text-blue-mid">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 text-accent text-lg">
                   <i className={`fas ${getRequirementIcon(sub.title)}`} />
                 </div>
                 <div>
@@ -153,6 +173,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
 
 export default function ApplicationTemplate({ title, description, intro, sections, faqs, industry }: ApplicationTemplateProps) {
   const industryName = industry.charAt(0).toUpperCase() + industry.slice(1);
+  const keyStat = extractKeyStat(intro);
 
   return (
     <>
@@ -160,6 +181,14 @@ export default function ApplicationTemplate({ title, description, intro, section
       <section className="py-16">
         <div className="max-w-[900px] mx-auto px-6">
           <div className="prose max-w-none text-gray-700 text-lg leading-relaxed [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent" dangerouslySetInnerHTML={{ __html: intro }} />
+
+          {/* Stat callout bar */}
+          {keyStat && (
+            <div className="bg-blue-light border-l-4 border-accent rounded-r-xl p-6 my-8">
+              <div className="text-[2rem] font-extrabold text-accent leading-none">{keyStat.number}</div>
+              <div className="text-[0.9375rem] text-gray-700 mt-1">{keyStat.text}</div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -167,6 +196,36 @@ export default function ApplicationTemplate({ title, description, intro, section
       {sections.map((section, i) => (
         <RenderSection key={section.id} section={section} index={i} />
       ))}
+
+      {/* Case Study - dark navy background */}
+      <section className="bg-gradient-to-br from-navy to-blue text-white py-20">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-[0.6875rem] uppercase tracking-[1.5px] text-accent font-bold mb-3">
+                <i className="fas fa-award mr-1.5" /> Case Study
+              </p>
+              <h3 className="text-white text-[1.5rem] font-bold mb-4">
+                {industryName} Display Project for Leading OEM
+              </h3>
+              <p className="text-white/85 mb-4">
+                A major {industryName.toLowerCase()} manufacturer needed a custom display solution meeting strict industry standards. US Micro Products engineered a complete display assembly — from panel selection through optical bonding and environmental testing — delivered within 10 weeks from design freeze to production samples.
+              </p>
+              <Link href="/contact" className="text-accent font-semibold inline-flex items-center gap-1.5 hover:text-accent-hover transition-colors">
+                Discuss Your Project <i className="fas fa-arrow-right text-sm" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="bg-white/10 rounded-xl h-[200px] flex items-center justify-center">
+                <i className="fas fa-desktop text-white/20 text-4xl" />
+              </div>
+              <div className="bg-white/10 rounded-xl h-[200px] flex items-center justify-center">
+                <i className="fas fa-microchip text-white/20 text-4xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
       {faqs.length > 0 && (
@@ -178,8 +237,8 @@ export default function ApplicationTemplate({ title, description, intro, section
         </section>
       )}
 
-      {/* CTA */}
-      <section className="bg-navy py-16 text-center">
+      {/* CTA with 2 buttons */}
+      <section className="bg-gradient-to-br from-blue to-navy text-white py-16 text-center">
         <div className="max-w-[700px] mx-auto px-6">
           <h2 className="text-white text-[1.875rem] font-bold mb-4">Discuss Your {industryName} Display Project</h2>
           <p className="text-white/80 mb-8">Our team has decades of experience supplying displays to the world&apos;s leading {industryName.toLowerCase()} manufacturers.</p>

@@ -5,7 +5,6 @@ import HeroSection from '@/components/ui/HeroSection';
 import StatsBar from '@/components/ui/StatsBar';
 import LogoCarousel from '@/components/ui/LogoCarousel';
 import LeadershipCard from '@/components/ui/LeadershipCard';
-import CTABanner from '@/components/ui/CTABanner';
 
 export const metadata: Metadata = {
   title: 'About US Micro Products | Custom Display Manufacturer',
@@ -27,13 +26,13 @@ const values = [
 ];
 
 const timeline = [
-  { year: '1996', title: 'Founded in Austin, Texas', text: 'Established as a custom display solutions provider for OEMs, filling a gap in the market for engineering-focused display sourcing.' },
-  { year: '2001', title: 'Defense & Aerospace Expansion', text: 'Expanded into military and aerospace markets, securing Lockheed Martin and Honeywell as customers.' },
-  { year: '2006', title: 'Asian Operations Established', text: 'Opened offices in Shenzhen and Taichung to strengthen supply chain partnerships.' },
-  { year: '2010', title: 'ISO 9001 Certification', text: 'Achieved ISO 9001 certification. Product catalog exceeded 200 active SKUs.' },
-  { year: '2015', title: 'Inc. 5000 Recognition', text: 'First Inc. 5000 recognition. Entered the AMOLED and wearable display market.' },
-  { year: '2019', title: 'Five-Time Inc. 5000 Honoree', text: 'Five consecutive years on Inc. 5000. Became a leading wearable display provider.' },
-  { year: '2024', title: '450+ SKUs, Global Presence', text: 'Product catalog exceeds 450 SKUs across 9 display technologies. Six offices on three continents.' },
+  { year: '1996', title: 'Founded in Austin, Texas', text: 'Established as a custom display solutions provider for OEMs, filling a gap in the market for engineering-focused display sourcing. Started with a small team and a vision to add the human touch to technology.' },
+  { year: '2001', title: 'Defense & Aerospace Expansion', text: 'Expanded into military and aerospace markets, securing Lockheed Martin and Honeywell as customers. Developed rugged display solutions for harsh environment applications.' },
+  { year: '2006', title: 'Asian Operations Established', text: 'Opened offices in Shenzhen and Taichung to strengthen supply chain partnerships. Direct presence in Asia enabled closer factory relationships and faster turnaround.' },
+  { year: '2010', title: 'ISO 9001 Certification', text: 'Achieved ISO 9001 certification, formalizing quality management processes. Product catalog exceeded 200 active SKUs across multiple display technologies.' },
+  { year: '2015', title: 'Inc. 5000 Recognition', text: 'Recognized on Inc. 5000 list of America\'s fastest-growing private companies for the first time. Entered the AMOLED and wearable display market with new product lines.' },
+  { year: '2019', title: 'Five-Time Inc. 5000 Honoree', text: 'Achieved five consecutive years on Inc. 5000 list. Became a leading provider of displays for the wearable technology market. Expanded EMS capabilities.' },
+  { year: '2024', title: '450+ SKUs, Global Presence', text: 'Product catalog exceeds 450 SKUs across 9 display technologies. Six offices on three continents serve customers worldwide with local support and engineering expertise.' },
 ];
 
 const teamMembers = [
@@ -59,13 +58,23 @@ export default function AboutPage() {
 
       <StatsBar stats={stats} dark />
 
-      {/* Fabless Model */}
+      {/* Fabless Model - 2 column with images */}
       <section className="py-20">
         <div className="max-w-[1280px] mx-auto px-6">
-          <div className="max-w-[900px]">
-            <h2 className="text-[1.875rem] font-bold text-navy mb-6">The Fabless Model</h2>
-            <p className="text-gray-700 text-lg leading-relaxed mb-4">We design and deliver custom display solutions. We don&apos;t own factories — we operate a fabless manufacturing model that gives us access to the best display technology from the best manufacturers worldwide, without locking our customers into a single production line or a single technology.</p>
-            <p className="text-gray-700 text-lg leading-relaxed mb-4">Our supply chain spans six locations across three continents. Manufacturing partners in China, Taiwan, Japan, and South Korea give us access to the full spectrum of display technologies. We select the optimal technology and factory for each project based on the application requirements, not based on which factory we happen to own.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            <div className="lg:col-span-3">
+              <h2 className="text-[1.875rem] font-bold text-navy mb-6">The Fabless Model</h2>
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">We design and deliver custom display solutions. We don&apos;t own factories — we operate a fabless manufacturing model that gives us access to the best display technology from the best manufacturers worldwide, without locking our customers into a single production line or a single technology.</p>
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">Our supply chain spans six locations across three continents. Manufacturing partners in China, Taiwan, Japan, and South Korea give us access to the full spectrum of display technologies.</p>
+            </div>
+            <div className="lg:col-span-2 hidden lg:block relative min-h-[300px]" aria-hidden="true">
+              <div className="absolute left-0 top-0 w-[calc(100%-30px)] h-[calc(100%-40px)] bg-gray-200 rounded-xl shadow-lg z-[1] flex items-center justify-center overflow-hidden">
+                <i className="fas fa-building text-gray-400 text-4xl" />
+              </div>
+              <div className="absolute right-0 bottom-0 w-[140px] h-[140px] bg-gray-300 rounded-xl shadow-md z-[3] flex items-center justify-center border-4 border-white">
+                <i className="fas fa-globe text-gray-400 text-2xl" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -79,14 +88,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Believe */}
+      {/* What We Believe - orange circle icons */}
       <section className="py-20">
         <div className="max-w-[1280px] mx-auto px-6">
           <h2 className="text-center text-[1.875rem] font-bold text-navy mb-10">What We Believe</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="bg-gray-50 rounded-xl p-8 text-center">
-                <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-5 text-white text-2xl">
+              <div key={v.title} className="bg-gray-50 rounded-xl p-8 text-center border border-gray-200">
+                <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-5 text-white text-2xl">
                   <i className={`fas ${v.icon}`} />
                 </div>
                 <h3 className="text-[1.25rem] font-bold text-navy mb-3">{v.title}</h3>
@@ -97,23 +106,45 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Timeline - zigzag layout */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-[900px] mx-auto px-6">
           <h2 className="text-center text-[1.875rem] font-bold text-navy mb-12">Our Journey</h2>
-          <div className="space-y-0">
-            {timeline.map((item, i) => (
-              <div key={item.year} className={`flex gap-6 ${i < timeline.length - 1 ? 'pb-10' : ''}`}>
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center font-bold text-sm flex-shrink-0">{item.year}</div>
-                  {i < timeline.length - 1 && <div className="w-0.5 flex-1 bg-gray-300 mt-2" />}
+          <div className="relative">
+            {/* Center line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-[3px] bg-gray-200 -translate-x-1/2 hidden md:block" aria-hidden="true" />
+            {/* Mobile left line */}
+            <div className="absolute left-5 top-0 bottom-0 w-[3px] bg-gray-200 md:hidden" aria-hidden="true" />
+
+            <div className="space-y-12">
+              {timeline.map((item, i) => (
+                <div key={item.year} className="relative">
+                  {/* Desktop zigzag */}
+                  <div className={`hidden md:flex items-start gap-8 ${i % 2 === 0 ? '' : 'flex-row-reverse'}`}>
+                    <div className={`w-[45%] ${i % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                      <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                        <div className="text-[1.5rem] font-extrabold text-accent mb-2">{item.year}</div>
+                        <h3 className="text-[1.125rem] font-bold text-navy mb-2">{item.title}</h3>
+                        <p className="text-[0.9375rem] text-gray-700 m-0">{item.text}</p>
+                      </div>
+                    </div>
+                    {/* Center dot */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-7 w-4 h-4 rounded-full bg-accent border-4 border-white shadow z-[2]" />
+                    <div className="w-[45%]" />
+                  </div>
+
+                  {/* Mobile: left-aligned */}
+                  <div className="md:hidden flex items-start gap-4 pl-10 relative">
+                    <div className="absolute left-[14px] top-7 w-4 h-4 rounded-full bg-accent border-4 border-white shadow z-[2]" />
+                    <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex-1">
+                      <div className="text-lg font-extrabold text-accent mb-1">{item.year}</div>
+                      <h3 className="font-bold text-navy mb-1">{item.title}</h3>
+                      <p className="text-sm text-gray-700 m-0">{item.text}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="pt-2">
-                  <h3 className="font-bold text-navy text-lg mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-[0.9375rem]">{item.text}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -139,13 +170,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTABanner
-        title="Ready to Work Together?"
-        description="Contact us to discuss your display project or learn more about our capabilities."
-        ctaLabel="Contact Us"
-        ctaHref="/contact"
-        ctaIcon="fa-comments"
-      />
+      {/* CTA with 2 buttons */}
+      <section className="bg-gradient-to-br from-blue to-navy text-white py-16 text-center">
+        <div className="max-w-[700px] mx-auto px-6">
+          <h2 className="text-white text-[1.875rem] font-bold mb-4">Ready to Work Together?</h2>
+          <p className="text-white/80 mb-8">Contact us to discuss your display project or learn more about our capabilities.</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-7 py-3 text-[0.9375rem] font-semibold bg-accent text-white rounded-md border-2 border-accent hover:bg-accent-hover hover:border-accent-hover transition-all">
+              <i className="fas fa-comments" /> Contact Us
+            </Link>
+            <Link href="/products" className="inline-flex items-center gap-2 px-7 py-3 text-[0.9375rem] font-semibold bg-transparent text-white rounded-md border-2 border-white hover:bg-white hover:text-navy transition-all">
+              <i className="fas fa-search" /> Browse Products
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

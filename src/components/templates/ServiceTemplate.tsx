@@ -29,6 +29,13 @@ function getCapabilityIcon(title: string): string {
   if (t.includes('production') || t.includes('ramp')) return 'fa-industry';
   if (t.includes('logistics') || t.includes('supply')) return 'fa-truck';
   if (t.includes('inventory')) return 'fa-warehouse';
+  if (t.includes('optical') || t.includes('bonding')) return 'fa-layer-group';
+  if (t.includes('touch') || t.includes('sensor')) return 'fa-hand-pointer';
+  if (t.includes('custom')) return 'fa-tools';
+  if (t.includes('display driver')) return 'fa-desktop';
+  if (t.includes('touch controller')) return 'fa-hand-pointer';
+  if (t.includes('interface')) return 'fa-exchange-alt';
+  if (t.includes('backlight')) return 'fa-sun';
   return 'fa-cog';
 }
 
@@ -50,34 +57,65 @@ function extractSubSections(html: string): { preamble: string; subs: { title: st
   };
 }
 
-function SectionRenderer({ section, index }: { section: ContentSection; index: number }) {
+function SectionRenderer({ section, index, isFirst }: { section: ContentSection; index: number; isFirst: boolean }) {
   const { preamble, subs } = extractSubSections(section.html);
   const bgClass = index % 2 === 0 ? '' : 'bg-gray-50';
   const isCapabilities = section.title.toLowerCase().includes('capabilit');
   const isProcess = section.title.toLowerCase().includes('process');
   const isApplications = section.title.toLowerCase().includes('application') || section.title.toLowerCase().includes('typical');
+  const isQuality = section.title.toLowerCase().includes('quality');
 
-  // Process steps - numbered timeline
-  if (isProcess && subs.length > 0) {
+  // First "Why" section: 2-column with image placeholder on right
+  if (isFirst) {
     return (
-      <section className={`py-16 bg-gray-50`}>
+      <section className="py-16">
         <div className="max-w-[1280px] mx-auto px-6">
-          <h2 className="text-center text-[1.625rem] font-bold text-navy mb-10">{section.title}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {subs.map((sub, i) => (
-              <div key={sub.title} className="relative bg-white border border-gray-200 rounded-xl p-6 text-center">
-                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">{i + 1}</div>
-                <h3 className="font-bold text-navy mb-2">{sub.title}</h3>
-                <div className="text-sm text-gray-600 [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: sub.html }} />
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+            <div className="lg:col-span-3">
+              <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
+              <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+            </div>
+            <div className="lg:col-span-2 hidden lg:block relative min-h-[350px]" aria-hidden="true">
+              <div className="absolute left-0 top-0 w-[calc(100%-30px)] h-[calc(100%-40px)] bg-gray-200 rounded-xl shadow-lg z-[1] flex items-center justify-center">
+                <i className="fas fa-industry text-gray-400 text-4xl" />
               </div>
-            ))}
+              <div className="absolute right-0 bottom-0 w-[140px] h-[140px] bg-gray-300 rounded-xl shadow-md z-[3] flex items-center justify-center border-4 border-white">
+                <i className="fas fa-microchip text-gray-400 text-2xl" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
     );
   }
 
-  // Capabilities - benefit grid cards
+  // Process steps - numbered timeline with connecting line
+  if (isProcess && subs.length > 0) {
+    return (
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-center text-[1.625rem] font-bold text-navy mb-10">{section.title}</h2>
+          <div className="relative">
+            {/* Connecting line */}
+            <div className="hidden lg:block absolute top-[50px] left-0 right-0 h-[3px] bg-gray-200 z-0" aria-hidden="true">
+              <div className="h-full bg-accent/30 animate-pulse" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-[1]">
+              {subs.map((sub, i) => (
+                <div key={sub.title} className="relative bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center mx-auto mb-4 font-bold text-lg">{i + 1}</div>
+                  <h3 className="font-bold text-navy mb-2">{sub.title}</h3>
+                  <div className="text-sm text-gray-600 [&_p]:mb-2" dangerouslySetInnerHTML={{ __html: sub.html }} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Capabilities - benefit grid cards with icons
   if (isCapabilities && subs.length > 0) {
     return (
       <section className={`py-16 ${bgClass}`}>
@@ -89,9 +127,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {subs.map((sub) => (
               <div key={sub.title} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-[10px] bg-blue-light flex items-center justify-center mb-4 text-blue-mid text-xl">
-                  <i className={`fas ${getCapabilityIcon(sub.title)}`} />
-                </div>
+                <i className={`fas ${getCapabilityIcon(sub.title)} text-accent text-2xl mb-4 block`} />
                 <h3 className="font-bold text-navy mb-2">{sub.title}</h3>
                 <div className="text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1 [&_strong]:text-gray-900 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: sub.html }} />
               </div>
@@ -102,7 +138,24 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     );
   }
 
-  // Applications - compact cards
+  // Quality system - boxed card section
+  if (isQuality) {
+    return (
+      <section className={`py-16 ${bgClass}`}>
+        <div className="max-w-[900px] mx-auto px-6">
+          <div className="bg-blue-light border border-gray-200 rounded-xl p-8">
+            <h2 className="text-[1.625rem] font-bold text-navy mb-4">
+              <i className="fas fa-certificate text-accent mr-2" />
+              {section.title}
+            </h2>
+            <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Applications - horizontal card strip
   if (isApplications && subs.length > 0) {
     return (
       <section className="py-16 bg-gray-50">
@@ -110,7 +163,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {subs.map((sub) => (
-              <div key={sub.title} className="p-5 bg-white border border-gray-200 rounded-xl">
+              <div key={sub.title} className="p-5 bg-white border border-gray-200 rounded-xl hover:border-accent hover:shadow-sm transition-all">
                 <h3 className="font-bold text-navy mb-1 text-base">
                   <i className={`fas ${getCapabilityIcon(sub.title)} text-accent mr-2`} />
                   {sub.title}
@@ -124,7 +177,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
     );
   }
 
-  // Default: two-column prose with optional sub-sections
+  // Default: prose section
   return (
     <section className={`py-16 ${bgClass}`} id={section.id}>
       <div className="max-w-[900px] mx-auto px-6">
@@ -138,7 +191,7 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
 export default function ServiceTemplate({ title, description, intro, sections, serviceName }: ServiceTemplateProps) {
   return (
     <>
-      {/* Intro - two column with photo placeholder */}
+      {/* Intro */}
       <section className="py-16">
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="max-w-[900px]">
@@ -149,11 +202,11 @@ export default function ServiceTemplate({ title, description, intro, sections, s
 
       {/* Sections */}
       {sections.map((section, i) => (
-        <SectionRenderer key={section.id} section={section} index={i} />
+        <SectionRenderer key={section.id} section={section} index={i} isFirst={i === 0} />
       ))}
 
-      {/* CTA */}
-      <section className="bg-navy py-16 text-center">
+      {/* CTA with 2 buttons */}
+      <section className="bg-gradient-to-br from-blue to-navy text-white py-16 text-center">
         <div className="max-w-[700px] mx-auto px-6">
           <h2 className="text-white text-[1.875rem] font-bold mb-4">Need {serviceName}?</h2>
           <p className="text-white/80 mb-8">Contact our team to discuss your requirements and get a quote.</p>
