@@ -12,6 +12,10 @@ export interface Product {
   operatingTemp: string;
   touchPanel: string;
   contrast: string;
+  panelSize: string;
+  color: string;
+  bonding: string;
+  ic: string;
   datasheetUrl: string;
   category: string;
   [key: string]: string;

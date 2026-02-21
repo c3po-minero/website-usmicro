@@ -1,6 +1,6 @@
 ---
 title: "PMOLED Displays | Ultra-Low Power OLED | US Micro Products"
-description: "Browse 36 PMOLED display modules. Ultra-low power, wide viewing angles, true blacks. Ideal for wearables & instrumentation. Custom options available."
+description: "Browse 36 PMOLED display modules from 0.42\" to 2.7\". Ultra-low power, wide viewing angles, true blacks. Ideal for wearables & instrumentation."
 keywords: ["PMOLED display manufacturer", "PMOLED module", "small OLED display", "custom PMOLED"]
 url: "/products/pmoled-displays"
 schema: ["CollectionPage", "Product", "BreadcrumbList"]
@@ -18,27 +18,15 @@ The organic emissive layer produces light directly — no backlight is required.
 
 ## When to Choose PMOLED
 
-PMOLED is the optimal technology when your application meets these criteria:
+PMOLED is the right technology when your design calls for a compact, power-efficient display with straightforward content requirements. Here's how to decide:
 
-- **Small display area** — Under 3" diagonal
-- **Low to moderate resolution** — Typically up to 256×64 pixels
-- **Simple content** — Text, icons, status indicators, basic graphics
-- **Power budget constraints** — Battery-powered devices where every milliwatt matters
-- **Contrast critical** — Applications requiring crisp text on true black backgrounds
-- **Thin profile required** — Stack height under 2 mm
-- **Cost sensitivity** — Lower cost than AMOLED for equivalent small sizes
+**Display size under 3 inches.** PMOLED excels in small form factors — from 0.42" micro-displays to 2.7" readout panels. The passive-matrix architecture keeps costs low at these sizes while delivering OLED visual quality that LCD can't match.
 
-## Available Configurations
+**Simple, high-contrast content.** Text readouts, status icons, progress bars, and basic animations look stunning on PMOLED. The true black background makes every pixel pop, whether it's a heart rate number on a fitness band or a temperature reading on a thermostat.
 
-| Parameter | Range |
-|-----------|-------|
-| Diagonal size | 0.49" – 2.7" |
-| Resolution | 64×32 to 256×64 |
-| Display colors | Monochrome (white, yellow, blue, green), dual-color, full-color (RGB) |
-| Interface | SPI, I2C, Parallel |
-| Operating temperature | -40°C to 80°C |
-| Viewing angle | 170°+ |
-| Thickness | 1.4 mm – 2.5 mm |
+**Every milliwatt counts.** In battery-powered designs, PMOLED shines — literally only the active pixels consume power. A status display showing white text on black uses a fraction of the energy of a backlit LCD equivalent. Stack heights under 2mm are achievable.
+
+**Budget-conscious OLED.** Need OLED quality without AMOLED pricing? PMOLED delivers the same true blacks, wide viewing angles, and thin profiles at a fraction of the cost for small display sizes.
 
 ## Color Options
 
@@ -68,19 +56,30 @@ PMOLED is the optimal technology when your application meets these criteria:
 - **[Consumer](/applications/consumer)** — Audio equipment, smart home controls, IoT status displays
 - **[Military](/applications/military)** — Wrist-mounted computers, NVIS-compatible field instruments
 
-## PMOLED vs. AMOLED: Choosing the Right OLED
+## Why US Micro Products for PMOLED
 
-| Factor | PMOLED | AMOLED |
-|--------|--------|--------|
-| Size range | Under 3" | 1" – 7"+ |
-| Resolution | Low–moderate | Moderate–high |
-| Content complexity | Text, icons, simple graphics | Full UI, video, rich graphics |
-| Power (dark content) | Excellent | Excellent |
-| Power (bright content) | Higher per pixel at large sizes | More efficient at scale |
-| Cost (small sizes) | Lower | Higher |
-| Thickness | Ultra-thin | Thin |
+- **#1 Small OLED Specialist:** Deep expertise in sub-3" OLED displays for wearables, medical, and instrumentation applications.
+- **36+ Ready-to-Ship Models:** Extensive inventory from 0.42" to 2.7" — monochrome, dual-color, and full RGB options.
+- **Pin-Compatible Upgrades:** Drop-in replacements for legacy OLED modules with matched pinouts and interfaces.
+- **Custom Engineering:** FPC routing, cover glass, extended temperature validation, and brightness optimization — all in-house.
+- **Global Supply Chain:** Tier-1 OLED panel partnerships ensure consistent supply and competitive pricing.
+- **Fast Sampling:** Prototype-ready samples shipped in days, not weeks.
 
-For larger displays, richer content, or higher resolution, see our [AMOLED displays](/products/amoled-displays). For detailed technology comparison, visit our [OLED technology guide](/learn/oled-technology).
+---
+
+## Frequently Asked Questions
+
+### What is the maximum resolution for PMOLED displays?
+PMOLED displays typically max out at 256×64 pixels. The passive-matrix architecture limits practical resolution because higher pixel counts require faster multiplexing, which reduces brightness and increases power consumption. For higher resolution OLED needs, consider our [AMOLED displays](/products/amoled-displays).
+
+### How long do PMOLED displays last?
+PMOLED displays are rated for 15,000–30,000 hours at typical brightness. Lifespan depends on brightness level, duty cycle, and content pattern. Monochrome white offers the longest lifespan, while blue subpixels degrade faster. Our engineering team can optimize drive parameters for your specific longevity requirements.
+
+### Can PMOLED displays operate in extreme temperatures?
+Many of our PMOLED modules are rated for -40°C to 80°C operating range. For extended temperature applications, we offer custom validation and drive optimization to ensure reliable operation across your full environmental envelope.
+
+### What interfaces are available for PMOLED?
+Most PMOLED modules support I2C or SPI, making them easy to integrate with common microcontrollers like STM32, ESP32, and Nordic nRF series. Some larger modules also support parallel interfaces for higher data throughput.
 
 ---
 

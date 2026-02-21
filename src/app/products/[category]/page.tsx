@@ -208,7 +208,53 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const listItems = hasListItems(section.html) ? extractListItems(section.html) : [];
   const links = extractLinks(section.html);
   const isWhyChoose = isWhyChooseSection(section.title);
+  const isWhenToChoose = /when to choose/i.test(section.title);
   const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;
+
+  // "When to Choose" section — horizontal feature highlights with accent left border
+  if (isWhenToChoose) {
+    // Extract bold paragraphs as features
+    const boldParaRegex = /<p>\s*<strong>(.*?)<\/strong>([\s\S]*?)<\/p>/gi;
+    const features: { title: string; desc: string }[] = [];
+    let bm;
+    while ((bm = boldParaRegex.exec(section.html)) !== null) {
+      features.push({
+        title: bm[1].replace(/<[^>]*>/g, '').trim(),
+        desc: bm[2].replace(/<[^>]*>/g, '').trim(),
+      });
+    }
+    const introHtml = section.html.replace(/<p>\s*<strong>.*?<\/strong>[\s\S]*?<\/p>/gi, '');
+    const hasIntro = introHtml.replace(/<[^>]*>/g, '').trim().length > 20;
+    const featureIcons = ['fa-ruler-combined', 'fa-adjust', 'fa-battery-full', 'fa-tag', 'fa-cube', 'fa-bolt'];
+
+    if (features.length > 0) {
+      return (
+        <section key={section.id} className="py-16 bg-gradient-to-br from-gray-50 to-white">
+          <div className="max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-12">
+              <h2 className="text-[1.625rem] font-bold text-navy mb-3">{section.title}</h2>
+              {hasIntro && (
+                <div className="prose max-w-2xl mx-auto text-gray-600" dangerouslySetInnerHTML={{ __html: introHtml }} />
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {features.map((f, i) => (
+                <div key={i} className="flex gap-4 p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
+                    <i className={`fas ${featureIcons[i % featureIcons.length]} text-accent text-lg`} />
+                  </div>
+                  <div>
+                    <h3 className="text-[0.9375rem] font-bold text-navy mb-1">{f.title}</h3>
+                    <p className="text-sm text-gray-600 m-0 leading-relaxed">{f.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+  }
 
   // Why Choose section — gradient callout with optional images
   if (isWhyChoose) {
@@ -461,6 +507,111 @@ export default async function ProductCategoryPage({ params }: Props) {
 
       {/* Additional content sections — styled */}
       {otherSections.map((section, idx) => renderSection(section, idx))}
+
+      {/* PMOLED vs AMOLED Comparison — only for pmoled category */}
+      {category === 'pmoled-displays' && (
+        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div className="absolute top-0 left-1/4 w-80 h-80 bg-accent rounded-full blur-[100px]" />
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400 rounded-full blur-[80px]" />
+          </div>
+          <div className="relative max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Technology Comparison</p>
+              <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">PMOLED vs. AMOLED</h2>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">Two OLED technologies, different strengths. Choose the right one for your application.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* PMOLED Side */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-lightbulb text-accent text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">PMOLED</h3>
+                    <p className="text-white/50 text-sm">Passive Matrix OLED</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Size Range', value: 'Under 3"', icon: 'fa-ruler' },
+                    { label: 'Resolution', value: 'Low–Moderate', icon: 'fa-th' },
+                    { label: 'Content', value: 'Text, icons, simple graphics', icon: 'fa-font' },
+                    { label: 'Power (dark)', value: '★★★★★ Excellent', icon: 'fa-battery-full' },
+                    { label: 'Cost (small)', value: '★★★★★ Very competitive', icon: 'fa-tag' },
+                    { label: 'Thickness', value: 'Ultra-thin (1.4mm+)', icon: 'fa-compress-alt' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-accent/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-28 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-accent/10 rounded-xl border border-accent/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-accent">Best for:</strong> Wearables, instrumentation, IoT status displays, battery-powered devices with simple UI</p>
+                </div>
+              </div>
+
+              {/* AMOLED Side */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-blue-400/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-mobile-alt text-blue-400 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">AMOLED</h3>
+                    <p className="text-white/50 text-sm">Active Matrix OLED</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Size Range', value: '1" – 27"+', icon: 'fa-ruler' },
+                    { label: 'Resolution', value: 'Moderate–Ultra high', icon: 'fa-th' },
+                    { label: 'Content', value: 'Full UI, video, rich graphics', icon: 'fa-film' },
+                    { label: 'Power (dark)', value: '★★★★★ Excellent', icon: 'fa-battery-full' },
+                    { label: 'Cost (small)', value: '★★★ Higher', icon: 'fa-tag' },
+                    { label: 'Thickness', value: 'Thin', icon: 'fa-compress-alt' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-blue-400/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-28 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-blue-400/10 rounded-xl border border-blue-400/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-blue-400">Best for:</strong> Smartphones, smartwatches, medical monitors, military HUDs, premium consumer devices</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link href="/products/amoled-displays" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                Browse AMOLED Displays <i className="fas fa-arrow-right text-xs" />
+              </Link>
+              <Link href="/learn/oled-technology" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                OLED Technology Guide <i className="fas fa-book-open text-xs" />
+              </Link>
+            </div>
+            {/* Decorative images */}
+            <div className="mt-10 flex justify-center gap-4 opacity-50">
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden">
+                <img src="/images/content/pmoled-card.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden sm:block">
+                <img src="/images/content/amoled-card.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden md:block">
+                <img src="/images/products/pmoled-displays.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
+                <img src="/images/products/amoled-displays.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related Resources - 3 cards */}
       <section className="py-16 bg-gray-50">

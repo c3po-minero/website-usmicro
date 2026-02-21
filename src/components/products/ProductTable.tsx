@@ -11,6 +11,10 @@ interface Product {
   viewingAngle: string;
   contrastRatio: string;
   contrast: string;
+  panelSize: string;
+  color: string;
+  bonding: string;
+  ic: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
@@ -44,6 +48,16 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  'pmoled-displays': [
+    { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'panelSize', label: 'Panel Size', icon: 'fa-ruler-combined' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'color', label: 'Color', icon: 'fa-palette' },
+    { key: 'bonding', label: 'Bonding', icon: 'fa-link' },
+    { key: 'ic', label: 'IC', icon: 'fa-microchip' },
+    { key: 'interface', label: 'Interface', icon: 'fa-plug' },
   ],
   // Default columns for TFT and others
   default: [
