@@ -134,6 +134,10 @@ function extractSpecCards(html: string): SpecCard[] {
 }
 
 // Parse list items from HTML for card rendering
+function decodeEntities(text: string): string {
+  return text.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#x26;/g, '&').replace(/&#38;/g, '&').replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&apos;/g, "'");
+}
+
 function extractListItems(html: string): { title: string; description: string }[] {
   const liRegex = /<li>([\s\S]*?)<\/li>/gi;
   const items: { title: string; description: string }[] = [];
@@ -144,11 +148,11 @@ function extractListItems(html: string): { title: string; description: string }[
     const boldMatch = content.match(/^<strong>(.*?)<\/strong>[\s:–—-]*(.*)/i);
     if (boldMatch) {
       items.push({
-        title: boldMatch[1].replace(/<[^>]*>/g, '').trim(),
-        description: boldMatch[2].replace(/<[^>]*>/g, '').trim(),
+        title: decodeEntities(boldMatch[1].replace(/<[^>]*>/g, '').trim()),
+        description: decodeEntities(boldMatch[2].replace(/<[^>]*>/g, '').trim()),
       });
     } else {
-      const text = content.replace(/<[^>]*>/g, '').trim();
+      const text = decodeEntities(content.replace(/<[^>]*>/g, '').trim());
       const colonIdx = text.indexOf(':');
       if (colonIdx > 0 && colonIdx < 50) {
         items.push({ title: text.substring(0, colonIdx).trim(), description: text.substring(colonIdx + 1).trim() });
@@ -212,8 +216,8 @@ function renderSection(section: { id: string; title: string; html: string }, idx
     const boldParaRegex = /<p>\s*<strong>(.*?)<\/strong>\s*([\s\S]*?)<\/p>/gi;
     let bm;
     while ((bm = boldParaRegex.exec(section.html)) !== null) {
-      const t = bm[1].replace(/<[^>]*>/g, '').replace(/[.:]$/, '').trim();
-      const d = bm[2].replace(/<[^>]*>/g, '').trim();
+      const t = decodeEntities(bm[1].replace(/<[^>]*>/g, '').replace(/[.:]$/, '').trim());
+      const d = decodeEntities(bm[2].replace(/<[^>]*>/g, '').trim());
       if (t.length > 2) boldParagraphs.push({ title: t, description: d });
     }
   }
@@ -233,8 +237,8 @@ function renderSection(section: { id: string; title: string; html: string }, idx
     let bm;
     while ((bm = boldParaRegex.exec(section.html)) !== null) {
       features.push({
-        title: bm[1].replace(/<[^>]*>/g, '').trim(),
-        desc: bm[2].replace(/<[^>]*>/g, '').trim(),
+        title: decodeEntities(bm[1].replace(/<[^>]*>/g, '').trim()),
+        desc: decodeEntities(bm[2].replace(/<[^>]*>/g, '').trim()),
       });
     }
     const introHtml = section.html.replace(/<p>\s*<strong>.*?<\/strong>[\s\S]*?<\/p>/gi, '');

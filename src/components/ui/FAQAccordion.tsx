@@ -34,7 +34,7 @@ export default function FAQAccordion({ items, twoColumn = false }: FAQAccordionP
             aria-hidden={openIndex !== i}
             className={`overflow-hidden transition-all duration-300 ${openIndex === i ? 'max-h-[300px]' : 'max-h-0'}`}
           >
-            <p className="px-6 pb-5 text-[0.9375rem] text-gray-700">{item.answer}</p>
+            <div className="px-6 pb-5 text-[0.9375rem] text-gray-700 prose prose-sm max-w-none [&_p]:mb-2 [&_p:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: item.answer }} />
           </div>
         </div>
       ))}

@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: {
-    default: 'US Micro Products | Custom Display Solutions',
+    default: 'US Micro Products | Engineered Solutions',
     template: '%s | US Micro Products',
   },
   description: 'US Micro Products engineers custom TFT, AMOLED, OLED & LCD display solutions for medical, military, aerospace & industrial OEMs. 25+ years expertise.',
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'US Micro Products',
-    title: 'US Micro Products | Custom Display Solutions',
+    title: 'US Micro Products | Engineered Solutions',
     description: 'Custom TFT, AMOLED, OLED & LCD display solutions for OEMs.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'US Micro Products | Custom Display Solutions',
+    title: 'US Micro Products | Engineered Solutions',
     description: 'Custom display solutions for medical, military, aerospace & industrial OEMs.',
   },
   robots: { index: true, follow: true },
