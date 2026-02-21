@@ -38,6 +38,14 @@ const categoryImages: Record<string, { portrait: string; square: string }> = {
     portrait: '/images/content/pmoled-card.webp',
     square: '/images/products/pmoled-displays.webp',
   },
+  'character-lcd': {
+    portrait: '/images/content/character-lcd-1.webp',
+    square: '/images/content/character-lcd-2.webp',
+  },
+  'graphic-lcd': {
+    portrait: '/images/content/graphic-lcd-1.webp',
+    square: '/images/content/graphic-lcd-2.webp',
+  },
   'smart-displays': {
     portrait: '/images/content/smart-card.webp',
     square: '/images/products/smart-displays.webp',
@@ -49,6 +57,10 @@ const categoryImages: Record<string, { portrait: string; square: string }> = {
   'open-frame-monitors': {
     portrait: '/images/content/open-frame-card.webp',
     square: '/images/products/open-frame-monitors.webp',
+  },
+  'tablets': {
+    portrait: '/images/content/tablets-1.webp',
+    square: '/images/content/tablets-2.webp',
   },
 };
 
@@ -84,6 +96,18 @@ function getSpecIcon(title: string): string {
   return 'fa-check';
 }
 
+function getSectionIcon(title: string): string {
+  const t = title.toLowerCase();
+  if (t.includes('interface')) return 'fa-plug';
+  if (t.includes('custom')) return 'fa-tools';
+  if (t.includes('application')) return 'fa-industry';
+  if (t.includes('specification') || t.includes('spec')) return 'fa-list-check';
+  if (t.includes('why choose')) return 'fa-award';
+  if (t.includes('feature')) return 'fa-star';
+  if (t.includes('advantage')) return 'fa-trophy';
+  return 'fa-check-circle';
+}
+
 interface SpecCard {
   icon: string;
   title: string;
@@ -91,7 +115,6 @@ interface SpecCard {
 }
 
 function extractSpecCards(html: string): SpecCard[] {
-  // Look for h3 elements within the first section to extract key specs
   const h3Regex = /<h3>(.*?)<\/h3>([\s\S]*?)(?=<h3>|$)/gi;
   const cards: SpecCard[] = [];
   let match;
@@ -108,6 +131,198 @@ function extractSpecCards(html: string): SpecCard[] {
   }
 
   return cards;
+}
+
+// Parse list items from HTML for card rendering
+function extractListItems(html: string): { title: string; description: string }[] {
+  const liRegex = /<li>([\s\S]*?)<\/li>/gi;
+  const items: { title: string; description: string }[] = [];
+  let match;
+  while ((match = liRegex.exec(html)) !== null) {
+    const content = match[1].trim();
+    // Try to split on bold text
+    const boldMatch = content.match(/^<strong>(.*?)<\/strong>[\s:–—-]*(.*)/i);
+    if (boldMatch) {
+      items.push({
+        title: boldMatch[1].replace(/<[^>]*>/g, '').trim(),
+        description: boldMatch[2].replace(/<[^>]*>/g, '').trim(),
+      });
+    } else {
+      const text = content.replace(/<[^>]*>/g, '').trim();
+      const colonIdx = text.indexOf(':');
+      if (colonIdx > 0 && colonIdx < 50) {
+        items.push({ title: text.substring(0, colonIdx).trim(), description: text.substring(colonIdx + 1).trim() });
+      } else {
+        items.push({ title: text, description: '' });
+      }
+    }
+  }
+  return items;
+}
+
+// Detect if section has a table
+function extractTableRows(html: string): { key: string; value: string }[] | null {
+  if (!html.includes('<table')) return null;
+  const rowRegex = /<tr>\s*<td>([\s\S]*?)<\/td>\s*<td>([\s\S]*?)<\/td>\s*<\/tr>/gi;
+  const rows: { key: string; value: string }[] = [];
+  let match;
+  while ((match = rowRegex.exec(html)) !== null) {
+    rows.push({
+      key: match[1].replace(/<[^>]*>/g, '').trim(),
+      value: match[2].replace(/<[^>]*>/g, '').trim(),
+    });
+  }
+  return rows.length > 0 ? rows : null;
+}
+
+// Extract CTA links from section
+function extractLinks(html: string): { text: string; href: string }[] {
+  const linkRegex = /<a\s+href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+  const links: { text: string; href: string }[] = [];
+  let match;
+  while ((match = linkRegex.exec(html)) !== null) {
+    const text = match[2].replace(/<[^>]*>/g, '').trim();
+    if (text.toLowerCase().includes('learn more') || text.toLowerCase().includes('contact') || text.toLowerCase().includes('request')) {
+      links.push({ text, href: match[1] });
+    }
+  }
+  return links;
+}
+
+function hasListItems(html: string): boolean {
+  return /<li>/i.test(html);
+}
+
+function isWhyChooseSection(title: string): boolean {
+  return /why choose/i.test(title);
+}
+
+function isSpecTable(title: string): boolean {
+  return /specification|spec/i.test(title) && /range|across/i.test(title);
+}
+
+function renderSection(section: { id: string; title: string; html: string }, idx: number) {
+  const isEven = idx % 2 === 1;
+  const bgClass = isEven ? 'bg-gray-50' : 'bg-white';
+  const tableRows = extractTableRows(section.html);
+  const listItems = hasListItems(section.html) ? extractListItems(section.html) : [];
+  const links = extractLinks(section.html);
+  const isWhyChoose = isWhyChooseSection(section.title);
+  const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;
+
+  // Why Choose section — navy callout
+  if (isWhyChoose) {
+    return (
+      <section key={section.id} className="py-16 bg-navy text-white">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-[1.625rem] font-bold text-white mb-8">
+            <i className="fas fa-award text-accent mr-3" />
+            {section.title}
+          </h2>
+          {listItems.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {listItems.map((item, i) => (
+                <div key={i} className="p-5 bg-white/10 rounded-xl border border-white/20">
+                  <h3 className="text-base font-bold text-white mb-1">
+                    <i className={`fas ${getSectionIcon(item.title)} text-accent mr-2`} />
+                    {item.title}
+                  </h3>
+                  {item.description && <p className="text-sm text-white/80 m-0">{item.description}</p>}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="prose prose-invert max-w-none [&_a]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
+          )}
+          {links.length > 0 && (
+            <div className="flex flex-wrap gap-3 mt-8">
+              {links.map((link, i) => (
+                <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                  {link.text} <i className="fas fa-arrow-right text-xs" />
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  // Spec table section — key-value grid
+  if (isSpecTableSection && tableRows) {
+    return (
+      <section key={section.id} className={`py-16 ${bgClass}`}>
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-[1.625rem] font-bold text-navy mb-8">{section.title}</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {tableRows.map((row, i) => (
+              <div key={i} className="p-5 bg-navy rounded-xl text-white">
+                <p className="text-xs uppercase tracking-wider text-white/60 mb-1 font-semibold">{row.key}</p>
+                <p className="text-lg font-bold text-white m-0">{row.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Sections with lists — icon card grid
+  if (listItems.length > 0) {
+    // Remove list from HTML for intro text
+    const introHtml = section.html.replace(/<ul[\s\S]*?<\/ul>/gi, '').replace(/<ol[\s\S]*?<\/ol>/gi, '');
+    const hasIntro = introHtml.replace(/<[^>]*>/g, '').trim().length > 20;
+
+    return (
+      <section key={section.id} className={`py-16 ${bgClass}`}>
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
+          {hasIntro && (
+            <div className="prose max-w-none text-gray-700 leading-relaxed mb-8 [&_p]:mb-4 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: introHtml }} />
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {listItems.map((item, i) => (
+              <div key={i} className="p-5 bg-gray-50 rounded-xl border border-gray-200">
+                <h3 className="text-base font-bold text-navy mb-1">
+                  <i className={`fas ${getSectionIcon(item.title)} text-accent mr-2`} />
+                  {item.title}
+                </h3>
+                {item.description && <p className="text-sm text-gray-600 m-0">{item.description}</p>}
+              </div>
+            ))}
+          </div>
+          {links.length > 0 && (
+            <div className="flex flex-wrap gap-3 mt-8">
+              {links.map((link, i) => (
+                <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                  {link.text} <i className="fas fa-arrow-right text-xs" />
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  // Default: prose section
+  return (
+    <section key={section.id} className={`py-16 ${bgClass}`}>
+      <div className="max-w-[1280px] mx-auto px-6">
+        <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
+        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2 [&_table]:w-full [&_table]:border-collapse [&_th]:bg-navy [&_th]:text-white [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-sm [&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-gray-200 [&_td]:text-sm" dangerouslySetInnerHTML={{ __html: section.html }} />
+        {links.length > 0 && (
+          <div className="flex flex-wrap gap-3 mt-8">
+            {links.map((link, i) => (
+              <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                {link.text} <i className="fas fa-arrow-right text-xs" />
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
 }
 
 export default async function ProductCategoryPage({ params }: Props) {
@@ -142,64 +357,62 @@ export default async function ProductCategoryPage({ params }: Props) {
     <>
       <BreadcrumbNav items={[{ label: 'Home', href: '/' }, { label: 'Products', href: '/products' }, { label: cat.name }]} />
 
-      {/* Hero: 2-column with images on right */}
-      <section className="relative bg-navy text-white overflow-hidden py-14 md:py-16">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue/30 to-navy opacity-50" />
-        <div className="max-w-[1280px] mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
-            <div className="lg:col-span-3">
-              <p className="text-[0.8125rem] font-semibold uppercase tracking-[1.5px] text-accent mb-3">Products</p>
-              <h1 className="text-white text-3xl md:text-[3rem] font-bold leading-tight mb-5">{displayTitle}</h1>
-              <p className="text-lg md:text-[1.1875rem] text-white/85 mb-8 leading-relaxed max-w-[640px]">
-                {description || `Browse our complete ${cat.name} catalog with filterable specifications.`}
-              </p>
-            </div>
-            {images && (
-              <div className="lg:col-span-2 relative min-h-[280px] hidden lg:block" aria-hidden="true">
-                <img
-                  src={images.portrait}
-                  alt={`${cat.name} product`}
-                  className="absolute left-0 top-0 w-[calc(100%-40px)] h-[calc(100%-50px)] object-cover rounded-xl shadow-2xl z-[1]"
-                  loading="eager"
-                />
-                <img
-                  src={images.square}
-                  alt={`${cat.name} collection`}
-                  className="absolute right-0 bottom-0 w-[160px] h-[160px] object-cover rounded-xl shadow-xl z-[3] border-4 border-navy"
-                  loading="eager"
-                />
-              </div>
-            )}
-          </div>
+      {/* Hero: Simple short hero — navy bg, no images */}
+      <section className="bg-navy text-white py-12 md:py-16">
+        <div className="max-w-[1280px] mx-auto px-6 text-center">
+          <p className="text-[0.8125rem] font-semibold uppercase tracking-[1.5px] text-accent mb-3">Products</p>
+          <h1 className="text-white text-3xl md:text-[2.75rem] font-bold leading-tight mb-4">{displayTitle}</h1>
+          <p className="text-lg md:text-[1.125rem] text-white/85 leading-relaxed max-w-[700px] mx-auto">
+            {description || `Browse our complete ${cat.name} catalog with filterable specifications.`}
+          </p>
         </div>
       </section>
 
-      {/* Overview + Spec Highlight Cards */}
+      {/* Overview with photo collage */}
       {parsed && (
         <section className="py-16">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+              {/* Left column: 60% — text + spec cards */}
               <div className="lg:col-span-3">
                 {overviewSection && (
                   <>
                     <h2 className="text-[1.625rem] font-bold text-navy mb-6">{overviewSection.title}</h2>
                     {parsed.intro && (
-                      <div className="prose max-w-none text-gray-700 text-lg leading-relaxed mb-6 [&_p]:mb-4 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: parsed.intro }} />
+                      <div className="prose max-w-none text-gray-700 text-lg leading-relaxed mb-8 [&_p]:mb-4 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: parsed.intro }} />
                     )}
                   </>
                 )}
+                {specCards.length > 0 && (
+                  <div className="space-y-4">
+                    {specCards.map((card) => (
+                      <div key={card.title} className="p-5 bg-gray-50 rounded-xl border border-gray-200">
+                        <h3 className="text-base font-bold text-navy mb-1">
+                          <i className={`fas ${card.icon} text-accent mr-2`} />
+                          {card.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 m-0">{card.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-              {specCards.length > 0 && (
-                <div className="lg:col-span-2 space-y-4">
-                  {specCards.map((card) => (
-                    <div key={card.title} className="p-5 bg-gray-50 rounded-xl border border-gray-200">
-                      <h3 className="text-base font-bold text-navy mb-1">
-                        <i className={`fas ${card.icon} text-accent mr-2`} />
-                        {card.title}
-                      </h3>
-                      <p className="text-sm text-gray-600 m-0">{card.description}</p>
-                    </div>
-                  ))}
+
+              {/* Right column: 40% — photo collage */}
+              {images && (
+                <div className="lg:col-span-2 relative min-h-[350px] hidden lg:block" aria-hidden="true">
+                  <img
+                    src={images.portrait}
+                    alt={`${cat.name} product`}
+                    className="absolute left-0 top-0 w-[85%] h-[85%] object-cover rounded-xl shadow-2xl z-[1]"
+                    loading="eager"
+                  />
+                  <img
+                    src={images.square}
+                    alt={`${cat.name} collection`}
+                    className="absolute right-0 bottom-0 w-[160px] h-[160px] object-cover rounded-xl shadow-xl z-[3] border-4 border-white"
+                    loading="eager"
+                  />
                 </div>
               )}
             </div>
@@ -215,19 +428,8 @@ export default async function ProductCategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Additional content sections as structured cards */}
-      {otherSections.length > 0 && (
-        <section className="py-16">
-          <div className="max-w-[1280px] mx-auto px-6">
-            {otherSections.map((section) => (
-              <div key={section.id} className="mb-12 last:mb-0">
-                <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
-                <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+      {/* Additional content sections — styled */}
+      {otherSections.map((section, idx) => renderSection(section, idx))}
 
       {/* Related Resources - 3 cards */}
       <section className="py-16 bg-gray-50">
@@ -268,7 +470,7 @@ export default async function ProductCategoryPage({ params }: Props) {
         </div>
       </section>
 
-      {/* FAQ - 2 column grid */}
+      {/* FAQ */}
       {parsed && parsed.faqs.length > 0 && (
         <section className="py-16">
           <div className="max-w-[1280px] mx-auto px-6">

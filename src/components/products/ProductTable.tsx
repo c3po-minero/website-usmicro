@@ -28,6 +28,7 @@ const PAGE_SIZE = 20;
 
 export default function ProductTable({ products, categoryName }: ProductTableProps) {
   const [search, setSearch] = useState('');
+  const [mobileSearch, setMobileSearch] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('partNumber');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [filterInterface, setFilterInterface] = useState('');
@@ -53,14 +54,21 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     return Array.from(set).sort();
   }, [products]);
 
+  // Active search query — desktop uses search, mobile uses mobileSearch
+  const activeSearch = search || mobileSearch;
+
   const filtered = useMemo(() => {
     let result = products;
-    if (search) {
-      const q = search.toLowerCase();
+    if (activeSearch) {
+      const q = activeSearch.toLowerCase();
       result = result.filter((p) =>
         p.partNumber.toLowerCase().includes(q) ||
         p.resolution.toLowerCase().includes(q) ||
-        p.interface.toLowerCase().includes(q)
+        p.interface.toLowerCase().includes(q) ||
+        p.diagonalSize.toLowerCase().includes(q) ||
+        p.brightness.toLowerCase().includes(q) ||
+        p.operatingTemp.toLowerCase().includes(q) ||
+        (p.touchPanel || '').toLowerCase().includes(q)
       );
     }
     if (filterInterface) result = result.filter((p) => p.interface.includes(filterInterface));
@@ -76,9 +84,8 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
       return sortDir === 'asc' ? cmp : -cmp;
     });
     return result;
-  }, [products, search, sortKey, sortDir, filterInterface, filterTouch, filterTemp]);
+  }, [products, activeSearch, sortKey, sortDir, filterInterface, filterTouch, filterTemp]);
 
-  // Reset page when filters change
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const safePage = Math.min(page, totalPages || 1);
   if (safePage !== page) setPage(safePage);
@@ -91,7 +98,6 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     else { setSortKey(key); setSortDir('asc'); }
   };
 
-  // Reset to page 1 on filter/search change
   const updateFilter = <T,>(setter: (v: T) => void) => (v: T) => { setter(v); setPage(1); };
 
   const columns: { key: SortKey; label: string }[] = [
@@ -104,7 +110,6 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     { key: 'touchPanel', label: 'Touch' },
   ];
 
-  // Generate page numbers for pagination
   const pageNumbers = useMemo(() => {
     const pages: (number | '...')[] = [];
     if (totalPages <= 7) {
@@ -119,10 +124,37 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     return pages;
   }, [totalPages, safePage]);
 
+  const touchBadge = (touch: string) => {
+    if (touch && touch !== 'N/A' && touch !== '-') {
+      return <span className="inline-block px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[0.6875rem] font-semibold">{touch}</span>;
+    }
+    return <span className="inline-block px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-[0.6875rem] font-semibold">N/A</span>;
+  };
+
   return (
     <div>
-      {/* Filter controls */}
-      <div className="flex flex-wrap gap-3 mb-4 items-center">
+      {/* Mobile search — single full-width input */}
+      <div className="md:hidden mb-4">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            value={mobileSearch}
+            onChange={(e) => { setMobileSearch(e.target.value); setPage(1); }}
+            placeholder="Search part number, resolution, interface..."
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10"
+            aria-label="Search all products"
+          />
+          <button
+            onClick={() => setPage(1)}
+            className="px-5 py-3 bg-accent text-white rounded-lg font-semibold text-sm hover:bg-accent-hover transition-colors"
+          >
+            <i className="fas fa-search mr-1" /> Search
+          </button>
+        </div>
+      </div>
+
+      {/* Desktop filter controls */}
+      <div className="hidden md:flex flex-wrap gap-3 mb-4 items-center">
         <div className="flex items-center gap-1.5">
           <label htmlFor="filter-interface" className="text-[0.8125rem] font-semibold text-gray-700">Interface:</label>
           <select id="filter-interface" value={filterInterface} onChange={(e) => updateFilter(setFilterInterface)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by interface">
@@ -155,8 +187,8 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
         Showing {filtered.length === 0 ? 0 : pageStart + 1}–{Math.min(pageStart + PAGE_SIZE, filtered.length)} of {filtered.length} products
       </p>
 
-      {/* Table */}
-      <div className="product-table-wrap border border-gray-200 rounded-xl">
+      {/* Desktop Table */}
+      <div className="hidden md:block product-table-wrap border border-gray-200 rounded-xl">
         <table className="w-full border-collapse text-[0.8125rem] whitespace-nowrap" aria-label={`${categoryName} specifications`}>
           <thead className="bg-navy">
             <tr>
@@ -178,13 +210,7 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
                 <td className="px-4 py-3 text-gray-700">{product.interface}</td>
                 <td className="px-4 py-3 text-gray-700">{product.brightness}</td>
                 <td className="px-4 py-3 text-gray-700">{product.operatingTemp}</td>
-                <td className="px-4 py-3">
-                  {product.touchPanel && product.touchPanel !== 'N/A' && product.touchPanel !== '-' ? (
-                    <span className="inline-block px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[0.6875rem] font-semibold">{product.touchPanel}</span>
-                  ) : (
-                    <span className="inline-block px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-[0.6875rem] font-semibold">N/A</span>
-                  )}
-                </td>
+                <td className="px-4 py-3">{touchBadge(product.touchPanel)}</td>
                 <td className="px-4 py-3">
                   <div className="flex gap-2 whitespace-nowrap">
                     {product.datasheetUrl && (
@@ -201,6 +227,35 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Cards */}
+      <div className="md:hidden space-y-3">
+        {paged.map((product) => (
+          <div key={product.partNumber} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+            <p className="text-base font-bold text-navy mb-2">{product.partNumber}</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 mb-2">
+              <span><i className="fas fa-expand-alt text-gray-400 mr-1" />{product.diagonalSize}&quot;</span>
+              <span><i className="fas fa-th text-gray-400 mr-1" />{product.resolution}</span>
+              <span><i className="fas fa-plug text-gray-400 mr-1" />{product.interface}</span>
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 mb-3">
+              <span><i className="fas fa-sun text-gray-400 mr-1" />{product.brightness}</span>
+              <span><i className="fas fa-thermometer-half text-gray-400 mr-1" />{product.operatingTemp}</span>
+              <span>{touchBadge(product.touchPanel)}</span>
+            </div>
+            <div className="flex gap-2">
+              {product.datasheetUrl && (
+                <a href={product.datasheetUrl} target="_blank" rel="noopener noreferrer" className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 text-sm font-semibold text-blue-mid border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                  <i className="fas fa-file-pdf" /> PDF
+                </a>
+              )}
+              <Link href={`/support/request-quote?part=${product.partNumber}`} className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2.5 text-sm font-semibold bg-accent text-white rounded-lg hover:bg-accent-hover transition-colors">
+                <i className="fas fa-file-alt" /> Quote
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Pagination */}
