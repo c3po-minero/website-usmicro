@@ -266,7 +266,7 @@ export default function ProductTable({ products, categoryName, categorySlug }: P
 
       {/* Desktop Table */}
       <div className="hidden md:block product-table-wrap border border-gray-200 rounded-xl overflow-x-auto">
-        <table className={`w-full border-collapse whitespace-nowrap ${columns.length > 10 ? 'text-[0.6875rem]' : 'text-[0.8125rem]'}`} aria-label={`${categoryName} specifications`}>
+        <table className="w-full border-collapse text-[0.8125rem] whitespace-nowrap" aria-label={`${categoryName} specifications`}>
           <thead className="bg-navy">
             <tr>
               {columns.map((col) => (
