@@ -128,7 +128,7 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     if (touch && touch !== 'N/A' && touch !== '-') {
       return <span className="inline-block px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-[0.6875rem] font-semibold">{touch}</span>;
     }
-    return <span className="inline-block px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-[0.6875rem] font-semibold">N/A</span>;
+    return <span className="inline-block px-2 py-0.5 rounded bg-gray-200 text-gray-700 text-[0.6875rem] font-semibold">N/A</span>;
   };
 
   return (
@@ -293,7 +293,7 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
 
       <p className="mt-4 text-[0.8125rem] text-gray-500 text-center">
         {filtered.length} of {products.length} products match your filters.
-        {' '}<Link href="/contact" className="text-blue-mid hover:text-accent-text">Request a custom configuration</Link>
+        {' '}<Link href="/contact" className="text-blue-mid underline hover:text-accent-text">Request a custom configuration</Link>
       </p>
     </div>
   );

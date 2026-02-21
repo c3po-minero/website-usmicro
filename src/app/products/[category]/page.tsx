@@ -278,7 +278,7 @@ function renderSection(section: { id: string; title: string; html: string }, idx
         <div className="max-w-[1280px] mx-auto px-6">
           <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
           {hasIntro && (
-            <div className="prose max-w-none text-gray-700 leading-relaxed mb-8 [&_p]:mb-4 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: introHtml }} />
+            <div className="prose max-w-none text-gray-700 leading-relaxed mb-8 [&_p]:mb-4 [[&_a]:text-blue-mid_a]:text-blue-mid [[&_a]:text-blue-mid_a]:underline" dangerouslySetInnerHTML={{ __html: introHtml }} />
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {listItems.map((item, i) => (
@@ -310,7 +310,7 @@ function renderSection(section: { id: string; title: string; html: string }, idx
     <section key={section.id} className={`py-16 ${bgClass}`}>
       <div className="max-w-[1280px] mx-auto px-6">
         <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
-        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2 [&_table]:w-full [&_table]:border-collapse [&_th]:bg-navy [&_th]:text-white [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-sm [&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-gray-200 [&_td]:text-sm" dangerouslySetInnerHTML={{ __html: section.html }} />
+        <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [[&_a]:text-blue-mid_a]:text-blue-mid [[&_a]:text-blue-mid_a]:underline [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2 [&_table]:w-full [&_table]:border-collapse [&_th]:bg-navy [&_th]:text-white [&_th]:px-4 [&_th]:py-3 [&_th]:text-left [&_th]:text-sm [&_td]:px-4 [&_td]:py-3 [&_td]:border-b [&_td]:border-gray-200 [&_td]:text-sm" dangerouslySetInnerHTML={{ __html: section.html }} />
         {links.length > 0 && (
           <div className="flex flex-wrap gap-3 mt-8">
             {links.map((link, i) => (
@@ -360,7 +360,7 @@ export default async function ProductCategoryPage({ params }: Props) {
       {/* Hero: Simple short hero — navy bg, no images */}
       <section className="bg-navy text-white py-12 md:py-16">
         <div className="max-w-[1280px] mx-auto px-6 text-center">
-          <p className="text-[0.8125rem] font-semibold uppercase tracking-[1.5px] text-accent mb-3">Products</p>
+          <p className="text-[0.8125rem] font-semibold uppercase tracking-[1.5px] text-white/70 mb-3">Products</p>
           <h1 className="text-white text-3xl md:text-[2.75rem] font-bold leading-tight mb-4">{displayTitle}</h1>
           <p className="text-lg md:text-[1.125rem] text-white/85 leading-relaxed max-w-[700px] mx-auto">
             {description || `Browse our complete ${cat.name} catalog with filterable specifications.`}
@@ -379,7 +379,7 @@ export default async function ProductCategoryPage({ params }: Props) {
                   <>
                     <h2 className="text-[1.625rem] font-bold text-navy mb-6">{overviewSection.title}</h2>
                     {parsed.intro && (
-                      <div className="prose max-w-none text-gray-700 text-lg leading-relaxed mb-8 [&_p]:mb-4 [&_a]:text-blue-mid" dangerouslySetInnerHTML={{ __html: parsed.intro }} />
+                      <div className="prose max-w-none text-gray-700 text-lg leading-relaxed mb-8 [&_p]:mb-4 [[&_a]:text-blue-mid_a]:text-blue-mid [[&_a]:text-blue-mid_a]:underline" dangerouslySetInnerHTML={{ __html: parsed.intro }} />
                     )}
                   </>
                 )}
