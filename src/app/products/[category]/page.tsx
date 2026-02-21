@@ -106,23 +106,23 @@ export default async function ProductCategoryPage({ params }: Props) {
         </section>
       )}
 
-      {/* Product Table */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <h2 className="text-2xl font-bold text-navy mb-6">Product Specifications</h2>
-          <ProductTable products={products} categoryName={cat.name} />
-        </div>
-      </section>
-
       {/* Additional content sections */}
       {otherSections.map((section, i) => (
-        <section key={section.id} className={`py-16 ${i % 2 === 0 ? '' : 'bg-gray-50'}`}>
+        <section key={section.id} className={`py-16 ${i % 2 === 0 ? 'bg-gray-50' : ''}`}>
           <div className="max-w-[900px] mx-auto px-6">
             <h2 className="text-[1.625rem] font-bold text-navy mb-6">{section.title}</h2>
             <div className="prose max-w-none text-gray-700 leading-relaxed [&_h3]:text-[1.125rem] [&_h3]:font-bold [&_h3]:text-navy [&_h3]:mt-6 [&_p]:mb-4 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
           </div>
         </section>
       ))}
+
+      {/* Product Specifications Table */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-2xl font-bold text-navy mb-6">Product Specifications</h2>
+          <ProductTable products={products} categoryName={cat.name} />
+        </div>
+      </section>
 
       <CTABanner title={`Need a Custom ${cat.name.split(' ')[0]} Display?`} description="Our engineers can modify any product to meet your exact requirements." ctaLabel="Request a Quote" ctaHref="/support/request-quote" ctaIcon="fa-file-alt" />
     </>

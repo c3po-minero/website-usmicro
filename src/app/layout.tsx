@@ -33,6 +33,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+      </head>
       <body className="font-sans text-gray-900 bg-white leading-relaxed antialiased">
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />

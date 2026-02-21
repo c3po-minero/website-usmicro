@@ -126,7 +126,7 @@ function RenderSection({ section, index }: { section: ContentSection; index: num
                   <i className={`fas ${getRequirementIcon(sub.title)}`} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-navy mb-1">{sub.title}</h4>
+                  <h3 className="font-bold text-navy mb-1 text-base">{sub.title}</h3>
                   <div className="text-sm text-gray-600 leading-relaxed [&_p]:mb-2 [&_strong]:text-gray-900 [&_a]:text-blue-mid [&_a:hover]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-1" dangerouslySetInnerHTML={{ __html: sub.html }} />
                 </div>
               </div>

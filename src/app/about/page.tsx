@@ -37,11 +37,11 @@ const timeline = [
 ];
 
 const teamMembers = [
-  { name: 'Dave Alben', role: 'Leadership', photo: '/images/team/dave-alben.webp' },
-  { name: 'Vincent Chou', role: 'Leadership', photo: '/images/team/vincent-chou.webp' },
-  { name: 'Chris Seymour', role: 'Leadership', photo: '/images/team/chris-seymour.webp' },
-  { name: 'Brian Wilkie', role: 'Leadership', photo: '/images/team/brian-wilkie.webp' },
-  { name: 'Daniel Wu', role: 'Leadership', photo: '/images/team/daniel-wu.webp' },
+  { name: 'Dave Alben', role: 'Co-Founder & President', photo: '/images/team/dave-alben.webp' },
+  { name: 'Vincent Chou', role: 'VP, Asian Operations', photo: '/images/team/vincent-chou.webp' },
+  { name: 'Chris Seymour', role: 'VP, Engineering & Sales', photo: '/images/team/chris-seymour.webp' },
+  { name: 'Brian Wilkie', role: 'VP, Business Development', photo: '/images/team/brian-wilkie.webp' },
+  { name: 'Daniel Wu', role: 'VP, Operations & Logistics', photo: '/images/team/daniel-wu.webp' },
 ];
 
 export default function AboutPage() {

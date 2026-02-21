@@ -7,9 +7,10 @@ interface ProductCardProps {
   href: string;
   icon?: string;
   imageUrl?: string;
+  priority?: boolean;
 }
 
-export default function ProductCard({ title, description, href, icon, imageUrl }: ProductCardProps) {
+export default function ProductCard({ title, description, href, icon, imageUrl, priority }: ProductCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all group">
       <div className="h-[200px] relative bg-gradient-to-br from-navy to-blue flex items-center justify-center overflow-hidden">
@@ -20,6 +21,8 @@ export default function ProductCard({ title, description, href, icon, imageUrl }
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={priority}
+            loading={priority ? 'eager' : 'lazy'}
           />
         ) : (
           icon && <i className={`fas ${icon} text-5xl text-white/30`} />

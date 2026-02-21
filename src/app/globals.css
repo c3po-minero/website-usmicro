@@ -1,18 +1,17 @@
 @import "tailwindcss";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 @theme inline {
   --color-navy: #0a1628;
   --color-blue: #1a3a5c;
   --color-blue-mid: #2a5a8c;
   --color-blue-light: #e8f0f8;
-  --color-accent: #e8792b;
-  --color-accent-hover: #cf6a22;
+  --color-accent: #c96a1f;
+  --color-accent-hover: #b35d1a;
   --color-gray-50: #f8f9fa;
   --color-gray-100: #f0f2f5;
   --color-gray-200: #e2e5ea;
   --color-gray-300: #ccd0d7;
-  --color-gray-500: #6b7280;
+  --color-gray-500: #556170;
   --color-gray-700: #374151;
   --color-gray-900: #111827;
   --color-success: #16a34a;

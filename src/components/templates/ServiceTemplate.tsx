@@ -111,10 +111,10 @@ function SectionRenderer({ section, index }: { section: ContentSection; index: n
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {subs.map((sub) => (
               <div key={sub.title} className="p-5 bg-white border border-gray-200 rounded-xl">
-                <h4 className="font-bold text-navy mb-1">
+                <h3 className="font-bold text-navy mb-1 text-base">
                   <i className={`fas ${getCapabilityIcon(sub.title)} text-accent mr-2`} />
                   {sub.title}
-                </h4>
+                </h3>
                 <div className="text-[0.8125rem] text-gray-600 [&_p]:mb-0" dangerouslySetInnerHTML={{ __html: sub.html }} />
               </div>
             ))}

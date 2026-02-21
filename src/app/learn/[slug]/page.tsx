@@ -58,7 +58,21 @@ export default async function LearnGuidePage({ params }: Props) {
             </div>
           </div>
 
+          {/* Mobile TOC */}
+          {tocItems.length > 2 && (
+            <div className="lg:hidden">
+              <TableOfContents items={tocItems} />
+            </div>
+          )}
+
           <div className="flex gap-12">
+            {/* Sticky TOC sidebar - left */}
+            {tocItems.length > 2 && (
+              <div className="hidden lg:block w-[260px] flex-shrink-0">
+                <TableOfContents items={tocItems} />
+              </div>
+            )}
+
             {/* Main content */}
             <div className="flex-1 min-w-0">
               <h1 className="text-3xl md:text-[2.5rem] font-bold text-navy mb-8 leading-tight">{displayTitle}</h1>
@@ -76,13 +90,6 @@ export default async function LearnGuidePage({ params }: Props) {
                 dangerouslySetInnerHTML={{ __html: htmlWithIds }}
               />
             </div>
-
-            {/* Sticky TOC sidebar */}
-            {tocItems.length > 2 && (
-              <div className="hidden lg:block w-[260px] flex-shrink-0">
-                <TableOfContents items={tocItems} />
-              </div>
-            )}
           </div>
         </div>
       </section>
