@@ -54,6 +54,7 @@ export default function AboutPage() {
         description="Founded in 1996 in Austin, Texas. Nearly three decades of engineering custom display solutions for the world's most demanding OEMs."
         primaryCta={{ label: 'Meet the Team', href: '/about/leadership', icon: 'fa-users' }}
         secondaryCta={{ label: 'Contact Us', href: '/contact', icon: 'fa-comments' }}
+        backgroundImage="/images/content/about-hero.webp"
       />
 
       <StatsBar stats={stats} dark />
@@ -67,13 +68,19 @@ export default function AboutPage() {
               <p className="text-gray-700 text-lg leading-relaxed mb-4">We design and deliver custom display solutions. We don&apos;t own factories — we operate a fabless manufacturing model that gives us access to the best display technology from the best manufacturers worldwide, without locking our customers into a single production line or a single technology.</p>
               <p className="text-gray-700 text-lg leading-relaxed mb-4">Our supply chain spans six locations across three continents. Manufacturing partners in China, Taiwan, Japan, and South Korea give us access to the full spectrum of display technologies.</p>
             </div>
-            <div className="lg:col-span-2 hidden lg:block relative min-h-[300px]" aria-hidden="true">
-              <div className="absolute left-0 top-0 w-[calc(100%-30px)] h-[calc(100%-40px)] bg-gray-200 rounded-xl shadow-lg z-[1] flex items-center justify-center overflow-hidden">
-                <i className="fas fa-building text-gray-400 text-4xl" />
-              </div>
-              <div className="absolute right-0 bottom-0 w-[140px] h-[140px] bg-gray-300 rounded-xl shadow-md z-[3] flex items-center justify-center border-4 border-white">
-                <i className="fas fa-globe text-gray-400 text-2xl" />
-              </div>
+            <div className="lg:col-span-2 hidden lg:block relative min-h-[350px]" aria-hidden="true">
+              <img
+                src="/images/content/fabless-1.webp"
+                alt="Global supply chain operations"
+                className="absolute left-0 top-0 w-[85%] h-[85%] object-cover rounded-xl shadow-2xl z-[1]"
+                loading="eager"
+              />
+              <img
+                src="/images/content/fabless-2.webp"
+                alt="Worldwide logistics"
+                className="absolute right-0 bottom-0 w-[160px] h-[160px] object-cover rounded-xl shadow-xl z-[3] border-4 border-white"
+                loading="eager"
+              />
             </div>
           </div>
         </div>
