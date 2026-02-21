@@ -199,7 +199,12 @@ export default function ProductTable({ products, categoryName, categorySlug }: P
   const renderCellValue = (product: Product, col: ColumnDef) => {
     const val = product[col.key] || '';
     if (col.key === 'diagonalSize') return <>{val}&quot;</>;
-    if (col.key === 'partNumber') return <span className="font-semibold text-navy">{val}</span>;
+    if (col.key === 'partNumber') {
+      if (product.datasheetUrl) {
+        return <a href={product.datasheetUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-navy hover:text-accent underline-offset-2 hover:underline transition-colors">{val}</a>;
+      }
+      return <span className="font-semibold text-navy">{val}</span>;
+    }
     if (col.key === 'touchPanel') return touchBadge(val);
     return <>{val}</>;
   };
@@ -308,7 +313,11 @@ export default function ProductTable({ products, categoryName, categorySlug }: P
       <div className="md:hidden space-y-3">
         {paged.map((product, idx) => (
           <div key={`${product.partNumber}-${idx}`} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
-            <p className="text-base font-bold text-navy mb-2">{product.partNumber}</p>
+            {product.datasheetUrl ? (
+              <a href={product.datasheetUrl} target="_blank" rel="noopener noreferrer" className="block text-base font-bold text-navy hover:text-accent mb-2 transition-colors">{product.partNumber}</a>
+            ) : (
+              <p className="text-base font-bold text-navy mb-2">{product.partNumber}</p>
+            )}
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 mb-2">
               {columns.filter(c => c.key !== 'partNumber').slice(0, 3).map(col => (
                 <span key={col.key}><i className={`fas ${col.icon || 'fa-circle'} text-gray-400 mr-1`} />{col.key === 'diagonalSize' ? `${product[col.key]}"` : (product[col.key] || 'N/A')}</span>
