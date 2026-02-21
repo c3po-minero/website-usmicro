@@ -66,9 +66,9 @@
 .prose li { margin-bottom: 0.5rem; line-height: 1.7; }
 .prose a:hover { color: var(--color-accent-text); }
 
-/* Mega menu show on hover */
-.nav-item:hover .mega-menu,
-.nav-item:focus-within .mega-menu {
+/* Mega menu show on hover — only when not force-hidden */
+.nav-item:hover .mega-menu:not(.mega-hidden),
+.nav-item:focus-within .mega-menu:not(.mega-hidden) {
   display: grid;
 }
 

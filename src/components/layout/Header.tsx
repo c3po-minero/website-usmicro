@@ -86,7 +86,7 @@ export default function Header() {
             <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
               Products <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
             </button>
-            <div className={`mega-menu absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50 ${megaHidden ? 'hidden' : 'hidden group-hover:grid group-focus-within:grid'}`}>
+            <div className={`mega-menu hidden grid-cols-3 gap-2 absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] z-50 ${megaHidden ? 'mega-hidden' : ''}`}>
               {productLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem" onClick={() => setMegaHidden(true)}>
                   <i className={`fas ${item.icon} w-[18px] text-blue-mid text-sm`} />
@@ -99,7 +99,7 @@ export default function Header() {
             <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
               Applications <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
             </button>
-            <div className={`mega-menu absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50 ${megaHidden ? 'hidden' : 'hidden group-hover:grid group-focus-within:grid'}`}>
+            <div className={`mega-menu hidden grid-cols-3 gap-2 absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] z-50 ${megaHidden ? 'mega-hidden' : ''}`}>
               {applicationLinks.map((item) => (
                 <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem" onClick={() => setMegaHidden(true)}>
                   <i className={`fas ${item.icon} w-[18px] text-blue-mid text-sm`} />
