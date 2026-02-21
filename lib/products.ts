@@ -28,6 +28,10 @@ export interface Product {
   mcuMpu: string;
   io: string;
   os: string;
+  sensorType: string;
+  structure: string;
+  surfaceHardness: string;
+  outlineDimension: string;
   datasheetUrl: string;
   category: string;
   [key: string]: string;

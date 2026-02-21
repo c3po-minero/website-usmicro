@@ -209,7 +209,7 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const links = extractLinks(section.html);
   const isWhyChoose = isWhyChooseSection(section.title);
   const isWhenToChoose = /when to choose/i.test(section.title);
-  const isKeyAdvantages = /key (advantages|benefits)/i.test(section.title);
+  const isKeyAdvantages = /key (advantages|benefits)|advanced touch capabilities/i.test(section.title);
   const isApplications = /^applications$/i.test(section.title.trim());
   const isCustomization = /customization/i.test(section.title);
   const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;

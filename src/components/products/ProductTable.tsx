@@ -27,6 +27,10 @@ interface Product {
   mcuMpu: string;
   io: string;
   os: string;
+  sensorType: string;
+  structure: string;
+  surfaceHardness: string;
+  outlineDimension: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
@@ -60,6 +64,17 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  'touch-panels': [
+    { key: 'diagonalSize', label: 'Diagonal Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'sensorType', label: 'Sensor Type', icon: 'fa-fingerprint' },
+    { key: 'ic', label: 'IC', icon: 'fa-microchip' },
+    { key: 'interface', label: 'Interface', icon: 'fa-plug' },
+    { key: 'structure', label: 'Structure', icon: 'fa-layer-group' },
+    { key: 'surfaceHardness', label: 'Surface Hardness', icon: 'fa-shield-alt' },
+    { key: 'viewingArea', label: 'Active Area', icon: 'fa-vector-square' },
+    { key: 'outlineDimension', label: 'Outline Dimension', icon: 'fa-ruler-combined' },
   ],
   'smart-displays': [
     { key: 'diagonalSize', label: 'Diagonal Size', icon: 'fa-expand-alt' },

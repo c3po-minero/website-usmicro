@@ -27,29 +27,14 @@ Pre-bonded touch panel + display combinations where the touch sensor is opticall
 ### On-Cell Touch
 For select AMOLED and TFT displays, the touch sensor is integrated directly into the display cell structure, eliminating the separate touch panel layer entirely. The thinnest possible touch-enabled display stack.
 
-## Sensor Stack-Up Options
+## Key Advantages
 
-| Stack-Up | Structure | Advantages | Trade-offs |
-|----------|-----------|-----------|------------|
-| GG (Glass-Glass) | Cover glass + sensor glass | Highest durability, best optical clarity | Thicker, heavier |
-| GF (Glass-Film) | Cover glass + sensor film | Thinner than GG, good durability | Slightly less rigid |
-| GFF (Glass-Film-Film) | Cover glass + two sensor films | Cost-effective multi-touch | Lower optical clarity |
-| OGS (One Glass Solution) | Sensor on inner surface of cover glass | Thinnest, lightest | Less customizable |
-
-
-## Advanced Touch Capabilities
-
-### Glove Mode
-Modified sensitivity profiles that detect touches through latex, nitrile, surgical, or insulated work gloves up to 3 mm thick. Critical for [medical](/applications/medical), [military](/applications/military), and [industrial](/applications/industrial) applications where bare-finger operation is impractical.
-
-### Wet-Finger and Water Rejection
-Algorithms that distinguish between water droplets/films and intentional finger touches. Essential for [marine](/applications/marine), outdoor, and medical environments where the display surface may be wet.
-
-### Proximity Sensing
-Detection of finger approach before physical contact, enabling hover effects and wake-from-sleep functionality. Reduces power consumption in battery-operated devices.
-
-### Palm Rejection
-Algorithms that ignore large-area, unintentional touches (resting palms, cleaning cloths) while responding to fingertip inputs.
+- **Glove Mode:** Modified sensitivity profiles detect touches through latex, nitrile, surgical, or insulated work gloves up to 3 mm thick. Critical for medical, military, and industrial applications.
+- **Wet-Finger & Water Rejection:** Algorithms distinguish between water droplets/films and intentional finger touches. Essential for marine, outdoor, and medical environments.
+- **Proximity Sensing:** Detects finger approach before physical contact — enables hover effects and wake-from-sleep. Reduces power consumption in battery-operated devices.
+- **Palm Rejection:** Ignores large-area unintentional touches (resting palms, cleaning cloths) while responding to fingertip inputs accurately.
+- **Multi-Touch (10+ Points):** True simultaneous multi-touch enables pinch-zoom, rotation, and complex multi-finger gestures out of the box.
+- **Unlimited Touch Life:** No wear-prone layers means virtually unlimited touch cycles — unlike resistive technology that degrades over time.
 
 ## Cover Glass Options
 
@@ -84,7 +69,7 @@ Capacitive (PCAP) touch detects changes in capacitance from finger proximity and
 Yes. Our touch controllers support configurable sensitivity modes for use with surgical gloves (0.1 mm), nitrile gloves (0.5 mm), and insulated work gloves (up to 3 mm). Glove mode can be activated automatically or via command from the host system.
 
 ### What cover glass thickness do you recommend?
-For consumer devices, 0.7–1.1 mm is typical. Industrial HMI applications commonly use 1.8–3.0 mm for impact resistance. Vandal-resistant kiosk and public-access applications may specify 4–6 mm. The thicker the glass, the more the touch sensitivity algorithm must compensate — our controllers support glass up to 8 mm.
+For consumer devices, 0.7-1.1 mm is typical. Industrial HMI applications commonly use 1.8-3.0 mm for impact resistance. Vandal-resistant kiosk and public-access applications may specify 4-6 mm. The thicker the glass, the more the touch sensitivity algorithm must compensate — our controllers support glass up to 8 mm.
 
 ---
 
