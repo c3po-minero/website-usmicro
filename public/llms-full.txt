@@ -1,0 +1,60 @@
+# US Micro Products — Comprehensive Site Information
+
+## Company Overview
+US Micro Products is a fabless custom display manufacturer headquartered in Austin, Texas, established in 1996. With 25+ years of experience and 6 global offices (Austin, Los Angeles, New York, Shenzhen, Taichung), we serve OEMs across medical, military, aerospace, industrial, automotive, gaming, wearable, consumer electronics, kiosk/POS, instrumentation, marine, and harsh environment markets.
+
+## Core Capabilities
+- **Innovation**: 200+ custom display designs completed annually
+- **Expertise**: Engineering across TFT, AMOLED, PMOLED, LCD, and touch technologies
+- **Service**: Global scale with local engineering support; 5x Inc. 5000 honoree
+
+## Product Categories (450+ Active SKUs)
+
+### TFT LCD Displays (225+ SKUs)
+Sizes 0.96" to 84". Panel types: IPS, TN, MVA. Interfaces: SPI, LVDS, MIPI, RGB, eDP, HDMI. Applications: industrial HMI, medical devices, aerospace instrumentation, automotive dashboards.
+
+### AMOLED Displays (77+ SKUs)
+Sizes 0.95" to 6.67". Round, rectangular, and flexible form factors. True blacks, exceptional contrast ratios (100,000:1+), ultra-thin profiles. Applications: wearables, premium consumer devices, medical wearables.
+
+### PMOLED Displays (36+ SKUs)
+Ultra-low-power OLED modules. Sizes 0.49" to 5.5". Ideal for battery-powered devices, wearables, instrumentation, and IoT.
+
+### Character LCD (45+ SKUs)
+Monochrome character modules (8x1 to 40x4). STN, FSTN, VA types. Proven reliability for industrial controls and instrumentation.
+
+### Graphic LCD (20+ SKUs)
+Monochrome graphic modules. STN, FSTN, COG options. Custom graphics and status displays.
+
+### Smart Displays (30+ SKUs)
+Integrated controller modules. Simplify HMI design with all-in-one display solutions including UART/SPI interfaces.
+
+### Touch Panels (24+ SKUs)
+Capacitive (PCAP) touch solutions. Multi-touch, glove-compatible, custom cover glass, optical bonding.
+
+### Open Frame Monitors (20+ SKUs)
+Industrial monitors for kiosk, gaming, POS, and industrial integration. Optional touch, VESA mounting, wide temperature.
+
+### Tablets (5+ SKUs)
+Custom industrial tablets with ruggedized enclosures.
+
+## Services
+- **EMS / PCB Assembly**: SMT, chip-on-board, sub-assembly, box build
+- **Display Integration & Bonding**: Optical bonding, cover glass lamination, display-to-housing integration
+- **Inventory Management**: JIT inventory, consignment programs, demand planning
+- **Logistics & Kitting**: Custom packaging, kitting, global shipping
+
+## Customization Options
+Every display can be customized: brightness enhancement, optical bonding, custom cover glass, interface adaptation, connector changes, FPC modifications, backlight customization, temperature range extension, branding, and form factor changes.
+
+## Industries Served
+Medical (FDA-ready), Military (MIL-STD), Aerospace, Automotive, Gaming/Casino, Industrial, Wearables, Consumer Electronics, Kiosk/POS, Instrumentation, Marine, Harsh Environments
+
+## Certifications
+ISO 9001 certified quality management system
+
+## Contact
+- Website: https://www.usmicroproducts.com
+- Request Quote: https://www.usmicroproducts.com/support/request-quote
+- Email: info@usmicroproducts.com
+- Phone: (512) 955-1400
+- Address: Austin, TX, USA

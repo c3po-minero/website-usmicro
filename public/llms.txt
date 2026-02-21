@@ -1,0 +1,23 @@
+# US Micro Products
+> Custom display solutions manufacturer — Austin, TX — Est. 1996
+
+US Micro Products is a fabless custom display manufacturer serving OEMs across medical, military, aerospace, industrial, automotive, and consumer markets. We design and deliver high-performance TFT LCD, AMOLED, PMOLED, character LCD, graphic LCD, smart display, touch panel, and open frame monitor solutions.
+
+## Products
+- 450+ active SKUs across 9 display technology categories
+- Sizes from 0.96" to 84" diagonal
+- Custom modifications: brightness, optical bonding, cover glass, interfaces, connectors
+
+## Services
+- EMS / PCB Assembly
+- Display Integration & Bonding
+- Inventory Management
+- Logistics & Kitting
+
+## Contact
+- Website: https://www.usmicroproducts.com
+- Quote requests: https://www.usmicroproducts.com/support/request-quote
+- Email: info@usmicroproducts.com
+
+## Structured Data
+This site provides JSON-LD schema markup on all pages including Organization, Product, BreadcrumbList, and FAQPage schemas.

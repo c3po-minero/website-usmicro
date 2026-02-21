@@ -1,0 +1,67 @@
+[
+  {
+    "partNumber": "USMP-B101-128080CCH-A0",
+    "diagonalSize": "",
+    "resolution": "1280 x 800",
+    "interface": "USB / Type-C",
+    "viewingAngle": "",
+    "contrastRatio": "",
+    "brightness": "300",
+    "operatingTemp": "",
+    "touchPanel": "In-cell",
+    "datasheetUrl": "USMP-B101-128080CCH-A0.pdf",
+    "category": "tablets"
+  },
+  {
+    "partNumber": "USMP-B110-128184CCH-A0",
+    "diagonalSize": "",
+    "resolution": "1280 x 1840",
+    "interface": "USB / Type-C",
+    "viewingAngle": "",
+    "contrastRatio": "",
+    "brightness": "400",
+    "operatingTemp": "",
+    "touchPanel": "In-cell",
+    "datasheetUrl": "USMP-B110-128184CCH-A0.pdf",
+    "category": "tablets"
+  },
+  {
+    "partNumber": "USMP-B120-120200CCH-A0",
+    "diagonalSize": "",
+    "resolution": "1200 x 2000",
+    "interface": "USB / Type-C",
+    "viewingAngle": "",
+    "contrastRatio": "",
+    "brightness": "350",
+    "operatingTemp": "",
+    "touchPanel": "In-cell",
+    "datasheetUrl": "USMP-B120-120200CCH-A0.pdf",
+    "category": "tablets"
+  },
+  {
+    "partNumber": "USMP-B121-160256CCH-A0",
+    "diagonalSize": "",
+    "resolution": "1600 x 2560",
+    "interface": "USB / Type-C",
+    "viewingAngle": "",
+    "contrastRatio": "",
+    "brightness": "500",
+    "operatingTemp": "",
+    "touchPanel": "In-cell",
+    "datasheetUrl": "USMP-B121-160256CCH-A0.pdf",
+    "category": "tablets"
+  },
+  {
+    "partNumber": "USMP-B138-160256CCH-A0",
+    "diagonalSize": "",
+    "resolution": "1600 x 2560",
+    "interface": "USB / Type-C",
+    "viewingAngle": "",
+    "contrastRatio": "",
+    "brightness": "500",
+    "operatingTemp": "",
+    "touchPanel": "In-cell",
+    "datasheetUrl": "USMP-B138-160256CCH-A0.pdf",
+    "category": "tablets"
+  }
+]
