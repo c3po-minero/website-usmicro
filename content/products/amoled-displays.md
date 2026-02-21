@@ -1,6 +1,6 @@
 ---
 title: "AMOLED Displays | Round & Rectangular | US Micro Products"
-description: "Browse 77+ AMOLED display modules from 0.95\" to 6.67\". Round, rectangular & flexible options. Ideal for wearables, medical & military. Get a quote."
+description: "Browse 77+ AMOLED display modules from 0.95\" to 27\". Round, rectangular & flexible options. Ideal for wearables, medical & military. Get a quote."
 keywords: ["AMOLED display manufacturer", "custom AMOLED display", "small AMOLED module", "round AMOLED display", "wearable AMOLED display"]
 url: "/products/amoled-displays"
 schema: ["CollectionPage", "Product", "BreadcrumbList", "FAQPage"]
@@ -8,7 +8,7 @@ schema: ["CollectionPage", "Product", "BreadcrumbList", "FAQPage"]
 
 # AMOLED Displays
 
-US Micro Products stocks over 77 AMOLED display modules from 0.95" to 6.67", available in round, rectangular, and flexible form factors. As the #1 provider of displays for the wearable market, we bring unmatched expertise in specifying and customizing AMOLED panels for applications demanding true blacks, ultra-thin profiles, and exceptional contrast ratios.
+US Micro Products stocks over 77 AMOLED display modules from 0.95" to 27", available in round, rectangular, and flexible form factors. As the #1 provider of displays for the wearable market, we bring unmatched expertise in specifying and customizing AMOLED panels for applications demanding true blacks, ultra-thin profiles, and exceptional contrast ratios.
 
 ## Why AMOLED Technology
 
@@ -65,11 +65,12 @@ AMOLED technology excels in applications that demand premium visual quality, thi
 
 ## Why US Micro Products for AMOLED
 
-**Market leadership.** We are the #1 provider of displays for the wearable market. Our AMOLED expertise is built on thousands of wearable display designs delivered to customers worldwide.
-
-**Panel access.** Our relationships with tier-1 AMOLED panel manufacturers give us access to the latest panel technologies, including flexible substrates, on-cell touch, and high-PPI designs that aren't available through distribution channels.
-
-**Application expertise.** We've solved the hard problems — ultra-low power budgets, curved surface bonding, tiny FPC routing, waterproof integration — so your team benefits from our experience.
+- **#1 Wearable Display Provider:** Thousands of AMOLED designs delivered worldwide — smartwatches, fitness bands, medical wearables. No one has more wearable display experience.
+- **Tier-1 Panel Access:** Direct relationships with leading AMOLED manufacturers. Flexible substrates, on-cell touch, and high-PPI panels not available through distribution.
+- **Deep Application Expertise:** Ultra-low power budgets, curved surface bonding, micro FPC routing, IP68 waterproof integration — problems we've already solved.
+- **Full Customization:** Cover glass, touch integration, optical bonding, custom FPC routing, and shape modifications — all engineered in-house.
+- **Rapid Prototyping:** From spec to sample in weeks, not months. Our engineering team accelerates your design cycle.
+- **End-to-End Support:** From initial concept through mass production — optical design review, mechanical integration, firmware guidance, and supply chain management.
 
 ---
 

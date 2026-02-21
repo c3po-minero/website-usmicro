@@ -194,7 +194,7 @@ function hasListItems(html: string): boolean {
 }
 
 function isWhyChooseSection(title: string): boolean {
-  return /why choose/i.test(title);
+  return /why (choose|us micro)/i.test(title);
 }
 
 function isSpecTable(title: string): boolean {
@@ -210,32 +210,59 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const isWhyChoose = isWhyChooseSection(section.title);
   const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;
 
-  // Why Choose section — navy callout
+  // Why Choose section — gradient callout with optional images
   if (isWhyChoose) {
     return (
-      <section key={section.id} className="py-16 bg-navy text-white">
-        <div className="max-w-[1280px] mx-auto px-6">
-          <h2 className="text-[1.625rem] font-bold text-white mb-8">
-            <i className="fas fa-award text-accent mr-3" />
-            {section.title}
-          </h2>
+      <section key={section.id} className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 opacity-10" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-400 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Why Choose Us</p>
+            <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">
+              {section.title}
+            </h2>
+            <p className="text-white/70 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
+          </div>
           {listItems.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {listItems.map((item, i) => (
-                <div key={i} className="p-5 bg-white/10 rounded-xl border border-white/20">
-                  <h3 className="text-base font-bold text-white mb-1">
-                    <i className={`fas ${getSectionIcon(item.title)} text-accent mr-2`} />
-                    {item.title}
-                  </h3>
-                  {item.description && <p className="text-sm text-white/80 m-0">{item.description}</p>}
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {listItems.map((item, i) => {
+                const icons = ['fa-trophy', 'fa-handshake', 'fa-brain', 'fa-tools', 'fa-rocket', 'fa-headset'];
+                const icon = icons[i % icons.length];
+                return (
+                  <div key={i} className="group p-6 bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/[0.12] hover:border-accent/30 transition-all duration-300">
+                    <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent/30 transition-colors">
+                      <i className={`fas ${icon} text-accent text-lg`} />
+                    </div>
+                    <h3 className="text-[1.0625rem] font-bold text-white mb-2">{item.title}</h3>
+                    {item.description && <p className="text-sm text-white/70 m-0 leading-relaxed">{item.description}</p>}
+                  </div>
+                );
+              })}
             </div>
           ) : (
             <div className="prose prose-invert max-w-none [&_a]:text-accent [&_ul]:list-disc [&_ul]:pl-5 [&_li]:mb-2" dangerouslySetInnerHTML={{ __html: section.html }} />
           )}
+          {/* Decorative image strip */}
+          <div className="mt-12 flex justify-center gap-4 opacity-60">
+            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden">
+              <img src="/images/content/amoled-card.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden sm:block">
+              <img src="/images/products/amoled-displays.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden md:block">
+              <img src="/images/content/product-hero-portrait.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="w-32 h-20 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
+              <img src="/images/content/product-hero-square.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
           {links.length > 0 && (
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="flex flex-wrap justify-center gap-3 mt-8">
               {links.map((link, i) => (
                 <Link key={i} href={link.href} className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
                   {link.text} <i className="fas fa-arrow-right text-xs" />
@@ -428,7 +455,7 @@ export default async function ProductCategoryPage({ params }: Props) {
       <section className="py-16 bg-gray-50" id="products">
         <div className="max-w-[1280px] mx-auto px-6">
           <h2 className="text-2xl font-bold text-navy mb-6">Product Catalog</h2>
-          <ProductTable products={products} categoryName={cat.name} />
+          <ProductTable products={products} categoryName={cat.name} categorySlug={category} />
         </div>
       </section>
 

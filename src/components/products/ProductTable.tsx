@@ -10,43 +10,87 @@ interface Product {
   interface: string;
   viewingAngle: string;
   contrastRatio: string;
+  contrast: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
   datasheetUrl: string;
+  [key: string]: string;
+}
+
+interface ColumnDef {
+  key: string;
+  label: string;
+  icon?: string;
 }
 
 interface ProductTableProps {
   products: Product[];
   categoryName: string;
+  categorySlug?: string;
 }
 
-type SortKey = keyof Product;
 type SortDir = 'asc' | 'desc';
 
 const PAGE_SIZE = 20;
 
-export default function ProductTable({ products, categoryName }: ProductTableProps) {
+// Category-specific column definitions
+const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
+  'amoled-displays': [
+    { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'brightness', label: 'Brightness', icon: 'fa-sun' },
+    { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
+    { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
+    { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  // Default columns for TFT and others
+  default: [
+    { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'resolution', label: 'Resolution', icon: 'fa-th' },
+    { key: 'interface', label: 'Interface', icon: 'fa-plug' },
+    { key: 'brightness', label: 'Brightness', icon: 'fa-sun' },
+    { key: 'operatingTemp', label: 'Temp Range', icon: 'fa-thermometer-half' },
+    { key: 'touchPanel', label: 'Touch', icon: 'fa-hand-pointer' },
+  ],
+};
+
+function getColumns(categorySlug?: string): ColumnDef[] {
+  if (categorySlug && CATEGORY_COLUMNS[categorySlug]) {
+    return CATEGORY_COLUMNS[categorySlug];
+  }
+  return CATEGORY_COLUMNS.default;
+}
+
+export default function ProductTable({ products, categoryName, categorySlug }: ProductTableProps) {
+  const columns = getColumns(categorySlug);
   const [search, setSearch] = useState('');
   const [mobileSearch, setMobileSearch] = useState('');
-  const [sortKey, setSortKey] = useState<SortKey>('partNumber');
+  const [sortKey, setSortKey] = useState<string>('partNumber');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [filterInterface, setFilterInterface] = useState('');
   const [filterTouch, setFilterTouch] = useState('');
   const [filterTemp, setFilterTemp] = useState('');
   const [page, setPage] = useState(1);
 
+  const hasInterface = columns.some(c => c.key === 'interface');
+  const hasTouch = columns.some(c => c.key === 'touchPanel');
+
   const uniqueInterfaces = useMemo(() => {
+    if (!hasInterface) return [];
     const set = new Set<string>();
     products.forEach((p) => { p.interface.split(/[\/,]/).forEach((i) => set.add(i.trim())); });
     return Array.from(set).sort();
-  }, [products]);
+  }, [products, hasInterface]);
 
   const uniqueTouch = useMemo(() => {
+    if (!hasTouch) return [];
     const set = new Set<string>();
     products.forEach((p) => set.add(p.touchPanel || 'N/A'));
     return Array.from(set).sort();
-  }, [products]);
+  }, [products, hasTouch]);
 
   const uniqueTemp = useMemo(() => {
     const set = new Set<string>();
@@ -54,7 +98,6 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     return Array.from(set).sort();
   }, [products]);
 
-  // Active search query — desktop uses search, mobile uses mobileSearch
   const activeSearch = search || mobileSearch;
 
   const filtered = useMemo(() => {
@@ -62,17 +105,11 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     if (activeSearch) {
       const q = activeSearch.toLowerCase();
       result = result.filter((p) =>
-        p.partNumber.toLowerCase().includes(q) ||
-        p.resolution.toLowerCase().includes(q) ||
-        p.interface.toLowerCase().includes(q) ||
-        p.diagonalSize.toLowerCase().includes(q) ||
-        p.brightness.toLowerCase().includes(q) ||
-        p.operatingTemp.toLowerCase().includes(q) ||
-        (p.touchPanel || '').toLowerCase().includes(q)
+        columns.some(col => (p[col.key] || '').toLowerCase().includes(q))
       );
     }
-    if (filterInterface) result = result.filter((p) => p.interface.includes(filterInterface));
-    if (filterTouch) {
+    if (filterInterface && hasInterface) result = result.filter((p) => p.interface.includes(filterInterface));
+    if (filterTouch && hasTouch) {
       result = result.filter((p) => {
         const touch = p.touchPanel || 'N/A';
         return filterTouch === 'N/A' ? (touch === 'N/A' || touch === '-' || touch === '') : touch === filterTouch;
@@ -84,7 +121,7 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
       return sortDir === 'asc' ? cmp : -cmp;
     });
     return result;
-  }, [products, activeSearch, sortKey, sortDir, filterInterface, filterTouch, filterTemp]);
+  }, [products, activeSearch, sortKey, sortDir, filterInterface, filterTouch, filterTemp, columns, hasInterface, hasTouch]);
 
   const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
   const safePage = Math.min(page, totalPages || 1);
@@ -93,22 +130,12 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
   const pageStart = (safePage - 1) * PAGE_SIZE;
   const paged = filtered.slice(pageStart, pageStart + PAGE_SIZE);
 
-  const handleSort = (key: SortKey) => {
+  const handleSort = (key: string) => {
     if (sortKey === key) setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
     else { setSortKey(key); setSortDir('asc'); }
   };
 
   const updateFilter = <T,>(setter: (v: T) => void) => (v: T) => { setter(v); setPage(1); };
-
-  const columns: { key: SortKey; label: string }[] = [
-    { key: 'diagonalSize', label: 'Size' },
-    { key: 'partNumber', label: 'Part Number' },
-    { key: 'resolution', label: 'Resolution' },
-    { key: 'interface', label: 'Interface' },
-    { key: 'brightness', label: 'Brightness' },
-    { key: 'operatingTemp', label: 'Temp Range' },
-    { key: 'touchPanel', label: 'Touch' },
-  ];
 
   const pageNumbers = useMemo(() => {
     const pages: (number | '...')[] = [];
@@ -131,16 +158,24 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
     return <span className="inline-block px-2 py-0.5 rounded bg-gray-200 text-gray-700 text-[0.6875rem] font-semibold">N/A</span>;
   };
 
+  const renderCellValue = (product: Product, col: ColumnDef) => {
+    const val = product[col.key] || '';
+    if (col.key === 'diagonalSize') return <>{val}&quot;</>;
+    if (col.key === 'partNumber') return <span className="font-semibold text-navy">{val}</span>;
+    if (col.key === 'touchPanel') return touchBadge(val);
+    return <>{val}</>;
+  };
+
   return (
     <div>
-      {/* Mobile search — single full-width input */}
+      {/* Mobile search */}
       <div className="md:hidden mb-4">
         <div className="flex gap-2">
           <input
             type="text"
             value={mobileSearch}
             onChange={(e) => { setMobileSearch(e.target.value); setPage(1); }}
-            placeholder="Search part number, resolution, interface..."
+            placeholder="Search part number, resolution..."
             className="flex-1 px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10"
             aria-label="Search all products"
           />
@@ -155,20 +190,24 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
 
       {/* Desktop filter controls */}
       <div className="hidden md:flex flex-wrap gap-3 mb-4 items-center">
-        <div className="flex items-center gap-1.5">
-          <label htmlFor="filter-interface" className="text-[0.8125rem] font-semibold text-gray-700">Interface:</label>
-          <select id="filter-interface" value={filterInterface} onChange={(e) => updateFilter(setFilterInterface)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by interface">
-            <option value="">All</option>
-            {uniqueInterfaces.map((i) => <option key={i} value={i}>{i}</option>)}
-          </select>
-        </div>
-        <div className="flex items-center gap-1.5">
-          <label htmlFor="filter-touch" className="text-[0.8125rem] font-semibold text-gray-700">Touch:</label>
-          <select id="filter-touch" value={filterTouch} onChange={(e) => updateFilter(setFilterTouch)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by touch type">
-            <option value="">All</option>
-            {uniqueTouch.map((t) => <option key={t} value={t}>{t === 'N/A' || t === '-' || t === '' ? 'None' : t}</option>)}
-          </select>
-        </div>
+        {hasInterface && (
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="filter-interface" className="text-[0.8125rem] font-semibold text-gray-700">Interface:</label>
+            <select id="filter-interface" value={filterInterface} onChange={(e) => updateFilter(setFilterInterface)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by interface">
+              <option value="">All</option>
+              {uniqueInterfaces.map((i) => <option key={i} value={i}>{i}</option>)}
+            </select>
+          </div>
+        )}
+        {hasTouch && (
+          <div className="flex items-center gap-1.5">
+            <label htmlFor="filter-touch" className="text-[0.8125rem] font-semibold text-gray-700">Touch:</label>
+            <select id="filter-touch" value={filterTouch} onChange={(e) => updateFilter(setFilterTouch)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by touch type">
+              <option value="">All</option>
+              {uniqueTouch.map((t) => <option key={t} value={t}>{t === 'N/A' || t === '-' || t === '' ? 'None' : t}</option>)}
+            </select>
+          </div>
+        )}
         <div className="flex items-center gap-1.5">
           <label htmlFor="filter-temp" className="text-[0.8125rem] font-semibold text-gray-700">Temp:</label>
           <select id="filter-temp" value={filterTemp} onChange={(e) => updateFilter(setFilterTemp)(e.target.value)} className="px-3 py-2 border border-gray-300 rounded-md text-[0.8125rem] bg-white focus:outline-none focus:border-blue-mid focus:ring-3 focus:ring-blue/10" aria-label="Filter by temperature range">
@@ -203,14 +242,12 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
           </thead>
           <tbody>
             {paged.map((product, idx) => (
-              <tr key={product.partNumber} className={`hover:bg-blue-light border-b border-gray-100 ${idx % 2 === 1 ? 'bg-gray-50/50' : ''}`}>
-                <td className="px-4 py-3 text-gray-700">{product.diagonalSize}&quot;</td>
-                <td className="px-4 py-3 font-semibold text-navy">{product.partNumber}</td>
-                <td className="px-4 py-3 text-gray-700">{product.resolution}</td>
-                <td className="px-4 py-3 text-gray-700">{product.interface}</td>
-                <td className="px-4 py-3 text-gray-700">{product.brightness}</td>
-                <td className="px-4 py-3 text-gray-700">{product.operatingTemp}</td>
-                <td className="px-4 py-3">{touchBadge(product.touchPanel)}</td>
+              <tr key={`${product.partNumber}-${idx}`} className={`hover:bg-blue-light border-b border-gray-100 ${idx % 2 === 1 ? 'bg-gray-50/50' : ''}`}>
+                {columns.map((col) => (
+                  <td key={col.key} className={`px-4 py-3 ${col.key === 'partNumber' ? 'font-semibold text-navy' : 'text-gray-700'}`}>
+                    {renderCellValue(product, col)}
+                  </td>
+                ))}
                 <td className="px-4 py-3">
                   <div className="flex gap-2 whitespace-nowrap">
                     {product.datasheetUrl && (
@@ -231,18 +268,21 @@ export default function ProductTable({ products, categoryName }: ProductTablePro
 
       {/* Mobile Cards */}
       <div className="md:hidden space-y-3">
-        {paged.map((product) => (
-          <div key={product.partNumber} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+        {paged.map((product, idx) => (
+          <div key={`${product.partNumber}-${idx}`} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
             <p className="text-base font-bold text-navy mb-2">{product.partNumber}</p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 mb-2">
-              <span><i className="fas fa-expand-alt text-gray-400 mr-1" />{product.diagonalSize}&quot;</span>
-              <span><i className="fas fa-th text-gray-400 mr-1" />{product.resolution}</span>
-              <span><i className="fas fa-plug text-gray-400 mr-1" />{product.interface}</span>
+              {columns.filter(c => c.key !== 'partNumber').slice(0, 3).map(col => (
+                <span key={col.key}><i className={`fas ${col.icon || 'fa-circle'} text-gray-400 mr-1`} />{col.key === 'diagonalSize' ? `${product[col.key]}"` : (product[col.key] || 'N/A')}</span>
+              ))}
             </div>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-600 mb-3">
-              <span><i className="fas fa-sun text-gray-400 mr-1" />{product.brightness}</span>
-              <span><i className="fas fa-thermometer-half text-gray-400 mr-1" />{product.operatingTemp}</span>
-              <span>{touchBadge(product.touchPanel)}</span>
+              {columns.filter(c => c.key !== 'partNumber').slice(3).map(col => (
+                <span key={col.key}>
+                  <i className={`fas ${col.icon || 'fa-circle'} text-gray-400 mr-1`} />
+                  {col.key === 'touchPanel' ? (product[col.key] || 'N/A') : (product[col.key] || 'N/A')}
+                </span>
+              ))}
             </div>
             <div className="flex gap-2">
               {product.datasheetUrl && (

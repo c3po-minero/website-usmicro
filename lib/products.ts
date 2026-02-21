@@ -11,8 +11,10 @@ export interface Product {
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
+  contrast: string;
   datasheetUrl: string;
   category: string;
+  [key: string]: string;
 }
 
 const dataDir = path.join(process.cwd(), 'data/products');
