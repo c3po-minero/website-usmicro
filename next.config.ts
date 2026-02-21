@@ -13,7 +13,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: https://djnr.net https://*.vercel.app https://www.usmicroproducts.com",
+      "img-src 'self' data: https://djnr.net https://*.vercel.app https://www.usmicroproducts.com https://images.unsplash.com",
       "font-src 'self' data:",
       "connect-src 'self'",
       "frame-ancestors 'none'",
@@ -35,6 +35,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'djnr.net' },
       { protocol: 'https', hostname: 'www.usmicroproducts.com' },
+      { protocol: 'https', hostname: 'images.unsplash.com' },
     ],
   },
 };

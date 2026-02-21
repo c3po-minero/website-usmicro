@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 const logos = [
@@ -12,24 +14,33 @@ const logos = [
 ];
 
 export default function LogoCarousel() {
-  const allLogos = [...logos, ...logos]; // duplicate for infinite scroll
+  // Triple the logos for seamless infinite scroll
+  const allLogos = [...logos, ...logos, ...logos];
+
   return (
     <section className="bg-gray-50 py-12">
       <div className="max-w-[1280px] mx-auto px-6">
         <h2 className="text-center text-[1.875rem] font-bold text-navy mb-3">Trusted by Industry Leaders</h2>
         <p className="text-center text-gray-700 mb-6">Our customers include some of the world&apos;s most demanding OEMs and contract manufacturers.</p>
         <div className="overflow-hidden py-6" aria-label="Customer logos">
-          <div className="logo-carousel-track flex gap-20 items-center w-max">
+          <div
+            className="flex gap-16 items-center w-max"
+            style={{
+              animation: 'logoScroll 40s linear infinite',
+            }}
+          >
             {allLogos.map((logo, i) => (
-              <Image
-                key={i}
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.w}
-                height={logo.h}
-                className="h-10 w-auto opacity-70 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-                loading="lazy"
-              />
+              <div key={i} className="flex-shrink-0">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.w}
+                  height={logo.h}
+                  className="h-10 w-auto opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  loading="eager"
+                  unoptimized={logo.src.endsWith('.svg')}
+                />
+              </div>
             ))}
           </div>
         </div>

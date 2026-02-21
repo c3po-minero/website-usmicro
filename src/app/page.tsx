@@ -23,12 +23,12 @@ const pillars = [
 ];
 
 const productCategories = [
-  { title: 'TFT LCD Displays', desc: '225+ models from 0.96" to 84". IPS, TN, and MVA types with SPI, LVDS, MIPI, and RGB interfaces.', href: '/products/tft-displays', icon: 'fa-desktop' },
-  { title: 'AMOLED Displays', desc: '77+ modules from 0.95" to 6.67". Round, rectangular, and flexible form factors for wearables and premium devices.', href: '/products/amoled-displays', icon: 'fa-mobile-alt' },
-  { title: 'PMOLED Displays', desc: '36+ ultra-low-power OLED modules for wearables, instrumentation, and battery-powered devices.', href: '/products/pmoled-displays', icon: 'fa-lightbulb' },
-  { title: 'Touch Panels', desc: '24+ capacitive touch solutions. PCAP, multi-touch, glove-compatible, and custom cover glass options.', href: '/products/touch-panels', icon: 'fa-hand-pointer' },
-  { title: 'Open Frame Monitors', desc: '20+ monitors for kiosk, gaming, POS, and industrial integration with optional touch and VESA mounting.', href: '/products/open-frame-monitors', icon: 'fa-tv' },
-  { title: 'Smart Displays', desc: '30+ modules with integrated controllers. Simplify your HMI design with all-in-one display solutions.', href: '/products/smart-displays', icon: 'fa-microchip' },
+  { title: 'TFT LCD Displays', desc: '225+ models from 0.96" to 84". IPS, TN, and MVA types with SPI, LVDS, MIPI, and RGB interfaces.', href: '/products/tft-displays', icon: 'fa-desktop', imageUrl: 'https://images.unsplash.com/photo-1588508065123-287b28e013da?w=600&q=80' },
+  { title: 'AMOLED Displays', desc: '77+ modules from 0.95" to 6.67". Round, rectangular, and flexible form factors for wearables and premium devices.', href: '/products/amoled-displays', icon: 'fa-mobile-alt', imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=600&q=80' },
+  { title: 'PMOLED Displays', desc: '36+ ultra-low-power OLED modules for wearables, instrumentation, and battery-powered devices.', href: '/products/pmoled-displays', icon: 'fa-lightbulb', imageUrl: 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&q=80' },
+  { title: 'Touch Panels', desc: '24+ capacitive touch solutions. PCAP, multi-touch, glove-compatible, and custom cover glass options.', href: '/products/touch-panels', icon: 'fa-hand-pointer', imageUrl: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80' },
+  { title: 'Open Frame Monitors', desc: '20+ monitors for kiosk, gaming, POS, and industrial integration with optional touch and VESA mounting.', href: '/products/open-frame-monitors', icon: 'fa-tv', imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&q=80' },
+  { title: 'Smart Displays', desc: '30+ modules with integrated controllers. Simplify your HMI design with all-in-one display solutions.', href: '/products/smart-displays', icon: 'fa-microchip', imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80' },
 ];
 
 const industries = [
@@ -132,7 +132,7 @@ export default function HomePage() {
           <p className="text-center text-gray-700 max-w-[640px] mx-auto mb-10">From compact wearable screens to large-format industrial monitors, we offer the broadest range of display technologies in the industry.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {productCategories.map((cat) => (
-              <ProductCard key={cat.href} title={cat.title} description={cat.desc} href={cat.href} icon={cat.icon} />
+              <ProductCard key={cat.href} title={cat.title} description={cat.desc} href={cat.href} icon={cat.icon} imageUrl={cat.imageUrl} />
             ))}
           </div>
         </div>
