@@ -11,7 +11,7 @@ const LogoCarousel = dynamic(() => import('@/components/ui/LogoCarousel'));
 const NewsletterSignup = dynamic(() => import('@/components/ui/NewsletterSignup'));
 
 const stats = [
-  { number: '25+', label: 'Years in Business' },
+  { number: '30', label: 'Celebrating Our 30th Anniversary' },
   { number: '450+', label: 'Active SKUs' },
   { number: '6', label: 'Global Offices' },
   { number: '200+', label: 'Custom Designs / Year' },

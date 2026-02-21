@@ -48,12 +48,14 @@ const submenus = { products: productLinks, applications: applicationLinks };
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobilePanel, setMobilePanel] = useState<'main' | 'products' | 'applications'>('main');
+  const [megaHidden, setMegaHidden] = useState(false);
   const pathname = usePathname();
 
   // Close mobile menu on navigation
   useEffect(() => {
     setMobileOpen(false);
     setMobilePanel('main');
+    setMegaHidden(false);
   }, [pathname]);
 
   // Prevent body scroll when mobile menu open
@@ -80,26 +82,26 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" role="navigation" aria-label="Main navigation">
-          <div className="nav-item relative group">
+          <div className="nav-item relative group" onMouseLeave={() => setMegaHidden(false)}>
             <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
               Products <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
             </button>
-            <div className="mega-menu hidden group-hover:grid group-focus-within:grid absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50">
+            <div className={`mega-menu absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50 ${megaHidden ? 'hidden' : 'hidden group-hover:grid group-focus-within:grid'}`}>
               {productLinks.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem">
+                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem" onClick={() => setMegaHidden(true)}>
                   <i className={`fas ${item.icon} w-[18px] text-blue-mid text-sm`} />
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="nav-item relative group">
+          <div className="nav-item relative group" onMouseLeave={() => setMegaHidden(false)}>
             <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
               Applications <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
             </button>
-            <div className="mega-menu hidden group-hover:grid group-focus-within:grid absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50">
+            <div className={`mega-menu absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-6 min-w-[600px] grid-cols-3 gap-2 z-50 ${megaHidden ? 'hidden' : 'hidden group-hover:grid group-focus-within:grid'}`}>
               {applicationLinks.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem">
+                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem" onClick={() => setMegaHidden(true)}>
                   <i className={`fas ${item.icon} w-[18px] text-blue-mid text-sm`} />
                   {item.label}
                 </Link>
