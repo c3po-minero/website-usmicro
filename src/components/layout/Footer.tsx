@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Products</h4>
+            <p className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Products</p>
             <ul className="space-y-2">
               {[['TFT Displays', '/products/tft-displays'], ['AMOLED Displays', '/products/amoled-displays'], ['PMOLED Displays', '/products/pmoled-displays'], ['Touch Panels', '/products/touch-panels'], ['Open Frame Monitors', '/products/open-frame-monitors'], ['Smart Displays', '/products/smart-displays']].map(([label, href]) => (
                 <li key={href}><Link href={href} className="text-white/60 text-[0.8125rem] hover:text-white transition-colors">{label}</Link></li>
@@ -24,7 +24,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Applications</h4>
+            <p className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Applications</p>
             <ul className="space-y-2">
               {[['Medical', '/applications/medical'], ['Military', '/applications/military'], ['Aerospace', '/applications/aerospace'], ['Industrial', '/applications/industrial'], ['Automotive', '/applications/automotive'], ['Wearables', '/applications/wearables']].map(([label, href]) => (
                 <li key={href}><Link href={href} className="text-white/60 text-[0.8125rem] hover:text-white transition-colors">{label}</Link></li>
@@ -32,7 +32,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Company</h4>
+            <p className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Company</p>
             <ul className="space-y-2">
               {[['About Us', '/about'], ['Leadership', '/about/leadership'], ['Quality', '/about/quality'], ['Careers', '/about/careers'], ['Contact', '/contact']].map(([label, href]) => (
                 <li key={href}><Link href={href} className="text-white/60 text-[0.8125rem] hover:text-white transition-colors">{label}</Link></li>
@@ -40,7 +40,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Resources</h4>
+            <p className="text-white text-[0.8125rem] uppercase tracking-wider font-bold mb-4">Resources</p>
             <ul className="space-y-2">
               {[['Learning Center', '/learn/tft-display-technology'], ['FAQ', '/support/faq'], ['Request Quote', '/support/request-quote'], ['Services', '/services/ems']].map(([label, href]) => (
                 <li key={href}><Link href={href} className="text-white/60 text-[0.8125rem] hover:text-white transition-colors">{label}</Link></li>

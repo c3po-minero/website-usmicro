@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -34,13 +35,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+        <noscript><link rel="stylesheet" href="/fontawesome/css/all.min.css" /></noscript>
       </head>
       <body className="font-sans text-gray-900 bg-white leading-relaxed antialiased">
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <Script id="load-fontawesome" strategy="afterInteractive">
+          {`var l=document.createElement('link');l.rel='stylesheet';l.href='/fontawesome/css/all.min.css';document.head.appendChild(l);`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

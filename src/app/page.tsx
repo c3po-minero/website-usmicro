@@ -1,12 +1,14 @@
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/ui/HeroSection';
 import StatsBar from '@/components/ui/StatsBar';
 import IndustryCard from '@/components/ui/IndustryCard';
 import ProductCard from '@/components/ui/ProductCard';
-import FAQAccordion from '@/components/ui/FAQAccordion';
 import CTABanner from '@/components/ui/CTABanner';
-import NewsletterSignup from '@/components/ui/NewsletterSignup';
-import LogoCarousel from '@/components/ui/LogoCarousel';
 import Link from 'next/link';
+
+const FAQAccordion = dynamic(() => import('@/components/ui/FAQAccordion'));
+const LogoCarousel = dynamic(() => import('@/components/ui/LogoCarousel'));
+const NewsletterSignup = dynamic(() => import('@/components/ui/NewsletterSignup'));
 
 const stats = [
   { number: '25+', label: 'Years in Business' },
