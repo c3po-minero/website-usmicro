@@ -440,8 +440,10 @@ function renderSection(section: { id: string; title: string; html: string }, idx
 
   // Sections with lists — icon card grid
   if (listItems.length > 0) {
-    // Remove list from HTML for intro text
+    // Remove list from HTML for intro text, and strip paragraphs that are only links
     let introHtml = section.html.replace(/<ul[\s\S]*?<\/ul>/gi, '').replace(/<ol[\s\S]*?<\/ol>/gi, '');
+    // Strip paragraphs that contain only links (CTA paragraphs)
+    introHtml = introHtml.replace(/<p>\s*(?:<a\s[^>]*>[^<]*<\/a>\s*\|?\s*)+<\/p>/gi, '');
     if (isCustomization) introHtml = introHtml.replace(/<p>[\s\S]*?<a[\s\S]*?<\/a>[\s\S]*?<\/p>/gi, '');
     const hasIntro = introHtml.replace(/<[^>]*>/g, '').trim().length > 20;
 

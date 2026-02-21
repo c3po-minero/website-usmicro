@@ -56,5 +56,4 @@ Custom tablet development follows our Engineering Display Solution Process (EDSP
 
 Typical development timeline: 16–24 weeks from requirements lock to production-ready units.
 
-[Request a Quote](/support/request-quote)
-[Learn About Custom Solutions](/products/custom-displays)
+[Request a Quote](/support/request-quote) | [Learn About Custom Solutions](/products/custom-displays)
