@@ -39,7 +39,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <noscript><link rel="stylesheet" href="/fontawesome/css/all.min.css" /></noscript>
       </head>
       <body className="font-sans text-gray-900 bg-white leading-relaxed antialiased">
-        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
