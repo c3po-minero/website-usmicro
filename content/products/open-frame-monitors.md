@@ -10,15 +10,6 @@ schema: ["CollectionPage", "Product", "BreadcrumbList"]
 
 US Micro Products offers 20+ open frame monitor assemblies designed for integration into kiosks, gaming cabinets, POS terminals, digital signage enclosures, and industrial equipment. Open frame monitors arrive as complete, tested display assemblies — panel, driver board, power supply, and optional touch screen — without an external enclosure, ready to mount directly into your system's housing.
 
-### Projected Capacitive (PCAP)
-Multi-touch, durable, works through thick cover glass. Standard for new kiosk and POS designs. USB interface to host.
-
-### Resistive Touch
-Single-touch, works with any pointing device (finger, glove, stylus). Lower cost option. USB or serial interface.
-
-### No Touch
-Display-only for signage, status displays, and non-interactive applications.
-
 ## What Is an Open Frame Monitor
 
 An open frame monitor is a fully functional LCD display assembly without a consumer-style enclosure. It includes:
@@ -30,6 +21,17 @@ An open frame monitor is a fully functional LCD display assembly without a consu
 - **Optional touch screen** — PCAP or resistive touch overlay with USB controller
 
 The OEM integrator mounts the open frame monitor into their own enclosure, chassis, or panel cutout. This approach eliminates the cost and bulk of a consumer monitor enclosure while providing a display assembly that's pre-tested and ready for integration.
+
+## Touch Options
+
+### Projected Capacitive (PCAP)
+Multi-touch, durable, works through thick cover glass. Standard for new kiosk and POS designs. USB interface to host.
+
+### Resistive Touch
+Single-touch, works with any pointing device (finger, glove, stylus). Lower cost option. USB or serial interface.
+
+### No Touch
+Display-only for signage, status displays, and non-interactive applications.
 
 ## Video Input Options
 
