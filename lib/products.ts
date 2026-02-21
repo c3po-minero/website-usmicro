@@ -16,6 +16,14 @@ export interface Product {
   color: string;
   bonding: string;
   ic: string;
+  char: string;
+  moduleSize: string;
+  dotSize: string;
+  viewingArea: string;
+  backlightType: string;
+  ledColor: string;
+  glass: string;
+  image: string;
   datasheetUrl: string;
   category: string;
   [key: string]: string;

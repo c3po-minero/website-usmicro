@@ -15,6 +15,14 @@ interface Product {
   color: string;
   bonding: string;
   ic: string;
+  char: string;
+  moduleSize: string;
+  dotSize: string;
+  viewingArea: string;
+  backlightType: string;
+  ledColor: string;
+  glass: string;
+  image: string;
   brightness: string;
   operatingTemp: string;
   touchPanel: string;
@@ -48,6 +56,22 @@ const CATEGORY_COLUMNS: Record<string, ColumnDef[]> = {
     { key: 'contrast', label: 'Contrast', icon: 'fa-adjust' },
     { key: 'operatingTemp', label: 'Temperature', icon: 'fa-thermometer-half' },
     { key: 'viewingAngle', label: 'Viewing Angles', icon: 'fa-users' },
+  ],
+  'character-lcd': [
+    { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
+    { key: 'partNumber', label: 'Part Number', icon: 'fa-barcode' },
+    { key: 'char', label: 'Char', icon: 'fa-font' },
+    { key: 'moduleSize', label: 'Module Size', icon: 'fa-ruler-combined' },
+    { key: 'dotSize', label: 'Dot Size', icon: 'fa-braille' },
+    { key: 'viewingArea', label: 'Viewing Area', icon: 'fa-vector-square' },
+    { key: 'operatingTemp', label: 'Operating Temp.', icon: 'fa-thermometer-half' },
+    { key: 'viewingAngle', label: 'Viewing Angle', icon: 'fa-eye' },
+    { key: 'backlightType', label: 'Backlight Type', icon: 'fa-lightbulb' },
+    { key: 'ledColor', label: 'LED Color', icon: 'fa-palette' },
+    { key: 'interface', label: 'System Interface', icon: 'fa-plug' },
+    { key: 'glass', label: 'Glass', icon: 'fa-layer-group' },
+    { key: 'touchPanel', label: 'Touch Panel', icon: 'fa-hand-pointer' },
+    { key: 'image', label: 'Image', icon: 'fa-image' },
   ],
   'pmoled-displays': [
     { key: 'diagonalSize', label: 'Size', icon: 'fa-expand-alt' },
@@ -241,8 +265,8 @@ export default function ProductTable({ products, categoryName, categorySlug }: P
       </p>
 
       {/* Desktop Table */}
-      <div className="hidden md:block product-table-wrap border border-gray-200 rounded-xl">
-        <table className="w-full border-collapse text-[0.8125rem] whitespace-nowrap" aria-label={`${categoryName} specifications`}>
+      <div className="hidden md:block product-table-wrap border border-gray-200 rounded-xl overflow-x-auto">
+        <table className={`w-full border-collapse whitespace-nowrap ${columns.length > 10 ? 'text-[0.6875rem]' : 'text-[0.8125rem]'}`} aria-label={`${categoryName} specifications`}>
           <thead className="bg-navy">
             <tr>
               {columns.map((col) => (

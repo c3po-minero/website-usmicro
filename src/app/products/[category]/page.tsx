@@ -209,6 +209,8 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const links = extractLinks(section.html);
   const isWhyChoose = isWhyChooseSection(section.title);
   const isWhenToChoose = /when to choose/i.test(section.title);
+  const isKeyAdvantages = /key advantages/i.test(section.title);
+  const isApplications = /^applications$/i.test(section.title.trim());
   const isSpecTableSection = isSpecTable(section.title) || tableRows !== null;
 
   // "When to Choose" section — horizontal feature highlights with accent left border
@@ -254,6 +256,101 @@ function renderSection(section: { id: string; title: string; html: string }, idx
         </section>
       );
     }
+  }
+
+  // Key Advantages — gradient bg with cards + decorative photos
+  if (isKeyAdvantages && listItems.length > 0) {
+    const advIcons = ['fa-code', 'fa-battery-full', 'fa-thermometer-half', 'fa-shield-alt', 'fa-dollar-sign', 'fa-plug'];
+    return (
+      <section key={section.id} className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+        <div className="absolute inset-0 opacity-10" aria-hidden="true">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-400 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
+        </div>
+        <div className="relative max-w-[1280px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Why It Matters</p>
+            <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">{section.title}</h2>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Left: 4 cards */}
+            <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {listItems.map((item, i) => (
+                <div key={i} className="group p-5 bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/[0.12] hover:border-accent/30 transition-all duration-300">
+                  <div className="w-10 h-10 bg-accent/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-accent/30 transition-colors">
+                    <i className={`fas ${advIcons[i % advIcons.length]} text-accent`} />
+                  </div>
+                  <h3 className="text-[0.9375rem] font-bold text-white mb-1">{item.title}</h3>
+                  {item.description && <p className="text-sm text-white/70 m-0 leading-relaxed">{item.description}</p>}
+                </div>
+              ))}
+            </div>
+            {/* Right: stacked photos */}
+            <div className="hidden lg:flex flex-col gap-4">
+              <div className="flex-1 rounded-2xl overflow-hidden border border-white/10">
+                <img src="/images/content/character-lcd-1.webp" alt="Character LCD display" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="flex-1 rounded-2xl overflow-hidden border border-white/10">
+                <img src="/images/content/character-lcd-2.webp" alt="Character LCD application" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Applications — 2-column layout: cards left, photos right
+  if (isApplications && listItems.length > 0) {
+    return (
+      <section key={section.id} className="py-16 bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <h2 className="text-[1.625rem] font-bold text-navy mb-8">{section.title}</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left: application cards + CTAs */}
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {listItems.map((item, i) => {
+                  const appIcons = ['fa-industry', 'fa-tachometer-alt', 'fa-heartbeat', 'fa-shopping-cart', 'fa-cog', 'fa-microchip'];
+                  return (
+                    <div key={i} className="p-4 bg-white rounded-xl border border-gray-200 hover:shadow-md hover:border-accent/30 transition-all duration-300">
+                      <h3 className="text-[0.9375rem] font-bold text-navy mb-1">
+                        <i className={`fas ${appIcons[i % appIcons.length]} text-accent mr-2`} />
+                        {item.title}
+                      </h3>
+                      {item.description && <p className="text-xs text-gray-600 m-0 leading-relaxed">{item.description}</p>}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/support/request-quote" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                  <i className="fas fa-file-alt" /> Request a Quote
+                </Link>
+                <Link href="/learn/lcd-technology" className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-lg font-semibold hover:bg-blue transition-colors">
+                  <i className="fas fa-book-open" /> Learn About LCD Technology
+                </Link>
+              </div>
+            </div>
+            {/* Right: 2x2 photo grid */}
+            <div className="grid grid-cols-2 gap-3">
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/images/content/character-lcd-1.webp" alt="Industrial LCD application" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/images/content/character-lcd-2.webp" alt="Instrumentation display" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/images/content/graphic-lcd-1.webp" alt="LCD module close-up" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="rounded-xl overflow-hidden aspect-[4/3]">
+                <img src="/images/content/product-hero-square.webp" alt="Display integration" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
 
   // Why Choose section — gradient callout with optional images
@@ -607,6 +704,111 @@ export default async function ProductCategoryPage({ params }: Props) {
               </div>
               <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
                 <img src="/images/products/amoled-displays.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Character LCD vs Graphic LCD Comparison */}
+      {category === 'character-lcd' && (
+        <section className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0a1628 0%, #1a2d4a 50%, #0f1d32 100%)' }}>
+          <div className="absolute inset-0 opacity-10" aria-hidden="true">
+            <div className="absolute top-0 left-1/4 w-80 h-80 bg-accent rounded-full blur-[100px]" />
+            <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-400 rounded-full blur-[80px]" />
+          </div>
+          <div className="relative max-w-[1280px] mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="text-accent text-sm font-semibold uppercase tracking-[2px] mb-3">Technology Comparison</p>
+              <h2 className="text-[2rem] md:text-[2.5rem] font-bold text-white mb-4">Character LCD vs. Graphic LCD</h2>
+              <p className="text-white/70 text-lg max-w-2xl mx-auto">Choose the right LCD technology for your application requirements.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Character LCD Side */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-font text-accent text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Character LCD</h3>
+                    <p className="text-white/50 text-sm">Text & Symbol Displays</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Content', value: 'Text, numbers, basic symbols', icon: 'fa-font' },
+                    { label: 'Resolution', value: '8×1 to 40×4 characters', icon: 'fa-th' },
+                    { label: 'Interface', value: 'Parallel 6800, I2C, SPI', icon: 'fa-plug' },
+                    { label: 'Firmware', value: '★★★★★ Minimal (ASCII)', icon: 'fa-code' },
+                    { label: 'Power', value: '★★★★★ Ultra-low (1-50 mA)', icon: 'fa-battery-full' },
+                    { label: 'Cost', value: '★★★★★ Lowest', icon: 'fa-tag' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-accent/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-24 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-accent/10 rounded-xl border border-accent/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-accent">Best for:</strong> Industrial readouts, instrumentation, HVAC, appliance panels — anywhere text content is sufficient</p>
+                </div>
+              </div>
+
+              {/* Graphic LCD Side */}
+              <div className="bg-white/[0.07] backdrop-blur-sm rounded-2xl border border-white/10 p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-blue-400/20 rounded-xl flex items-center justify-center">
+                    <i className="fas fa-th text-blue-400 text-xl" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Graphic LCD</h3>
+                    <p className="text-white/50 text-sm">Pixel-Level Control</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  {[
+                    { label: 'Content', value: 'Graphics, charts, multi-language', icon: 'fa-image' },
+                    { label: 'Resolution', value: '128×64 to 320×240 pixels', icon: 'fa-th' },
+                    { label: 'Interface', value: 'SPI, Parallel, I2C', icon: 'fa-plug' },
+                    { label: 'Firmware', value: '★★★ Frame buffer required', icon: 'fa-code' },
+                    { label: 'Power', value: '★★★★ Low', icon: 'fa-battery-full' },
+                    { label: 'Cost', value: '★★★★ Low-moderate', icon: 'fa-tag' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 py-2 border-b border-white/10 last:border-0">
+                      <i className={`fas ${item.icon} text-blue-400/70 w-5 text-center text-sm`} />
+                      <span className="text-white/50 text-sm w-24 flex-shrink-0">{item.label}</span>
+                      <span className="text-white text-sm font-medium">{item.value}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 p-4 bg-blue-400/10 rounded-xl border border-blue-400/20">
+                  <p className="text-white/80 text-sm m-0"><strong className="text-blue-400">Best for:</strong> Custom UIs, waveforms, bar charts, logos, multi-language text, and richer visual content</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link href="/products/graphic-lcd" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-colors border border-white/20">
+                Browse Graphic LCDs <i className="fas fa-arrow-right text-xs" />
+              </Link>
+              <Link href="/products/tft-displays" className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:bg-accent-hover transition-colors">
+                Need Full Color? See TFT <i className="fas fa-arrow-right text-xs" />
+              </Link>
+            </div>
+            {/* Photos */}
+            <div className="mt-10 flex justify-center gap-4 opacity-50">
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden">
+                <img src="/images/content/character-lcd-1.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden sm:block">
+                <img src="/images/content/character-lcd-2.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden md:block">
+                <img src="/images/content/graphic-lcd-1.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="w-28 h-18 bg-white/10 rounded-lg overflow-hidden hidden lg:block">
+                <img src="/images/content/graphic-lcd-2.webp" alt="" className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>

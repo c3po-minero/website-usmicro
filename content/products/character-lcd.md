@@ -16,22 +16,9 @@ Character LCD modules combine a passive-matrix LCD glass panel with an integrate
 
 The display is organized in rows and columns of fixed character cells, each typically 5×8 pixels. Standard configurations include 8×1, 8×2, 16×1, 16×2, 16×4, 20×2, 20×4, 24×2, and 40×4 — with 16×2 and 20×4 being the most commonly specified.
 
-## Standard Configurations
-
-| Configuration | Characters | Active Area (typical) | Common Use Cases |
-|--------------|-----------|----------------------|-----------------|
-| 8×1 | 8 | 38 × 8 mm | Compact readouts, single-value displays |
-| 8×2 | 16 | 38 × 16 mm | Dual-line status, label + value |
-| 16×1 | 16 | 65 × 8 mm | Wide single-line readouts |
-| 16×2 | 32 | 65 × 16 mm | General purpose, most popular |
-| 16×4 | 64 | 62 × 26 mm | Multi-parameter monitoring |
-| 20×2 | 40 | 77 × 16 mm | Extended text display |
-| 20×4 | 80 | 77 × 26 mm | Menu-driven interfaces |
-| 40×4 | 160 | 147 × 30 mm | Data-dense industrial panels |
-
 ## Interface Options
 
-- **Parallel 4-bit/8-bit** — Standard HD44780 interface. Maximum compatibility with microcontrollers and legacy systems.
+- **Parallel 4-bit/8-bit (6800)** — Standard HD44780 interface. Maximum compatibility with microcontrollers and legacy systems.
 - **I2C** — Two-wire serial interface via I/O expander. Reduces pin count for GPIO-constrained microcontrollers.
 - **SPI** — Available on select modules for higher-speed serial communication.
 
@@ -43,15 +30,12 @@ The display is organized in rows and columns of fixed character cells, each typi
 
 ## Key Advantages
 
-**Simplicity.** Send an ASCII code, get a character. No frame buffer management, no display driver stack, no GPU. Character LCD reduces firmware development effort to minutes rather than days.
-
-**Low power.** Reflective character LCDs operate without a backlight, drawing as little as 1-2 mA. Even with LED backlighting, total module consumption is typically under 50 mA — orders of magnitude less than a TFT of equivalent size.
-
-**Wide temperature range.** Standard modules operate from -20°C to 70°C. Extended temperature versions rated to -40°C to 85°C are available for outdoor, automotive, and industrial environments.
-
-**Long lifespan and proven reliability.** Character LCD technology has been in volume production for over 40 years. Failure rates are extremely low, and supply chain stability is excellent.
-
-**Cost efficiency.** Character LCDs are the lowest-cost display technology per unit, making them ideal for high-volume, price-sensitive applications.
+- **Dead-Simple Integration:** Send an ASCII code, get a character. No frame buffer, no GPU, no display driver stack — firmware development in minutes, not days.
+- **Ultra-Low Power:** Reflective character LCDs draw as little as 1-2 mA without backlight. Even with LED backlighting, total consumption stays under 50 mA.
+- **Extreme Temperature Range:** Standard modules operate -20°C to 70°C. Extended versions rated -40°C to 85°C for outdoor, automotive, and harsh industrial environments.
+- **Proven Reliability:** Over 40 years of volume production. Extremely low failure rates and rock-solid supply chain stability.
+- **Lowest Cost Per Unit:** The most cost-effective display technology available — ideal for high-volume, price-sensitive applications.
+- **Universal Compatibility:** HD44780-compatible interface works with virtually every microcontroller platform from Arduino to STM32.
 
 ## Customization
 
@@ -62,16 +46,12 @@ The display is organized in rows and columns of fixed character cells, each typi
 - Custom outline dimensions for drop-in replacements
 - Optical filters for contrast enhancement or EMI shielding
 
-## When to Choose Character LCD vs. Graphic LCD
-
-Choose character LCD when your content is exclusively text and simple symbols, your interface needs are minimal, and cost and power are priorities. If you need custom graphics, bar charts, waveforms, or multi-language character sets beyond the built-in ROM, consider our [graphic LCD modules](/products/graphic-lcd). For full-color content, see our [TFT displays](/products/tft-displays).
-
 ## Applications
 
-- **[Industrial](/applications/industrial)** — PLC readouts, motor controllers, HVAC panels, factory equipment
-- **[Instrumentation](/applications/instrumentation)** — Multimeters, power supplies, bench equipment
-- **[Medical](/applications/medical)** — Device status panels, calibration readouts, accessory modules
-- **[Consumer](/applications/consumer)** — Appliance controls, audio equipment, hobbyist platforms
+- **[Industrial](/applications/industrial)** — PLC readouts, motor controllers, HVAC panels, factory automation equipment, process control displays
+- **[Instrumentation](/applications/instrumentation)** — Multimeters, power supplies, bench equipment, frequency counters, signal generators
+- **[Medical](/applications/medical)** — Device status panels, calibration readouts, infusion pump displays, patient monitoring accessories
+- **[Consumer](/applications/consumer)** — Appliance controls, audio equipment, hobbyist platforms, vending machines, point-of-sale terminals
 
 ---
 
