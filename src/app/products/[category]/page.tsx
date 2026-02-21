@@ -206,6 +206,17 @@ function renderSection(section: { id: string; title: string; html: string }, idx
   const bgClass = isEven ? 'bg-gray-50' : 'bg-white';
   const tableRows = extractTableRows(section.html);
   const listItems = hasListItems(section.html) ? extractListItems(section.html) : [];
+  // Also extract bold paragraphs as card items (for "Why Choose" sections without <li>)
+  const boldParagraphs: { title: string; description: string }[] = [];
+  if (listItems.length === 0) {
+    const boldParaRegex = /<p>\s*<strong>(.*?)<\/strong>\s*([\s\S]*?)<\/p>/gi;
+    let bm;
+    while ((bm = boldParaRegex.exec(section.html)) !== null) {
+      const t = bm[1].replace(/<[^>]*>/g, '').replace(/[.:]$/, '').trim();
+      const d = bm[2].replace(/<[^>]*>/g, '').trim();
+      if (t.length > 2) boldParagraphs.push({ title: t, description: d });
+    }
+  }
   const links = extractLinks(section.html);
   const isWhyChoose = isWhyChooseSection(section.title);
   const isWhenToChoose = /when to choose/i.test(section.title);
@@ -371,9 +382,9 @@ function renderSection(section: { id: string; title: string; html: string }, idx
             </h2>
             <p className="text-white/70 text-lg max-w-2xl mx-auto">Decades of display engineering expertise, direct manufacturer partnerships, and a relentless focus on your success.</p>
           </div>
-          {listItems.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {listItems.map((item, i) => {
+          {(listItems.length > 0 || boldParagraphs.length > 0) ? (
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${(listItems.length > 0 ? listItems : boldParagraphs).length > 4 ? 'lg:grid-cols-3' : ''}`}>
+              {(listItems.length > 0 ? listItems : boldParagraphs).map((item, i) => {
                 const icons = ['fa-trophy', 'fa-handshake', 'fa-brain', 'fa-tools', 'fa-rocket', 'fa-headset'];
                 const icon = icons[i % icons.length];
                 return (
