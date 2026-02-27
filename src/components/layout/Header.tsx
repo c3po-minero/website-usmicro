@@ -41,6 +41,7 @@ const mainNavItems = [
   { label: 'About', href: '/about' },
   { label: 'Support', href: '/support/faq' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Product Advisor', href: '/product-advisor' },
 ];
 
 const submenus = { products: productLinks, applications: applicationLinks };
@@ -113,6 +114,9 @@ export default function Header() {
           <Link href="/about" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">About</Link>
           <Link href="/support/faq" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Support</Link>
           <Link href="/contact" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Contact</Link>
+          <Link href="/product-advisor" className="px-3.5 py-2 text-sm font-semibold text-accent rounded-md hover:bg-red-50 transition-all inline-flex items-center gap-1.5">
+            <i className="fas fa-wand-magic-sparkles text-xs" /> Product Advisor
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3">
