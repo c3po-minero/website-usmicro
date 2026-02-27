@@ -158,7 +158,7 @@ export default function ProductAdvisorChat() {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 md:px-6 py-8 space-y-6">
+      <div className="max-w-[1280px] mx-auto px-6 py-8 space-y-6">
         {/* ── Input Area ────────────────────────────────── */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
           <div className="flex gap-3">
@@ -246,7 +246,7 @@ export default function ProductAdvisorChat() {
       {/* ── Product Result Cards (dark section) ─────────── */}
       {products.length > 0 && (
         <div ref={resultsRef} className="bg-[#0B1120] py-12 px-4 md:px-6">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-[1280px] mx-auto px-6">
             <p className="text-gray-400 text-sm mb-6">
               Found <strong className="text-white">{products.length}</strong> matching {products.length === 1 ? 'product' : 'products'}
             </p>
