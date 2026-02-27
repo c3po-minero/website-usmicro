@@ -6,7 +6,7 @@
     "moduleSize": "53 x 21.8 x 8.5",
     "dotSize": "5 x 8",
     "viewingArea": "34.1 x 7.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -22,7 +22,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S015-016002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S015-016002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -32,7 +32,7 @@
     "moduleSize": "53 x 21.8 x 8.5",
     "dotSize": "5 x 8",
     "viewingArea": "34.1 x 7.4",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -48,7 +48,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S015-016002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S015-016002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -58,7 +58,7 @@
     "moduleSize": "53 x 21.8 x 8.5",
     "dotSize": "5 x 8",
     "viewingArea": "34.1 x 7.4",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "40 / 50 / 50 / 50",
     "backlightType": "LED",
     "ledColor": "White",
@@ -74,7 +74,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S015-016002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S015-016002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -84,7 +84,7 @@
     "moduleSize": "58 x 32 x 13.2",
     "dotSize": "5 x 8",
     "viewingArea": "27.88 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -100,7 +100,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S015-008002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S015-008002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -110,7 +110,7 @@
     "moduleSize": "58 x 32 x 13.2",
     "dotSize": "5 x 8",
     "viewingArea": "27.88 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "60 / 45 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -126,7 +126,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S015-008002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S015-008002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -136,7 +136,7 @@
     "moduleSize": "84 x 44 x 14.1",
     "dotSize": "5 x 8",
     "viewingArea": "56.2 x 11.5",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "60 / 45 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -152,7 +152,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S025-016002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S025-016002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -162,7 +162,7 @@
     "moduleSize": "84 x 44 x 14.1",
     "dotSize": "5 x 8",
     "viewingArea": "56.2 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -178,7 +178,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S025-016002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S025-016002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -188,7 +188,7 @@
     "moduleSize": "84 x 44 x 14.1",
     "dotSize": "5 x 8",
     "viewingArea": "56.2 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "50 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -204,7 +204,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S025-016002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S025-016002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -214,7 +214,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -230,7 +230,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S025-016002NEN-D0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S025-016002NEN-D0.pdf",
     "category": "character"
   },
   {
@@ -240,7 +240,7 @@
     "moduleSize": "80 x 36 x 13.2",
     "dotSize": "5 x 8",
     "viewingArea": "59.62 x 6.56",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -256,7 +256,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S026-016001NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S026-016001NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -266,7 +266,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "59.62 x 6.56",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -282,7 +282,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S026-016001NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S026-016001NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -292,7 +292,7 @@
     "moduleSize": "87 x 60 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "56.2 x 20.8",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -308,7 +308,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S026-016004NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S026-016004NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -318,7 +318,7 @@
     "moduleSize": "87 x 60 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "56.2 x 20.8",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -334,7 +334,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S026-016004NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S026-016004NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -344,7 +344,7 @@
     "moduleSize": "85 x 36 x 14.5",
     "dotSize": "5 x 8",
     "viewingArea": "56.21 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -360,7 +360,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -370,7 +370,7 @@
     "moduleSize": "85 x 36 x 14.5",
     "dotSize": "5 x 8",
     "viewingArea": "56.21 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -386,7 +386,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -396,7 +396,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -412,7 +412,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016001NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016001NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -422,7 +422,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "50 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -438,7 +438,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -448,7 +448,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "40 / 50 / 50 / 50",
     "backlightType": "LED",
     "ledColor": "White",
@@ -464,7 +464,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -474,7 +474,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -490,7 +490,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-D0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-D0.pdf",
     "category": "character"
   },
   {
@@ -500,7 +500,7 @@
     "moduleSize": "80 x 36 x 13",
     "dotSize": "5 x 8",
     "viewingArea": "57.7 x 9.4",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "50 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -516,7 +516,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S027-016002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S027-016002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -526,7 +526,7 @@
     "moduleSize": "98 x 60 x 14.2",
     "dotSize": "5 x 8",
     "viewingArea": "70.4 x 20.8",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -542,7 +542,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S032-020004NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S032-020004NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -552,7 +552,7 @@
     "moduleSize": "98 x 60 x 14.2",
     "dotSize": "5 x 8",
     "viewingArea": "70.4 x 20.8",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -568,7 +568,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S032-020004NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S032-020004NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -578,7 +578,7 @@
     "moduleSize": "116 x 37 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "75.4 x 17.78",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -594,7 +594,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S034-020002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S034-020002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -604,7 +604,7 @@
     "moduleSize": "116 x 37 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "75.4 x 17.78",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -620,7 +620,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S034-020002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S034-020002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -630,7 +630,7 @@
     "moduleSize": "116 x 37 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "75.4 x 17.78",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -646,7 +646,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S034-020002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S034-020002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -656,7 +656,7 @@
     "moduleSize": "116 x 37 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "75.4 x 17.78",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "40 / 50 / 50 / 50",
     "backlightType": "LED",
     "ledColor": "White",
@@ -672,7 +672,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S034-020002NEN-D0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S034-020002NEN-D0.pdf",
     "category": "character"
   },
   {
@@ -682,7 +682,7 @@
     "moduleSize": "118 x 36 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "88.3 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -698,7 +698,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S038-024002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S038-024002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -708,7 +708,7 @@
     "moduleSize": "118 x 36 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "88.3 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -724,7 +724,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S038-024002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S038-024002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -734,7 +734,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -750,7 +750,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -760,7 +760,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -776,7 +776,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -786,7 +786,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "40 / 50 / 50 / 50",
     "backlightType": "LED",
     "ledColor": "White",
@@ -802,7 +802,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -812,7 +812,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -828,7 +828,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-D0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-D0.pdf",
     "category": "character"
   },
   {
@@ -838,7 +838,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "50 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -854,7 +854,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-E0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-E0.pdf",
     "category": "character"
   },
   {
@@ -864,7 +864,7 @@
     "moduleSize": "122 x 44 x 14.3",
     "dotSize": "5 x 8",
     "viewingArea": "94.84 x 20",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "50 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -880,7 +880,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S040-016002NEN-F0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S040-016002NEN-F0.pdf",
     "category": "character"
   },
   {
@@ -890,7 +890,7 @@
     "moduleSize": "151 x 40 x 15",
     "dotSize": "5 x 8",
     "viewingArea": "114 x 14.54",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -906,7 +906,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S048-016001NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S048-016001NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -916,7 +916,7 @@
     "moduleSize": "151 x 40 x 15",
     "dotSize": "5 x 8",
     "viewingArea": "114 x 14.54",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -932,7 +932,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S048-016001NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S048-016001NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -942,7 +942,7 @@
     "moduleSize": "146 x 62.5 x 13.6",
     "dotSize": "5 x 8",
     "viewingArea": "118.84 x 38.47",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "White",
@@ -958,7 +958,7 @@
     "color": "White",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S049-020004NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S049-020004NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -968,7 +968,7 @@
     "moduleSize": "146 x 62.5 x 13.6",
     "dotSize": "5 x 8",
     "viewingArea": "118.84 x 38.47",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "60 / 45 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -984,7 +984,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S049-020004NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S049-020004NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -994,7 +994,7 @@
     "moduleSize": "146 x 62.5 x 13.6",
     "dotSize": "5 x 8",
     "viewingArea": "118.84 x 38.47",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1010,7 +1010,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S049-020004NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S049-020004NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -1020,7 +1020,7 @@
     "moduleSize": "182 x 33.5 x 13.6",
     "dotSize": "5 x 8",
     "viewingArea": "147.5 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1036,7 +1036,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S061-040002NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S061-040002NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -1046,7 +1046,7 @@
     "moduleSize": "182 x 33.5 x 13.6",
     "dotSize": "5 x 8",
     "viewingArea": "147.5 x 11.5",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "60 / 45 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1062,7 +1062,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S061-040002NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S061-040002NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -1072,7 +1072,7 @@
     "moduleSize": "183 x 54 x 14.7",
     "dotSize": "5 x 8",
     "viewingArea": "140.47 x 23.18",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1088,7 +1088,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S065-040004NEN-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S065-040004NEN-A0.pdf",
     "category": "character"
   },
   {
@@ -1098,7 +1098,7 @@
     "moduleSize": "183 x 54 x 14.7",
     "dotSize": "5 x 8",
     "viewingArea": "140.47 x 23.18",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1114,7 +1114,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S065-040004NEN-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S065-040004NEN-B0.pdf",
     "category": "character"
   },
   {
@@ -1124,7 +1124,7 @@
     "moduleSize": "183 x 54 x 14.7",
     "dotSize": "5 x 8",
     "viewingArea": "140.47 x 23.18",
-    "operatingTemp": "0°C ~ 50°C",
+    "operatingTemp": "0\u00b0C ~ 50\u00b0C",
     "viewingAngle": "60 / 45 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1140,7 +1140,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S065-040004NEN-C0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S065-040004NEN-C0.pdf",
     "category": "character"
   },
   {
@@ -1150,7 +1150,7 @@
     "moduleSize": "183 x 54 x 14.7",
     "dotSize": "5 x 8",
     "viewingArea": "140.47 x 23.18",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "45 / 60 / 40 / 40",
     "backlightType": "LED",
     "ledColor": "Yellow / Green",
@@ -1166,7 +1166,7 @@
     "color": "Yellow / Green",
     "bonding": "",
     "ic": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-S065-040004NEN-D0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-S065-040004NEN-D0.pdf",
     "category": "character"
   }
 ]

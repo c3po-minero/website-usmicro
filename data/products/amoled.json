@@ -5,12 +5,12 @@
     "resolution": "120 x 240",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A010-012024UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A010-012024UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -19,12 +19,12 @@
     "resolution": "184 x 276",
     "brightness": "350 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A010-018027UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A010-018027UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -33,12 +33,12 @@
     "resolution": "340 x 340",
     "brightness": "630 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A010-034034UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A010-034034UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -47,12 +47,12 @@
     "resolution": "360 x 360",
     "brightness": "360 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A011-036036UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A011-036036UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -61,12 +61,12 @@
     "resolution": "466 x 466",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A013-046046CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A013-046046CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -75,12 +75,12 @@
     "resolution": "466 x 466",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A013-046046UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A013-046046UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -89,12 +89,12 @@
     "resolution": "128 x 400",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A014-012040UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A014-012040UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -103,12 +103,12 @@
     "resolution": "454 x 454",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 60°C",
+    "operatingTemp": "-20\u00b0C ~ 60\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A014-045045NEI-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A014-045045NEI-A0.pdf",
     "category": "amoled"
   },
   {
@@ -117,12 +117,12 @@
     "resolution": "454 x 454",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A014-045045CEB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A014-045045CEB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -131,12 +131,12 @@
     "resolution": "466 x 466",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A014-046046CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A014-046046CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -145,12 +145,12 @@
     "resolution": "194 x 368",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A015-019036UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A015-019036UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -159,12 +159,12 @@
     "resolution": "194 x 368",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A015-019036UGB-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A015-019036UGB-B0.pdf",
     "category": "amoled"
   },
   {
@@ -173,12 +173,12 @@
     "resolution": "480 x 480",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A015-048048UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A015-048048UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -187,12 +187,12 @@
     "resolution": "466 x 466",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A015-046046CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A015-046046CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -201,12 +201,12 @@
     "resolution": "256 x 402",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A016-025040UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A016-025040UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -215,12 +215,12 @@
     "resolution": "228 x 460",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A016-022046CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A016-022046CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -229,12 +229,12 @@
     "resolution": "320 x 360",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A016-032036CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A016-032036CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -243,12 +243,12 @@
     "resolution": "192 x 490",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A016-019049UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A016-019049UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -257,12 +257,12 @@
     "resolution": "280 x 456",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A016-028045CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A016-028045CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -271,12 +271,12 @@
     "resolution": "336 x 480",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A017-033048CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A017-033048CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -285,12 +285,12 @@
     "resolution": "372 x 430",
     "brightness": "450 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A017-037043UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A017-037043UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -299,12 +299,12 @@
     "resolution": "390 x 450",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-039045CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-039045CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -313,12 +313,12 @@
     "resolution": "336 x 480",
     "brightness": "450 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-033048UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-033048UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -327,12 +327,12 @@
     "resolution": "368 x 448",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-036044CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-036044CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -341,12 +341,12 @@
     "resolution": "368 x 448",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-036044MEB-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-036044MEB-B0.pdf",
     "category": "amoled"
   },
   {
@@ -355,12 +355,12 @@
     "resolution": "390 x 450",
     "brightness": "450 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-039045UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-039045UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -369,12 +369,12 @@
     "resolution": "480 x 408",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A018-048040UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A018-048040UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -383,12 +383,12 @@
     "resolution": "410 x 502",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A020-041050CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A020-041050CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -397,12 +397,12 @@
     "resolution": "390 x 450",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A020-039045UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A020-039045UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -411,12 +411,12 @@
     "resolution": "410 x 502",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A021-041050UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A021-041050UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -425,12 +425,12 @@
     "resolution": "480 x 480",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A021-048048UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A021-048048UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -439,12 +439,12 @@
     "resolution": "480 x 480",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A022-048048NGC-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A022-048048NGC-A0.pdf",
     "category": "amoled"
   },
   {
@@ -453,12 +453,12 @@
     "resolution": "450 x 600",
     "brightness": "800 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A024-045060CFY-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A024-045060CFY-A0.pdf",
     "category": "amoled"
   },
   {
@@ -467,12 +467,12 @@
     "resolution": "450 x 600",
     "brightness": "850 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A024-045060UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A024-045060UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -481,12 +481,12 @@
     "resolution": "1080 x 1240",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A039-108124UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A039-108124UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -495,12 +495,12 @@
     "resolution": "1080 x 1240",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A039-108124UGB-B0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A039-108124UGB-B0.pdf",
     "category": "amoled"
   },
   {
@@ -509,12 +509,12 @@
     "resolution": "1080 x 1200",
     "brightness": "700 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "88 / 88 / 88 / 88",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A040-108120UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A040-108120UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -523,12 +523,12 @@
     "resolution": "568 x 1232",
     "brightness": "280 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A041-056123CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A041-056123CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -537,12 +537,12 @@
     "resolution": "568 x 1210",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A044-056121UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A044-056121UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -551,12 +551,12 @@
     "resolution": "720 x 1280",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A050-072128UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A050-072128UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -565,12 +565,12 @@
     "resolution": "1080 x 1920",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A054-108192UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A054-108192UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -579,12 +579,12 @@
     "resolution": "1125 x 2436",
     "brightness": "450 cd/m2",
     "contrast": "60,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "60,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A058-112243UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A058-112243UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -593,12 +593,12 @@
     "resolution": "1080 x 2220",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A059-108222UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A059-108222UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -607,12 +607,12 @@
     "resolution": "1080 x 2160",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A060-108216UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A060-108216UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -621,12 +621,12 @@
     "resolution": "1080 x 2340",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A060-108234UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A060-108234UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -635,12 +635,12 @@
     "resolution": "1080 x 2340",
     "brightness": "430 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A064-108234CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A064-108234CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -649,12 +649,12 @@
     "resolution": "1080 x 2340",
     "brightness": "473 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A064-108234CFS-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A064-108234CFS-A0.pdf",
     "category": "amoled"
   },
   {
@@ -663,12 +663,12 @@
     "resolution": "1080 x 2400",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A064-108240CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A064-108240CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -677,12 +677,12 @@
     "resolution": "1080 x 2400",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A065-108240CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A065-108240CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -691,12 +691,12 @@
     "resolution": "1080 x 2340",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A066-108234UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A066-108234UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -705,12 +705,12 @@
     "resolution": "1080 x 2400",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A067-108240CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A067-108240CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -719,12 +719,12 @@
     "resolution": "1080 x 2400",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A067-108240CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A067-108240CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -733,12 +733,12 @@
     "resolution": "1080 x 2400",
     "brightness": "500 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A068-108240CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A068-108240CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -747,12 +747,12 @@
     "resolution": "1080 x 2436",
     "brightness": "550 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A068-108243CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A068-108243CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -761,12 +761,12 @@
     "resolution": "1224 x 2720",
     "brightness": "700 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A068-122272UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A068-122272UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -775,12 +775,12 @@
     "resolution": "1920 x 1080",
     "brightness": "700 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-30°C ~ 85°C",
+    "operatingTemp": "-30\u00b0C ~ 85\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A070-192108CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A070-192108CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -789,12 +789,12 @@
     "resolution": "1280 x 800",
     "brightness": "840 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-30°C ~ 85°C",
+    "operatingTemp": "-30\u00b0C ~ 85\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A070-128080UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A070-128080UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -803,12 +803,12 @@
     "resolution": "1080 x 1920",
     "brightness": "800 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A070-108192UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A070-108192UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -817,12 +817,12 @@
     "resolution": "2400 x 1504",
     "brightness": "650 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A091-240150UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A091-240150UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -831,12 +831,12 @@
     "resolution": "1728 x 2368",
     "brightness": "350 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A110-172236CGC-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A110-172236CGC-A0.pdf",
     "category": "amoled"
   },
   {
@@ -845,12 +845,12 @@
     "resolution": "2560 x 1536",
     "brightness": "450 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A112-256153CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A112-256153CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -859,12 +859,12 @@
     "resolution": "2560 x 1600",
     "brightness": "420 cd/m2",
     "contrast": "60,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "60,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A115-256160CFS-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A115-256160CFS-A0.pdf",
     "category": "amoled"
   },
   {
@@ -873,12 +873,12 @@
     "resolution": "2800 x 1840",
     "brightness": "600 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-10°C ~ 60°C",
+    "operatingTemp": "-10\u00b0C ~ 60\u00b0C",
     "viewingAngle": "89 / 89 / 89 / 89",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A122-280184UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A122-280184UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -887,12 +887,12 @@
     "resolution": "1600 x 2560",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A126-160256UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A126-160256UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -901,12 +901,12 @@
     "resolution": "1728 x 1888",
     "brightness": "800 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-40°C ~ 85°C",
+    "operatingTemp": "-40\u00b0C ~ 85\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A128-172188CGC-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A128-172188CGC-A0.pdf",
     "category": "amoled"
   },
   {
@@ -915,12 +915,12 @@
     "resolution": "1728 x 1888",
     "brightness": "600 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-40°C ~ 85°C",
+    "operatingTemp": "-40\u00b0C ~ 85\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A128-172188UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A128-172188UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -929,12 +929,12 @@
     "resolution": "2560 x 1440",
     "brightness": "800 cd/m2",
     "contrast": "2,000,000:1",
-    "operatingTemp": "-40°C ~ 85°C",
+    "operatingTemp": "-40\u00b0C ~ 85\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "2,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A130-256144UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A130-256144UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -943,12 +943,12 @@
     "resolution": "1920 x 1200",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-10°C ~ 60°C",
+    "operatingTemp": "-10\u00b0C ~ 60\u00b0C",
     "viewingAngle": "89 / 89 / 89 / 89",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A140-192120UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A140-192120UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -957,12 +957,12 @@
     "resolution": "2880 x 1800",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-10°C ~ 60°C",
+    "operatingTemp": "-10\u00b0C ~ 60\u00b0C",
     "viewingAngle": "89 / 89 / 89 / 89",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A140-288180UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A140-288180UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -971,12 +971,12 @@
     "resolution": "3000 x 1876",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A145-300187CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A145-300187CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -985,12 +985,12 @@
     "resolution": "3000 x 1876",
     "brightness": "400 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A145-300187UGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A145-300187UGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -999,12 +999,12 @@
     "resolution": "2880 x 1800",
     "brightness": "880 cd/m2",
     "contrast": "2,000,000:1",
-    "operatingTemp": "-40°C ~ 85°C",
+    "operatingTemp": "-40\u00b0C ~ 85\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "2,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A151-288180CGC-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A151-288180CGC-A0.pdf",
     "category": "amoled"
   },
   {
@@ -1013,12 +1013,12 @@
     "resolution": "2560 x 1600",
     "brightness": "800 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-30°C ~ 85°C",
+    "operatingTemp": "-30\u00b0C ~ 85\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A151-256160CGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A151-256160CGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -1027,12 +1027,12 @@
     "resolution": "3840 x 2160",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A156-384216NGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A156-384216NGB-A0.pdf",
     "category": "amoled"
   },
   {
@@ -1041,12 +1041,12 @@
     "resolution": "1672 x 2972",
     "brightness": "1000 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "80 / 80 / 80 / 80",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A170-167297CGC-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A170-167297CGC-A0.pdf",
     "category": "amoled"
   },
   {
@@ -1055,12 +1055,12 @@
     "resolution": "3840 x 2160",
     "brightness": "400 cd/m2",
     "contrast": "1,000,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "89 / 89 / 89 / 89",
     "interface": "",
     "contrastRatio": "1,000,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A216-284216NGD-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A216-284216NGD-A0.pdf",
     "category": "amoled"
   },
   {
@@ -1069,12 +1069,12 @@
     "resolution": "3840 x 2160",
     "brightness": "400 cd/m2",
     "contrast": "100,000:1",
-    "operatingTemp": "-20°C ~ 70°C",
+    "operatingTemp": "-20\u00b0C ~ 70\u00b0C",
     "viewingAngle": "85 / 85 / 85 / 85",
     "interface": "",
     "contrastRatio": "100,000:1",
     "touchPanel": "",
-    "datasheetUrl": "https://djnr.net/usmp/USMP-A270-384216NGB-A0.pdf",
+    "datasheetUrl": "https://www.usmicroproducts.com/sites/default/files/datasheets/USMP-A270-384216NGB-A0.pdf",
     "category": "amoled"
   }
 ]
