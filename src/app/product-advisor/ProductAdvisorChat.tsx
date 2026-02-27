@@ -306,6 +306,18 @@ export default function ProductAdvisorChat() {
                       </div>
                     )}
 
+                    {/* Row 5: Download Datasheet */}
+                    <div className="mt-4">
+                      <a
+                        href={`https://www.usmicroproducts.com/sites/default/files/datasheets/${product.partNumber}.pdf`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#db282f] text-white text-sm font-semibold rounded-lg hover:bg-[#c12228] transition-colors w-full"
+                      >
+                        <i className="fas fa-file-pdf" />
+                        Download Datasheet
+                      </a>
+                    </div>
 
                   </div>
                 );
