@@ -306,25 +306,7 @@ export default function ProductAdvisorChat() {
                       </div>
                     )}
 
-                    {/* Row 5: Action buttons */}
-                    <div className="flex gap-3 mt-4">
-                      <a
-                        href={product.datasheetUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#db282f] text-white text-sm font-semibold rounded-lg hover:bg-[#c12228] transition-colors"
-                      >
-                        <i className="fas fa-file-pdf" />
-                        Download Datasheet
-                      </a>
-                      <a
-                        href={categoryUrl}
-                        className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 border border-[#334155] text-[#94A3B8] text-sm font-semibold rounded-lg hover:bg-[#1E293B] transition-colors"
-                      >
-                        <i className="fas fa-table-list" />
-                        View Category
-                      </a>
-                    </div>
+
                   </div>
                 );
               })}
