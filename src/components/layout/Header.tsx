@@ -33,33 +33,34 @@ const applicationLinks = [
   { href: '/applications/harsh-environments', icon: 'fa-mountain', label: 'Harsh Environments' },
 ];
 
+const resourceLinks = [
+  { href: '/learn/tft-display-technology', icon: 'fa-book-open', label: 'Learn' },
+  { href: '/support/faq', icon: 'fa-life-ring', label: 'Support' },
+];
+
 const mainNavItems = [
   { label: 'Products', hasSubmenu: true, submenuKey: 'products' as const },
   { label: 'Applications', hasSubmenu: true, submenuKey: 'applications' as const },
   { label: 'Services', href: '/services/ems' },
-  { label: 'Learn', href: '/learn/tft-display-technology' },
+  { label: 'Resources', hasSubmenu: true, submenuKey: 'resources' as const },
   { label: 'About', href: '/about' },
-  { label: 'Support', href: '/support/faq' },
-  { label: 'Contact', href: '/contact' },
   { label: 'Product Advisor', href: '/product-advisor' },
 ];
 
-const submenus = { products: productLinks, applications: applicationLinks };
+const submenus = { products: productLinks, applications: applicationLinks, resources: resourceLinks };
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobilePanel, setMobilePanel] = useState<'main' | 'products' | 'applications'>('main');
+  const [mobilePanel, setMobilePanel] = useState<'main' | 'products' | 'applications' | 'resources'>('main');
   const [megaHidden, setMegaHidden] = useState(false);
   const pathname = usePathname();
 
-  // Close mobile menu on navigation
   useEffect(() => {
     setMobileOpen(false);
     setMobilePanel('main');
     setMegaHidden(false);
   }, [pathname]);
 
-  // Prevent body scroll when mobile menu open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -78,7 +79,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 h-[72px]" role="banner">
       <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="US Micro Products - Home">
-          <Image src="/images/logos/USMP-horizontal.svg" alt="US Micro Products logo" width={200} height={48} priority className="h-10 w-auto" />
+          <Image src="/images/logos/USMP-horizontal.svg" alt="US Micro Products logo" width={160} height={38} priority className="h-8 w-auto" />
         </Link>
 
         {/* Desktop nav */}
@@ -110,10 +111,20 @@ export default function Header() {
             </div>
           </div>
           <Link href="/services/ems" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Services</Link>
-          <Link href="/learn/tft-display-technology" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Learn</Link>
+          <div className="nav-item relative group" onMouseLeave={() => setMegaHidden(false)}>
+            <button className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all inline-flex items-center gap-1" tabIndex={0}>
+              Resources <i className="fas fa-chevron-down text-[0.625rem] ml-1" />
+            </button>
+            <div className={`mega-menu hidden grid-cols-1 gap-1 absolute top-full left-1/2 -translate-x-1/2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 min-w-[200px] z-50 ${megaHidden ? 'mega-hidden' : ''}`}>
+              {resourceLinks.map((item) => (
+                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-[0.8125rem] text-gray-700 hover:bg-blue-light hover:text-blue transition-all" role="menuitem" onClick={() => setMegaHidden(true)}>
+                  <i className={`fas ${item.icon} w-[18px] text-blue-mid text-sm`} />
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/about" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">About</Link>
-          <Link href="/support/faq" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Support</Link>
-          <Link href="/contact" className="px-3.5 py-2 text-sm font-medium text-gray-700 rounded-md hover:text-accent hover:bg-gray-50 transition-all">Contact</Link>
           <Link href="/product-advisor" className="px-3.5 py-2 text-sm font-semibold text-accent rounded-md hover:bg-red-50 transition-all inline-flex items-center gap-1.5">
             <i className="fas fa-wand-magic-sparkles text-xs" /> Product Advisor
           </Link>
@@ -136,7 +147,6 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-0 top-[72px] z-50 bg-white overflow-hidden">
           <div className="relative h-full">
-            {/* Panel 1: Main menu */}
             <div
               className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'main' ? 'translateX(0)' : 'translateX(-100%)' }}
@@ -166,7 +176,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Panel 2: Products submenu */}
             <div
               className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'products' ? 'translateX(0)' : 'translateX(100%)' }}
@@ -187,7 +196,6 @@ export default function Header() {
               </nav>
             </div>
 
-            {/* Panel 3: Applications submenu */}
             <div
               className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
               style={{ transform: mobilePanel === 'applications' ? 'translateX(0)' : 'translateX(100%)' }}
@@ -200,6 +208,26 @@ export default function Header() {
               </div>
               <nav className="flex flex-col gap-1">
                 {applicationLinks.map((item) => (
+                  <Link key={item.href} href={item.href} className="flex items-center gap-3 px-4 py-3 text-[0.9375rem] text-gray-700 rounded-lg hover:bg-blue-light transition-colors" onClick={closeMobile}>
+                    <i className={`fas ${item.icon} w-5 text-blue-mid text-sm`} />
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            <div
+              className="absolute inset-0 flex flex-col p-6 overflow-y-auto bg-white transition-transform duration-300 ease-in-out"
+              style={{ transform: mobilePanel === 'resources' ? 'translateX(0)' : 'translateX(100%)' }}
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <button onClick={() => setMobilePanel('main')} className="flex items-center gap-1.5 text-sm font-medium text-accent-text">
+                  <i className="fas fa-chevron-left text-xs" /> Back
+                </button>
+                <span className="text-lg font-bold text-navy mx-auto pr-12">Resources</span>
+              </div>
+              <nav className="flex flex-col gap-1">
+                {resourceLinks.map((item) => (
                   <Link key={item.href} href={item.href} className="flex items-center gap-3 px-4 py-3 text-[0.9375rem] text-gray-700 rounded-lg hover:bg-blue-light transition-colors" onClick={closeMobile}>
                     <i className={`fas ${item.icon} w-5 text-blue-mid text-sm`} />
                     {item.label}

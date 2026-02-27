@@ -5,6 +5,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import SearchOverlay from '@/components/SearchOverlay';
+import PasswordGate from '@/components/PasswordGate';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
@@ -39,10 +40,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <noscript><link rel="stylesheet" href="/fontawesome/css/all.min.css" /></noscript>
       </head>
       <body className="font-sans text-gray-900 bg-white leading-relaxed antialiased">
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <SearchOverlay />
+        <PasswordGate>
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <SearchOverlay />
+        </PasswordGate>
         <Script id="load-fontawesome" strategy="afterInteractive">
           {`var l=document.createElement('link');l.rel='stylesheet';l.href='/fontawesome/css/all.min.css';document.head.appendChild(l);`}
         </Script>
